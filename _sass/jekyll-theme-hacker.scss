@@ -324,3 +324,11 @@ pre{
   direction: ltr;
   font-family: monospace;
 }
+table{
+	direction: ltr;
+}
+th{
+	text-align: right !important;
+}
+td { direction: ltr;text-align: left !important; }
+td:first-child { direction: rtl;text-align: right !important; }
