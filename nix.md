@@ -1,298 +1,301 @@
 ---
 layout: default
+published: true
 ---
 
-# \*nix
+# لینوکس
 
-## Linux Network Commands
+## دستورات شبکه
 
-| **Command** | **Description** |
+| **دستور** | **توضیح** |
 | :--- | :--- |
-| watch ss -tp | Network connections |
-| netstat -ant | Tcp connections -anu=udp |
-| netstat -tulpn | Connections with PIDs |
-| lsof -i | Established connections |
-| smb:// ip /share | Access windows smb share |
-| share user x.x.x.x c$ | Mount Windows share |
-| smbclient -0 user\\ ip \ share | SMB connect |
-| ifconfig eth\# ip I cidr | Set IP and netmask |
-| ifconfig eth0:1 ip I cidr | Set virtual interface |
-| route add default gw gw lp | Set GW |
-| ifconfig eth\# mtu \[size\] | Change MTU size |
-| export MAC=xx: XX: XX: XX: XX: XX | Change MAC |
-| ifconfig int hw ether MAC | Change MAC |
-| macchanger -m MAC int | Backtrack MAC changer |
-| iwlist int scan | Built-in wifi scanner |
-| dig -x ip | Domain lookup for IP |
-| host ip | Domain lookup for IP |
-| host -t SRV \_ service tcp.url.com | Domain SRV lookup |
-| dig @ ip domain -t AXrR | DNS Zone Xfer |
-| host -1 domain namesvr | DNS Zone Xfer |
-| ip xfrm state list | Print existing VPN kejs |
-| ip addr add ip I cidr aev ethO | Adds 'hidden' interface |
-| /var/log/messages I grep DHCP | List DHCP assignments |
-| tcpkill host ip and port port | Block ip:port |
-| echo "1" /proc/sys/net/ipv4/ip forward | Turn on IP Forwarding |
-| echo ''nameserver x.x.x.x''  /etc7resolv.conf | Add DNS Server |
+| watch ss -tp | ارتباطات شبکه |
+| netstat -ant | ارتباطات tcp یا udp -anu=udp |
+| netstat -tulpn | ارتباطات به همراه PIDs |
+| lsof -i | ارتباطات برقرار |
+| smb:// ip /share | دسترسی محیط اشتراکی smb  |
+| share user x.x.x.x c$ | Mount نمودن محیط اشتراکی ویندوزی  |
+| smbclient -0 user\\ ip \ share | اتصال به SMB |
+| ifconfig eth\# ip I cidr | تنظیم IP و netmask |
+| ifconfig eth0:1 ip I cidr | تنظیم interface مجازی |
+| route add default gw gw lp | تنظیم GW |
+| ifconfig eth\# mtu \[size\] | تغییر اندازه MTU |
+| export MAC=xx: XX: XX: XX: XX: XX | تغییر MAC |
+| ifconfig int hw ether MAC | تغییر MAC |
+| macchanger -m MAC int | تغییر Mac در Backtrack  |
+| iwlist int scan | پویشگر wifi |
+| dig -x ip | شناسایی دامین های یک ip |
+| host ip | شناسایی دامین های یک ip |
+| host -t SRV \_ service tcp.url.com | شناسایی SRV دامین |
+| dig @ ip domain -t AXrR | شناسایی DNS Zone Xfer |
+| host -1 domain namesvr | شناسایی DNS Zone Xfer |
+| ip xfrm state list | نمایش VPN موجود |
+| ip addr add ip I cidr aev ethO | اضافه نمودن 'hidden' interface |
+| /var/log/messages I grep DHCP | لیست DHCP  |
+| tcpkill host ip and port port | مسدود نمودن ip:port |
+| echo "1" /proc/sys/net/ipv4/ip forward | فعال سازی IP Forwarding |
+| echo ''nameserver x.x.x.x''  /etc7resolv.conf | اضافه نمودن سرور DNS |
 
-## Linux System Info
+## اطلاعات سیستم
 
-| **Command** | **Description** |
+| **دستور** | **توضیح** |
 | :--- | :--- |
-| nbstate -A -ip | Get hostname for ip |
-| id | Current username |
-| w | Logged on users |
-| who -a | User information |
-| last -a | Last users logged on |
-| ps -ef | Process listing \(top\) |
-| df -h | Disk usage \(free\) |
-| uname -a | Kernel version/CPU info |
-| mount | Mounted file Sjstems |
-| getent passwd | Show list of users |
-| PATH~$PATH:/home/mypath | Add to PATH variable |
-| kill pid | Kills process with pid |
-| cat /etc/issue | Show OS info |
-| cat /etc/'release' | Show OS version info |
-| cat /proc/version | Show kernel info |
-| rpm --query -all | Installed pkgs \(Redhat\) |
-| rpm -ivh ' .rpm | Install RPM \(-e=remove\) |
-| dpkg -get-selections | Installed pkgs \(Ubuntu\) |
-| dpkg -I '.deb | Install DEB \(-r=remove\) |
-| pkginfo | Installed pkgs \(Solaris\) |
-| which tscsh/csh/ksh/bash | Show location of executable |
-| chmod -so tcsh/csh/ksh | Disable shell , force bash |
+| nbstate -A -ip | دریافت hostname برای ip |
+| id | نام کاربری فعلی |
+| w | کاربر وارد شده |
+| who -a | اطلاعات کاربر |
+| last -a | آخرین کاربر وارد شده |
+| ps -ef | پردازش های موجود سیستم \(یا استفاده از top\) |
+| df -h | میزان استفاده از دیسک \(یا استفاده از free\) |
+| uname -a | نمایش  نسخه کرنل به همراه ساختار پردازنده |
+| mount | Mount نمودن فایل سیستم |
+| getent passwd | نمایش لیست کاربران |
+| PATH~$PATH:/home/mypath | اضافه نمودن متغیر به PATH |
+| kill pid | حذف فرآیند با pid |
+| cat /etc/issue | نمایش اطلاعات سیستم عامل |
+| cat /etc/'release' | نمایش اطلاعات نسخه سیستم عامل |
+| cat /proc/version | نمایش طلاعات نسخه کرنل  |
+| rpm --query -all | بسته های نصب شده \(در Redhat\) |
+| rpm -ivh ' .rpm | نصب بسته های rpm \(برای حذف -e=remove\) |
+| dpkg -get-selections | بسته های نصب شده \(در Ubuntu\) |
+| dpkg -I '.deb | نصب بسته های DEB \(برای حذف -r=remove\) |
+| pkginfo | بسته های نصب شده \(در Solaris\) |
+| which tscsh/csh/ksh/bash | نمایش مسیر های فایل های اجرایی |
+| chmod -so tcsh/csh/ksh | غیر فعال سازی شل و همچنین اجبار به استفاده از bash |
 
-## Linux Utility Commands
+## دستورات کاربردی
 
-| **Command** | **Description** |
+| **دستور** | **توضیح** |
 | :--- | :--- |
-| wget http:// url -0 url.txt -o /dev/null | Grab url |
-| rdesktop ip | Remote Desktop to ip |
-| scp /tmp/file user@x.x.x.x:/tmp/file | Put file |
-| scp user@ remoteip :/tmp/file /tmp/file | Get file |
-| useradd -m user | Add user |
-| passwd user | Change user password |
-| rmuser unarne | Remove user |
-| script -a outfile | Record shell : Ctrl-D stops |
-| apropos subject | Find related command |
-| history | View users command history |
-| ! num | Executes line \# in history |
+| wget http:// url -0 url.txt -o /dev/null | گرفتن آدرس |
+| rdesktop ip | دسترسی به دسکتاپ ip |
+| scp /tmp/file user@x.x.x.x:/tmp/file | ارسال فایل |
+| scp user@ remoteip :/tmp/file /tmp/file | دریافت فایل |
+| useradd -m user | اضافه نموده کاربر |
+| passwd user | تغییر کلمه عبور کاربر |
+| rmuser unarne | حذف کاربر |
+| script -a outfile | ضبط شل : Ctrl-D برای توقف |
+| apropos subject | دستورات مرتبط |
+| history | تاریخچه دستورات کاربر |
+| ! num | خطوط اجرایی در history |
 
-## Linux File Commands
+## دستورات فایل
 
 <table>
   <thead>
     <tr>
-      <th style="text-align:left"><b>Command</b>
+      <th style="text-align:left"><b>دستور</b>
       </th>
-      <th style="text-align:left"><b>Description</b>
+      <th style="text-align:left"><b>توضیح</b>
       </th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td style="text-align:left">diff filel file2</td>
-      <td style="text-align:left">Compare files</td>
+      <td style="text-align:left">مقایسه دو فایل</td>
     </tr>
     <tr>
       <td style="text-align:left">rm -rf dir</td>
-      <td style="text-align:left">Force delete of dir</td>
+      <td style="text-align:left">حذف اجباری فولدر به صورت تو در تو</td>
     </tr>
     <tr>
       <td style="text-align:left">shred -f -u file</td>
-      <td style="text-align:left">Overwrite/delete file</td>
+      <td style="text-align:left">بازنوسی و یا حذف فایل</td>
     </tr>
     <tr>
       <td style="text-align:left">touch -r ref file</td>
-      <td style="text-align:left">Matches ref_ file timestamp</td>
+      <td style="text-align:left">تطبیق timestamp مربوط به ref_ file</td>
     </tr>
     <tr>
       <td style="text-align:left">touch -t YYYYMMDDHHSS file</td>
-      <td style="text-align:left">Set file timestamp</td>
+      <td style="text-align:left">تنظیم timestamp فایل</td>
     </tr>
     <tr>
       <td style="text-align:left">sudo fdisk -1</td>
-      <td style="text-align:left">List connected drives</td>
+      <td style="text-align:left">لیست درایور های متصل شده</td>
     </tr>
     <tr>
       <td style="text-align:left">mount /dev/sda# /mnt/usbkey</td>
-      <td style="text-align:left">Mount USB key</td>
+      <td style="text-align:left">Mount نمودن دستگاه های usb</td>
     </tr>
     <tr>
       <td style="text-align:left">md5sum -t file</td>
-      <td style="text-align:left">Compute md5 hash</td>
+      <td style="text-align:left">محاسبه هش md5</td>
     </tr>
     <tr>
       <td style="text-align:left">echo -n &quot;str&quot; | md5sum</td>
-      <td style="text-align:left">Generate md5 hash</td>
+      <td style="text-align:left">تولید نمودن هش md5</td>
     </tr>
     <tr>
       <td style="text-align:left">shalsum file</td>
-      <td style="text-align:left">SHAl hash of file</td>
+      <td style="text-align:left">هش SHAl مربوط به فایل</td>
     </tr>
     <tr>
       <td style="text-align:left">sort -u</td>
-      <td style="text-align:left">Sort/show unique lines</td>
+      <td style="text-align:left">مرتبط و نمایش خطوط  یکتا</td>
     </tr>
     <tr>
       <td style="text-align:left">grep -c &apos;&apos;str&apos;&apos; file</td>
-      <td style="text-align:left">Count lines w/ &apos;&apos;str&apos;&apos;</td>
+      <td style="text-align:left">جمع خطوط w/ &apos;&apos;str&apos;&apos;</td>
     </tr>
     <tr>
       <td style="text-align:left">tar cf file.tar files</td>
-      <td style="text-align:left">Create .tar from files</td>
+      <td style="text-align:left">ایجاد .tar از فایل ها</td>
     </tr>
     <tr>
       <td style="text-align:left">tar xf file.tar</td>
-      <td style="text-align:left">Extract .tar</td>
+      <td style="text-align:left">اسختراج .tar</td>
     </tr>
     <tr>
       <td style="text-align:left">tar czf file.tar.gz files</td>
-      <td style="text-align:left">Create .tar.gz</td>
+      <td style="text-align:left">ایجاد .tar.gz</td>
     </tr>
     <tr>
       <td style="text-align:left">tar xzf file.tar.gz</td>
-      <td style="text-align:left">Extract .tar.gz</td>
+      <td style="text-align:left">استخراج .tar.gz</td>
     </tr>
     <tr>
       <td style="text-align:left">tar cjf file.tar.bz2 files</td>
-      <td style="text-align:left">Create .tar.bz2</td>
+      <td style="text-align:left">ایجاد .tar.bz2</td>
     </tr>
     <tr>
       <td style="text-align:left">tar xjf file.tar.bz2</td>
-      <td style="text-align:left">Extract .tar.bz2</td>
+      <td style="text-align:left">استخراج .tar.bz2</td>
     </tr>
     <tr>
       <td style="text-align:left">gzip file</td>
-      <td style="text-align:left">Compress/rename file</td>
+      <td style="text-align:left">فشرده سازی و تغییر نام فایل</td>
     </tr>
     <tr>
       <td style="text-align:left">gzip -d file. gz</td>
-      <td style="text-align:left">Decompress file.gz</td>
+      <td style="text-align:left">عدم فشرده سازی file.gz</td>
     </tr>
     <tr>
       <td style="text-align:left">upx -9 -o out.exe orig.exe</td>
-      <td style="text-align:left">UPX packs orig.exe</td>
+      <td style="text-align:left">دریافت UPX packs مربوط به orig.exe</td>
     </tr>
     <tr>
       <td style="text-align:left">zip -r zipname.zip \Directory\&apos;</td>
-      <td style="text-align:left">Create zip</td>
+      <td style="text-align:left">ایجاد zip</td>
     </tr>
     <tr>
       <td style="text-align:left">dd skip=lOOO count=2000 bs=S if=file of=file</td>
-      <td style="text-align:left">Cut block 1K-3K from file</td>
+      <td style="text-align:left">جداسازی 1 تا 3 کیلوبایت از فایل</td>
     </tr>
     <tr>
       <td style="text-align:left">split -b 9K file prefix</td>
-      <td style="text-align:left">Split file into 9K chunks</td>
+      <td style="text-align:left">جداسازی بخش های 9 کیلیوبایتی از فایل</td>
     </tr>
     <tr>
       <td style="text-align:left">awk &apos;sub(&quot;$&quot;.&quot;\r&quot;)&apos; unix.txt win.txt</td>
       <td
-      style="text-align:left">Win compatible txt file</td>
+      style="text-align:left">فایل txt سازگار ویندوز</td>
     </tr>
     <tr>
       <td style="text-align:left">find -i -name file -type &apos;.pdf</td>
-      <td style="text-align:left">Find PDF files</td>
+      <td style="text-align:left">جست و جو فایل های  PDF</td>
     </tr>
     <tr>
       <td style="text-align:left">
         <p>find I -perm -4000 -o -perm -2000 -exec ls -</p>
         <p>ldb {} \;</p>
       </td>
-      <td style="text-align:left">Search for setuid files</td>
+      <td style="text-align:left">جست و جو setuid فایل ها</td>
     </tr>
     <tr>
       <td style="text-align:left">dos2unix file</td>
-      <td style="text-align:left">Convert to &apos;nix format</td>
+      <td style="text-align:left">تغییر به فرمت *nix</td>
     </tr>
     <tr>
       <td style="text-align:left">file file</td>
-      <td style="text-align:left">Determine file type/info</td>
+      <td style="text-align:left">تعیین نوع و فرمت فایل</td>
     </tr>
     <tr>
       <td style="text-align:left">chattr (+/-)i file</td>
-      <td style="text-align:left">Set/Unset immutable bit</td>
+      <td style="text-align:left">تنظیم و یا عدم تنظیم بیت immutable</td>
     </tr>
   </tbody>
-</table>## Linux Misc Commands
+</table>
 
-| **Command** | **Description** |
+## دستورات متفرقه
+
+| **دستور** | **توضیح** |
 | :--- | :--- |
-| unset HISTFILE | Disable history logging |
-| ssh user@ ip arecord - I aplay - | Record remote mic |
-| gcc -o outfile myfile.c | Compile C,C++ |
-| init 6 | Reboot \(0 = shutdown\) |
-| cat /etc/ 1 syslog 1 .conf 1 grep -v ''"\#'' | List of log files |
-| grep 'href=' file 1 cut -d"/" -f3 I grep url \| sort -u | Strip links in url.com |
-| dd if=/dev/urandom of= file bs=3145728 count=100 | Make random 3MB file |
+| unset HISTFILE | غیرفعال نموده گزاراشات در history |
+| ssh user@ ip arecord - I aplay - | ضبط میکروفن از راه دور |
+| gcc -o outfile myfile.c | Compile نمودن C,C++ |
+| init 6 | راه اندازی مجدد \(0 = خاموش نمودن\) |
+| cat /etc/ 1 syslog 1 .conf 1 grep -v ''"\#'' | لیست فایل های گزاراشات |
+| grep 'href=' file 1 cut -d"/" -f3 I grep url \| sort -u | جداسازی لینک های url.com |
+| dd if=/dev/urandom of= file bs=3145728 count=100 | ایجاد فایل 3 مگابایتی |
 
-## Linux "Cover Your Tracks" Commands
+## دستورات کنترل کننده
 
 
 
-| **Command** | **Description** |
+| **دستور** | **توضیح** |
 | :--- | :--- |
-| echo "" /var/log/auth.log | Clear auth.log file |
-| echo '''' -/.bash history | Clear current user bash history |
-| rm -/.bash histor/ -rf | Delete .bash\_history file |
-| history -c | Clear current session history |
-| export HISTFILESIZE=0 | Set historj max lines to 0 |
-| export HISTSIZE=0 | Set histroy max commands to 0 |
-| unset HISTFILE | Disable history logging \(need to logout to take effect\) |
-| kill -9 $$ | Kills current session |
-| ln /dev/null -/.bash\_historj -sf | Perrnanentlj send all bash history commands to /dev/null |
+| echo "" /var/log/auth.log | حذف فایل auth.log |
+| echo '''' -/.bash history | حذف تاریخچه نشست کاربر جاری |
+| rm -/.bash histor/ -rf | حذف فایل .bash\_history |
+| history -c | حذف تاریخچه نشست کاربر جاری |
+| export HISTFILESIZE=0 | تعیین حداکثر خطوط فایل تاریخچه به صفر |
+| export HISTSIZE=0 | تعیین حداکثر دستورات فایل تاریخچه به صفر |
+| unset HISTFILE | حذف تاریخچه \(برای اعمال نیاز به ورود مجدد است\) |
+| kill -9 $$ | حذف نشست جاری |
+| ln /dev/null -/.bash\_historj -sf | به صورت دائم و همیشگی کلیه دستورات تاریخچه به /dev/null فرستاده شود |
 
-Linux File System Structure
+## ساختار فایل سیستم
 
-| **Location** | **Description** |
+| **موقعیت** | **توضیح** |
 | :--- | :--- |
-| /bin | User binaries |
-| /boot | Boot-up related files |
-| /dev | Interface for system devices |
-| /etc | System configuration files |
-| /home | Base directory for user files/lib |
-| /opt | Critical software libraries |
-| /proc | System and running programs |
-| /root | Home directory of root user |
-| /sbin | System administrator binaries |
-| /tmp | Temporary files |
-| /usr | Less critical files |
-| /var | Variable System files |
+| /bin | فایل های باینری سیستم |
+| /boot | فایل های مرتبط با فرآیند بوت |
+| /dev | Interface های مربوط به دستگاه های سیستم |
+| /etc | فایل های تنظیمات سیستم |
+| /home | مکان پایه ای برای کاربران و کتابخانه ها |
+| /opt | کتابخانه های ضروری نرم افزار ها |
+| /proc | فرآیند های اجرایی و سیستمی |
+| /root | مسیر پایه برای کاربر root |
+| /sbin | فایل های اجرایی کاربر root |
+| /tmp | فایل ها موقت |
+| /usr | فایل های نه چندان ضروری |
+| /var | فایل متغیر های سیستم |
 
-## Linux Files
+## فایل ها
 
-| **Filename** | **Description** |
+| **فایل** | **توضیح** |
 | :--- | :--- |
-| /etc/shadow | Local users' hashes |
-| /etc/passwd | Local users |
-| /etc/group | Local groups |
-| /etc/rc.d | Startup services |
-| /etc/init.d | Service |
-| /etc/hosts | Known hostnames and IPs |
-| /etc/HOSTNAME | Full hostnarne with domain |
-| /etc/network/interfaces | Network configuration |
-| /etc/profile | System environment variables |
-| /etc/apt/sources.list | Ubuntu sources list |
-| /etc/resolv.conf | Narneserver configuration |
-| /horne/ user /.bash history | Bash history \(also /root/\) |
-| /usr/share/wireshark/manuf | Vendor-MAC lookup |
-| -/.ssh/ | SSH keystore |
-| /var/log | System log files \(most Linux\) |
-| /var/adrn | System log files \(Unix\) |
-| /var/spool/cron | List cron files |
-| /var/log/apache/access.log | Apache connection log |
-| /etc/fstab | Static file system info |
+| /etc/shadow | هش کاربران محلی |
+| /etc/passwd | کاربران محلی |
+| /etc/group | گروه های محلی |
+| /etc/rc.d | سرویس های راه انداز |
+| /etc/init.d | سرویس ها |
+| /etc/hosts | لیست hostname ها و  IP ها |
+| /etc/HOSTNAME | نمایش hostname به همراه domain |
+| /etc/network/interfaces | ارتباطات شبکه ای |
+| /etc/profile | متغیر های محیطی سیستم |
+| /etc/apt/sources.list | لیست سورس های توزیع ubuntu |
+| /etc/resolv.conf | تنظیمات namserver |
+| /horne/ user /.bash history | تاریخچه bash \(همچنین در /root/\) |
+| /usr/share/wireshark/manuf | سازنده MAC |
+| -/.ssh/ | محل keystore های ssh  |
+| /var/log | فایل گزارشات سیستم \(برای Linux\) |
+| /var/adrn | فایل گزارشات سیستم \(برای Unix\) |
+| /var/spool/cron | لیست فایل های در cron |
+| /var/log/apache/access.log | گزارشات ارتباطات apache |
+| /etc/fstab | فایل اطلاعات ثابت سیستم |
 
-## Linux Scripting
+## اسکریپت نویسی
 
-### Ping sweep
+### ایجاد Ping sweep
 
 ```text
 for x in {1 .. 254 .. l};do ping -c 1 1.1.1.$x lgrep "64 b" lcut -d" "-f4 ips.txt; done
 ```
 
-### Automated domain name resolve bash script
+### خودکار سازی فرآیند domain name resolve در اسکریپت bash 
 
 ```text
 #!/bin/bash
@@ -303,20 +306,20 @@ host $range.$ip lgrep " name pointer " lcut -d"
 done
 ```
 
-### Fork bomb \(creates process until system "crashes"\)
+### ایجاد Fork bomb \(ایجاد فرآیند برای crash شدن سیستم\)
 
 ```text
 : (){:|: & };:
 ```
 
-### dns reverse lookup
+### فرآیند dns reverse lookup
 
 ```text
 for ip in {1 .. 254 .. 1}; do dig -x 1.1.1.$ip | grep $ip
 dns.txt; done;
 ```
 
-### Ip banning script
+### اسکریپت مسدود نمدن Ip 
 
 ```text
 #!/bin/sh
@@ -336,7 +339,7 @@ i='expr $i +1`
 done
 ```
 
-### SSH Callback
+### ایجاد SSH Callback
 
 ```text
 Set up script in crontab to callback every X minutes.
@@ -363,62 +366,64 @@ do
 fi
 ```
 
-## Iptables
+## دستور Iptables
 
-use ip6tables for ipv6 rules
+استفاده iptable برای ipv6
 
 <table>
   <thead>
     <tr>
-      <th style="text-align:left"><b>Command</b>
+      <th style="text-align:left"><b>دستور</b>
       </th>
-      <th style="text-align:left"><b>Description</b>
+      <th style="text-align:left"><b>توضیح</b>
       </th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td style="text-align:left">iptables-save -c file</td>
-      <td style="text-align:left">Dump iptables (with counters) rules to stdout</td>
+      <td style="text-align:left">استخراج قوانین iptable و ذخیره در فایل</td>
     </tr>
     <tr>
       <td style="text-align:left">iptables-restore file</td>
-      <td style="text-align:left">Restore iptables rules</td>
+      <td style="text-align:left">بازیابی قوانین iptables</td>
     </tr>
     <tr>
       <td style="text-align:left">iptables -L -v --line-numbers</td>
-      <td style="text-align:left">List all iptables rules with affected and line numbers</td>
+      <td style="text-align:left">لیست کلیه قوانین به همراه شماره خط آن</td>
     </tr>
     <tr>
       <td style="text-align:left">iptables -F</td>
-      <td style="text-align:left">Flush all iptables rules</td>
+      <td style="text-align:left">راه اندازی مجدد کلیه قوانین</td>
     </tr>
     <tr>
       <td style="text-align:left">
         <p>iptables -P INPUT/FORWARD/OUTPUT</p>
         <p>ACCEPT/REJECT/DROP</p>
       </td>
-      <td style="text-align:left">Change default policy for rules that don&apos;t match rules</td>
+      <td style="text-align:left">تغییر سیسات در صورت عدم احراز قوانین</td>
     </tr>
     <tr>
       <td style="text-align:left">iptables -A INPUT -i interface -m state --state RELATED,ESTABLcSHED -j
         ACCEPT</td>
-      <td style="text-align:left">Allow established connections on INPUT</td>
+      <td style="text-align:left">اجازه به اتصالات برقرار در INPUT</td>
     </tr>
     <tr>
       <td style="text-align:left">iptables -D INPUT 7</td>
-      <td style="text-align:left">Delete 7th inbound rule</td>
+      <td style="text-align:left">حذف 7 لایه از قوانین inbound</td>
     </tr>
     <tr>
       <td style="text-align:left">iptables -t raw -L -n</td>
-      <td style="text-align:left">Increase throughput by turning off statefulness</td>
+      <td style="text-align:left">افزایش بهره وری با غیر فعال سازی statefulness</td>
     </tr>
     <tr>
       <td style="text-align:left">iptables -P INPUT DROP</td>
-      <td style="text-align:left">Drop all packets</td>
+      <td style="text-align:left">حذف کلیه packet ها</td>
     </tr>
   </tbody>
-</table>## Allow SSH on port 22 outbound
+</table>
+
+## اجازه به ssh و پورت 22 در outbound
 
 ```text
 iptables -A OUTPUT -o iface -p tcp --dport 22 -m state --state
@@ -428,14 +433,14 @@ iface -p tcp --sport 22 -m state --state
 ESTABLISHED -j ACCEPT
 ```
 
-## Allow ICMP outband
+## اجازه به ICMP در outband
 
 ```text
 iptacles -A OUTPUT -i iface -p icmp --icmp-type echo-request -j ACCEPT
 iptables -A INPUT -o iface -p icmp --icmp-type echo-reply -j ACCEPT
 ```
 
-## Port forward
+## ایجاد Port forward
 
 ```text
 echo "1" /proc/sys/net/ipv4/lp forward
@@ -447,7 +452,7 @@ cidr -d attackip --dport 443 -to-source pivotip
 iptables -t filter -I FORWARD 1 -j ACCEPT
 ```
 
-## Allow only 1.1.1.0/24, ports 80,443 and log drops to /var/log/messages
+## اجازه به 1.1.1.0/24 و پورت 80,443 و ایجاد گزارش در  /var/log/messages
 
 ```text
 iptables -A INPU~ -s 1.1.1.0/24 -m state --state RELATED,ESTABLISHED,NEW
@@ -463,16 +468,16 @@ iptables -A LOGGING -m limit --limit 4/min -j LOG --log-prefix "DROPPED "
 iptables -A LOGGING -j DROP
 ```
 
-## Update-rc.d
+## فایل Update-rc.d
 
-check/change startup services
+بررسی و ایجاد راه انداز
 
 <table>
   <thead>
     <tr>
-      <th style="text-align:left"><b>Command</b>
+      <th style="text-align:left"><b>دستور</b>
       </th>
-      <th style="text-align:left"><b>Description</b>
+      <th style="text-align:left"><b>توضیح</b>
       </th>
     </tr>
   </thead>
@@ -486,63 +491,65 @@ check/change startup services
     </tr>
     <tr>
       <td style="text-align:left">service service start</td>
-      <td style="text-align:left">Start a service</td>
+      <td style="text-align:left">شروع سرویس</td>
     </tr>
     <tr>
       <td style="text-align:left">service service stop</td>
-      <td style="text-align:left">Stop a service</td>
+      <td style="text-align:left">متوقف نمودن سرویس</td>
     </tr>
     <tr>
       <td style="text-align:left">service service status</td>
-      <td style="text-align:left">Check status of a service</td>
+      <td style="text-align:left">بررسی وضیعت سرویس</td>
     </tr>
     <tr>
       <td style="text-align:left">update-rc.d -f service remove</td>
-      <td style="text-align:left">Remove a service start up cmd (-f if the /etc/init.d start up file exists)</td>
+      <td style="text-align:left">حذف سرویس موجود راه اندازی سیستم (-f برای فایل /etc/init.d در صورتی که از قبل موجود باشد)</td>
     </tr>
     <tr>
       <td style="text-align:left">update-rc.d service defaults</td>
-      <td style="text-align:left">Add a start up service</td>
+      <td style="text-align:left">اضافه نموده سرویس در راه اندازی سیستم</td>
     </tr>
   </tbody>
-</table>## Chkconfig
+</table>
 
-Available in linux distributions such as red hat enterprise linux\(RHEL\), centos and oracle enterprise linux\(OEL\)
+## Chkconfig
+
+موجود در توزیع های مانند  red hat مانند centos و oracle
 
 
 
-| **Command** | **Description** |
+| **دستور** | **توضیح** |
 | :--- | :--- |
-| chkconfig --list | List existing services and run status |
-| chkconfig service -list | Check single service status |
-| chkconfig service on \[--level 3\] | Add service \[optional to add level at which service runs\] |
-| chkconfig service off \[--level 3\] e.g. chkconfig iptables off | Remove service |
+| chkconfig --list | لیست سرویس های موجود و وضیعت اجرا |
+| chkconfig service -list | وضیعت یک سرویس |
+| chkconfig service on \[--level 3\] | اضافه نمودن سرویس \[میتوان لایه آن را هم مشخص نمود\] |
+| chkconfig service off \[--level 3\] e.g. chkconfig iptables off | حذف سرویس |
 
-## Screen
+## دستور Screen
 
-| **Command** | **Description** |
+| **دستور** | **توضیح** |
 | :--- | :--- |
-| screen -S name | Start new screen with name |
-| screen -ls | List running screens |
-| screen -r name | Attach to screen name |
-| screen -S name -X cmd | Send crnd to screen anrne |
-| C-a ? | List keybindings \(help\) |
-| C-a d | Detach |
-| C-a D D | Detach and logout |
-| C-a c | Create new window |
-| C-a C-a | Switch to last active window |
-| C-a ' num\|name | Switch to window numlname |
-| C-a " | See windows list and change |
-| C-a k | Kill current window |
-| C-a S | Split display horizontally |
-| C-a V | Split display vertically |
-| C-a tab | Jump to next display |
-| C-a X | Remove current region |
-| C-a Q | Remove all regions but current |
+| screen -S name | ایجاد یک screen جدید با اسم |
+| screen -ls | لیست screen در حال اجرا |
+| screen -r name | الحاق به screen با نام |
+| screen -S name -X cmd | ارسال دستور به screen با نام |
+| C-a ? | لیست کلید های ترکیبی \(help\) |
+| C-a d | رفع الحاق |
+| C-a D D | رفع الحاق و خروج |
+| C-a c | ایجاد یک پنجره جدید |
+| C-a C-a | تغییر به آخرین پنجره |
+| C-a ' num\|name | تغییر به پنجره با اسم |
+| C-a " | نمایش لیست پنجره و تغییرات |
+| C-a k | حذف پنجره فعلی |
+| C-a S | جداسازی افقی نمایشگر |
+| C-a V | جداسازی عمودی نمایشگر |
+| C-a tab | پرش به آخرین نمایشگر |
+| C-a X | حذف بخش فعلی |
+| C-a Q | حذف تمامی بخش ها به غیر بخش فعلی |
 
 ## X11
 
-### Capture remote X11 windows and convert to JPG
+### ظبط از راه دور پنجره X11 و تغییر فرمت آن به JPG
 
 ```text
 xwd -display ip :0 -root -out /tmp/test.xpm
@@ -550,54 +557,54 @@ xwud -in /tmp/test1.xpm
 convert /tmp/test.xpm -resize 1280x1024 /tmp/test.jpg
 ```
 
-### Open X11 stream viewing
+### باز نمودن X11 در حالت stream
 
 ```text
 xwd -display 1.1.1.1:0 -root -silent -out x11dump
 Read dumped file with xwudtopnm or GIMP
 ```
 
-## TCPDump
+## دستور TCPDump
 
-### Capture packets on eth0 in ASCII and hex and write to file
+### ضبط بسته های در eth0 و تغییر آن ازASCII و hex و ذخیره آن در فایل
 
 ```text
 tcpdump -i ethO -XX -w out.pcap
 ```
 
-### Capture HTTP traffic to 2.2.2.2
+### ضبط کلیه ترافیک های 2.2.2.2
 
 ```text
 tcpdump -i ethO port 80 dst 2.2.2.2
 ```
 
-### Show connections to a specific IP
+### نمایش کلیه ارتباطات ip
 
 ```text
 tcpdump -i ethO -tttt dst 192.168.1.22 and not net 192.168.1.0/24
 ```
 
-Print all ping response
+## نمایش کلیه خروجی های ping
 
 ```text
 tcpdump -i ethO 'icmp[icmptype] == icmp-echoreply'
 ```
 
-### Capture 50 DNS packets and print timestamp
+### ضبط 50 بسته dns و نمایش timestamp
 
 ```text
 tcpdump -i ethO -c 50 -tttt 'udp and port 53'
 ```
 
-## Native KALI commands
+## دستورات پیش فرض kali
 
-### WMIC equivalent
+### معادل WMIC
 
 ```text
 wmis -U DOMAIN\ user % password //DC cmd.exe /c command
 ```
 
-### Mount SMB share
+### Mount نمودن فضای اشتراکی SMB
 
 ```text
 # Mounts to /mnt/share. For other options besides ntlmssp, man mount.cifs
@@ -605,56 +612,55 @@ mount.cifs // ip /share /mnt/share -o
 user= user ,pass= pass ,sec=ntlmssp,domain= domain ,rw
 ```
 
-### Updating KALI
+### بروز رسانی KALI
 
 ```text
 apt-get update
 apt-get upgrade
 ```
 
-## PFSENSE
+## دستور PFSENSE
 
 
 
-| **Command** | **Description** |
+| **دستور** | **توضیح** |
 | :--- | :--- |
-| pfSsh.php | pfSense Shell System |
-| pfSsh.php playback enableallowallwan | Allow all inbound WAN connections \(adds to visible rules in WAN rules\) |
-| pfSsh.php playback enablesshd | Enable ssh inbound/outbound |
-| pfctl -sn | Show NAT rules |
-| pfctl -sr | Show filter rules |
-| pfctl -sa | Show all rules |
-| viconfig | Edit config |
-| rm /tmp/config.cache | Remove cached \(backup\) config after editing the current running |
-| /etc/rc.reload\_all | Reload entire config |
+| pfSsh.php | شل pfSense |
+| pfSsh.php playback enableallowallwan | اجازه اتصال به اتصالات inbound در WAN \(اضافه نمودن قوانین مخفی به  قوانین WAN \) |
+| pfSsh.php playback enablesshd | فعال سازی inbound/outbound ssh|
+| pfctl -sn | نمایش قوانین NAT |
+| pfctl -sr | نمایش قوانین فیلتر |
+| pfctl -sa | نمایش کلیه قوانین |
+| viconfig | وایرایش تنظیمات |
+| rm /tmp/config.cache | حدف حافظه پنهان \(یا پشتیبان\) تنظیمات بعد اجرا آن |
+| /etc/rc.reload\_all | بارگیری مجدد کل پیکربندی |
 
-## SOLARIS
+## سیستم عامل SOLARIS
 
-| **Command** | **Description** |
+| **دستور** | **توضیح** |
 | :--- | :--- |
-| ifconfig -a | List of interfaces |
-| netstat -in | List of interface |
-| ifconfig -r | Route listing |
-| ifconfig eth0 dhcp | Start DHCP client |
-| ifconfig eth0 plumb up ip netmask nmask | Set IP |
-| route add default ip | Set gateway |
-| logins -p | List users w/out passwords |
-| svcs -a | List all services w/ status |
-| prstat -a | Process listing \(top\) |
-| svcadm start ssh | Start SSH service |
-| inetadm -e telnet \(-d for disable\) | Enable telnet |
-| prtconf I grep Memorj | Total physical memory |
-| iostat -En | Hard disk size |
-| showrev -c /usr/bin/bash | Information on a binary |
-| shutdown -i6 -g0 -y | Restart system |
-| dfmounts | List clients connected NFS |
-| smc | Management GUI |
-| snoop -d int -c pkt \# -o results.pcap | Packet capture |
-| /etc/vfstab | File system mount table |
-| /var/adm/logging | Login attempt log |
-| /etc/default/' | Default settings |
-| /etc/system | Kernel modules & config |
-| /var/adm/messages | Syslog location |
-| /etc/auto ' | Automounter config files |
-| /etc/inet/ipnodes | IPv4/IPv6 host file |
-
+| ifconfig -a | لیست کلیه interface ها |
+| netstat -in | لیست کلیه interface ها |
+| ifconfig -r | لیست Route ها |
+| ifconfig eth0 dhcp | شروع DHCP در کاربر |
+| ifconfig eth0 plumb up ip netmask nmask | تنظیم IP |
+| route add default ip | تنظیم gateway |
+| logins -p | لیست کاربرن و کلمه عبور ها |
+| svcs -a | لیست کلیه سرویس ها به همراه وضیعت |
+| prstat -a | وضیعت فرآیند ها \(همچنین دستورtop\) |
+| svcadm start ssh | آغاز سرویس SSH |
+| inetadm -e telnet \(-d for disable\) | فعال سازی telnet |
+| prtconf I grep Memorj | مجموع حافظه فیزیکی |
+| iostat -En | اندازه Hard disk |
+| showrev -c /usr/bin/bash | اطلاعات به صورت باینری |
+| shutdown -i6 -g0 -y | راه اندازی مجدد سیستم system |
+| dfmounts | لیست کاربران متصل به NFS |
+| smc | مدیریت GUI |
+| snoop -d int -c pkt \# -o results.pcap | ضبط Packet |
+| /etc/vfstab | جدول فایل سیستم عای mounte شده |
+| /var/adm/logging | گزارشات لیست تلاش های ورود به سیستم |
+| /etc/default/' | تنظیمات پیش فرض |
+| /etc/system | ماژول و تنظیمات کرنل |
+| /var/adm/messages | مسیر syslog |
+| /etc/auto ' | فایل تنظیمات Automounter  |
+| /etc/inet/ipnodes | فایل هاست های IPv4 و IPv6 |
