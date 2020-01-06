@@ -6,5 +6,5 @@ published: true
 
 ## روی جلد
 
-![](/assets/images/31asjs0ghyl._sx322_bo1-204-203-200_.jpg)
+![](/assets/images/31ziabee9hl._sx322_bo1-204-203-200_.jpg)
 
