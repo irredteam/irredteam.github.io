@@ -270,19 +270,19 @@ Run PeepingTom
 "users"
 ```
 
-## دستور wfuzz
+## تزریق پیلود های مختلف با wfuzz
 
 ```text
 wfuzz -c -z file,/usr/share/wfuzz/wordlist/Injections/XSS.txt -hc 404 https://www.example.com/?req=search_site&searchTitle=FUZZ
 ```
 
-## دستور ffuf 
+## حدس مسیر های وب با ffuf 
 
 ```text
 ffuf -w /usr/share/seclists/Discovery/Web-Content/raft-large-directories.txt -u http://10.10.10.10/FUZZ
 ```
 
-## دستور gobuster 
+## حدس subdomain با gobuster 
 
 ```text
 gobuster dns -t 50 -d pubg.com -w ~/seclists/Dir/subdomains.dat
