@@ -5,6 +5,8 @@
 | آدرس | توضیح |
 | :--- | :--- |
 | https://www.dcode.fr/ | رمزنگاری و رمزگشایی |
+| https://crackstation.net/ | رمزگشایی |
+
 
 
 ## دستور Nmap
