@@ -7,6 +7,7 @@
 | https://www.dcode.fr/ | رمزنگاری و رمزگشایی |
 | https://crackstation.net/ | رمزگشایی |
 | https://gchq.github.io/CyberChef/ | رمزنگاری و رمزگشایی و ... |
+| https://www.exploit-db.com/ | پایگاه داده exploit های عمومی |
 
 
 
