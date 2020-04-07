@@ -276,6 +276,14 @@ published: true
       <td style="text-align:left">شل reverse</td>
     </tr>
     <tr>
+      <td style="text-align:left">nc.exe -lvvp port</td>
+      <td style="text-align:left">گوش دادن به port خاص </td>
+    </tr>
+    <tr>
+      <td style="text-align:left">python3 -m http.server port</td>
+      <td style="text-align:left">ایجاد وبسرور</td>
+    </tr>
+    <tr>
       <td style="text-align:left">xcopy /s \\ ip \dir C:\local</td>
       <td style="text-align:left">کپی از فودر ip</td>
     </tr>
