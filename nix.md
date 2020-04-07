@@ -35,6 +35,9 @@ published: true
 | tcpkill host ip and port port | مسدود نمودن ip:port |
 | echo "1" /proc/sys/net/ipv4/ip forward | فعال سازی IP Forwarding |
 | echo ''nameserver x.x.x.x''  /etc7resolv.conf | اضافه نمودن سرور DNS |
+| showmount -e ip | نمایش نقاط mount شده |
+| mkdir /site_backups;mount -t nfs ip:/ /site_backup | mount مسیر به اشتراک گذشته شده ip|
+
 
 ## اطلاعات سیستم
 
