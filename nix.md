@@ -67,6 +67,7 @@ published: true
 
 | **دستور** | **توضیح** |
 | :--- | :--- |
+| python -c "import pty;pty.spawn('/bin/bash')" | شل interactive |
 | wget http:// url -0 url.txt -o /dev/null | گرفتن آدرس |
 | rdesktop ip | دسترسی به دسکتاپ ip |
 | scp /tmp/file user@x.x.x.x:/tmp/file | ارسال فایل |
