@@ -67,6 +67,9 @@ published: true
 | pkginfo | بسته های نصب شده \(در Solaris\) |
 | which tscsh/csh/ksh/bash | نمایش مسیر های فایل های اجرایی |
 | chmod -so tcsh/csh/ksh | غیر فعال سازی شل و همچنین اجبار به استفاده از bash |
+| find / -perm -4000 -type f -exec ls -la {} 2>/dev/null \; | پیدا نمودن فایل های دارای suid |
+| find / -uid 0 -perm -4000 -type f 2>/dev/null | پیدا نمودن فایل های دارای suid |
+
 
 ## دستورات کاربردی
 
