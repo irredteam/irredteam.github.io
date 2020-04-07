@@ -276,4 +276,9 @@ Run PeepingTom
 wfuzz -c -z file,/usr/share/wfuzz/wordlist/Injections/XSS.txt -hc 404 https://www.example.com/?req=search_site&searchTitle=FUZZ
 ```
 
+## دستور ffuf 
+
+```text
+ffuf -w /usr/share/seclists/Discovery/Web-Content/raft-large-directories.txt -u http://10.10.10.10/FUZZ
+```
 
