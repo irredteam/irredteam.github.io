@@ -639,8 +639,15 @@ https://github.com/rebootuser/LinEnum
 Example: ./LinEnum.sh -s -k keyword -r report -e /tmp/ -t
 ```
 
-## دستور PFSENSE
+### لیست کلیه فرآیند ها با دسترسی root
 
+```text
+https://github.com/DominicBreuker/pspy
+For example: ./pspy64 -pf -i 1000 
+```
+
+
+## دستور PFSENSE
 
 
 | **دستور** | **توضیح** |
