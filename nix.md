@@ -629,6 +629,13 @@ apt-get update
 apt-get upgrade
 ```
 
+### بررسی سیستم عامل برای امکان ارتقا دسترسی
+
+```text
+https://github.com/rebootuser/LinEnum
+Example: ./LinEnum.sh -s -k keyword -r report -e /tmp/ -t
+```
+
 ## دستور PFSENSE
 
 
