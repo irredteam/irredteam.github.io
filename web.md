@@ -282,3 +282,9 @@ wfuzz -c -z file,/usr/share/wfuzz/wordlist/Injections/XSS.txt -hc 404 https://ww
 ffuf -w /usr/share/seclists/Discovery/Web-Content/raft-large-directories.txt -u http://10.10.10.10/FUZZ
 ```
 
+## دستور gobuster 
+
+```text
+gobuster dns -t 50 -d pubg.com -w ~/seclists/Dir/subdomains.dat
+```
+
