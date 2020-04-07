@@ -88,6 +88,8 @@ published: true
 | apropos subject | دستورات مرتبط |
 | history | تاریخچه دستورات کاربر |
 | ! num | خطوط اجرایی در history |
+| ssh2john.py id_rsa > ssh-key | پیدا نمودن passphrase |
+| john ssh-key | پیدا نمودن passphrase |
 
 ## دستورات فایل
 
