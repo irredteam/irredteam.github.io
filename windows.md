@@ -134,6 +134,7 @@ published: true
 | tree /F /A c: tree.txt | لیست فولدر های درایو C: |
 | reg save HKLM\Security security.hive | ذخیره hive های امنیت درون فایل |
 | echo %USERNAME% | کاربر جاری |
+| whoami /priv | دسترسی های کاربر جاری |
 
 ## دستور net/domain
 
