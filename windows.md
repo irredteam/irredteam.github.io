@@ -605,6 +605,10 @@ schtasks.exe /create /tn t1yTask /xml "C:\MyTask.xml" /f
       <td style="text-align:left">wmic cpu get DataWidth /format:list</td>
       <td style="text-align:left">نمایش نسخه 32 بیتی یا 64 بیتی سیستم</td>
     </tr>
+   <tr>
+      <td style="text-align:left">wmic service where started = true get name, startname</td>
+      <td style="text-align:left">نمایش سرویس های اجرا شده</td>
+    </tr>
   </tbody>
 </table>
 
