@@ -269,3 +269,11 @@ Run PeepingTom
 ./sqlrnap.py -u "http:// url " --data="id=l&str=val" -p "id" --columns -T
 "users"
 ```
+
+## دستور wfuzz
+
+```text
+wfuzz -c -z file,/usr/share/wfuzz/wordlist/Injections/XSS.txt -hc 404 https://www.example.com/?req=search_site&searchTitle=FUZZ
+```
+
+
