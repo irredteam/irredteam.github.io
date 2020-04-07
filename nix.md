@@ -24,6 +24,7 @@ published: true
 | ifconfig int hw ether MAC | تغییر MAC |
 | macchanger -m MAC int | تغییر Mac در Backtrack  |
 | iwlist int scan | پویشگر wifi |
+| nc -lvvp port | گوش دادن به port خاص |
 | dig -x ip | شناسایی دامین های یک ip |
 | host ip | شناسایی دامین های یک ip |
 | host -t SRV \_ service tcp.url.com | شناسایی SRV دامین |
