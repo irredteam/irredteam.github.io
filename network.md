@@ -413,6 +413,12 @@ Must know the VPN group name a~d pre-shared key;
 hydra -L ~/seclists/Usernames/Names/femalenames-usa-top1000.txt -p Welcome123! IP PROTOCOL
 ```
 
+### نمایش مسیرهای smb با smbclient
+
+```text
+smbclient -U USERNAME -L IP
+```
+
 
 ## نرم افزار Putty
 
