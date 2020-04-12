@@ -419,6 +419,12 @@ hydra -L ~/seclists/Usernames/Names/femalenames-usa-top1000.txt -p Welcome123! I
 smbclient -U USERNAME -L IP
 ```
 
+### دسترسی به محیط سیستم با استفاده WRM 
+
+```text
+ruby evil-winrm.rb -u USER -p PASS -i IP
+```
+
 
 ## نرم افزار Putty
 
