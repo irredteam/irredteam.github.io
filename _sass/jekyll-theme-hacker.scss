@@ -160,9 +160,7 @@ h1, h2, h3, h4, h5, h6 {
   font-family: Vazir, monospace;
   color: $header;
   letter-spacing: -0.03em;
-  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1),
-               0 0 5px rgba(181, 232, 83, 0.1),
-               0 0 10px rgba(181, 232, 83, 0.1);
+  text-shadow: 0 1px 1px rgba(0,0,0,0.1), 0 0 5px rgba(150, 34, 34, 0.1), 0 0 10px rgba(136, 26, 26, 0.1);
 }
 
 #main_content h1 {
