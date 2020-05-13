@@ -440,6 +440,11 @@ smbclient -U USERNAME -L IP
 ruby evil-winrm.rb -u USER -p PASS -i IP
 ```
 
+## هدایت ترافیک های محلی به آدرس مشخص
+
+```text
+simpleproxy -L 8000 -R 10.10.10.10:1337
+```
 
 ## نرم افزار Putty
 
