@@ -233,6 +233,12 @@ wfuzz -c -z file,/usr/share/wfuzz/wordlist/Injections/XSS.txt -hc 404 https://ww
 wfuzz -w /usr/share/wordlists/big.txt -u http://admirer.htb/admin/FUZZ.FUZ2Z -z list,txt-php --hc 403,404 -c 
 ```
 
+## حدس در خواست های POST
+
+```text
+wfuzz -X POST -u ''http://quick.htb/login.php' -w elist.txt -d 'email=FUZZ&password=123456' -hc 200 -c
+```
+
 ## حدس مسیر های وب با ffuf 
 
 ```text
