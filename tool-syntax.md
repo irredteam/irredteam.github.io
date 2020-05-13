@@ -359,6 +359,10 @@ proxychains nmap -sT -p80,443 3.3.3.3
       <td style="text-align:left">جست و جو در اکسپلویت ها</td>
     </tr>
     <tr>
+      <td style="text-align:left">searchsploit -m exploits/php/webapps/45161.py</td>
+      <td style="text-align:left">کپی فایل اکسپولیت در مسیر جاری</td>
+    </tr>    
+    <tr>
       <td style="text-align:left">info module</td>
       <td style="text-align:left">نمایش اطلاعات ماژول</td>
     </tr>
