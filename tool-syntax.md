@@ -355,6 +355,10 @@ proxychains nmap -sT -p80,443 3.3.3.3
       <td style="text-align:left">جست و جو برای رشته ای خاص</td>
     </tr>
     <tr>
+      <td style="text-align:left">searchsploit string</td>
+      <td style="text-align:left">جست و جو در اکسپلویت ها</td>
+    </tr>
+    <tr>
       <td style="text-align:left">info module</td>
       <td style="text-align:left">نمایش اطلاعات ماژول</td>
     </tr>
