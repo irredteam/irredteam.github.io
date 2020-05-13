@@ -276,6 +276,12 @@ Run PeepingTom
 wfuzz -c -z file,/usr/share/wfuzz/wordlist/Injections/XSS.txt -hc 404 https://www.example.com/?req=search_site&searchTitle=FUZZ
 ```
 
+## حدس فایل های مختلف با پسوند های مشخص با wfuzz
+
+```text
+wfuzz -w /usr/share/wordlists/big.txt -u http://admirer.htb/admin/FUZZ.FUZ2Z -z list,txt-php --hc 403,404 -c 
+```
+
 ## حدس مسیر های وب با ffuf 
 
 ```text
