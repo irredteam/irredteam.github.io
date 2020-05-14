@@ -251,6 +251,12 @@ ffuf -w /usr/share/seclists/Discovery/Web-Content/raft-large-directories.txt -u 
 gobuster dns -t 50 -d pubg.com -w ~/seclists/Dir/subdomains.dat
 ```
 
+## پیدا نمودن subdomain بر اساس گواهی نامه ها
+
+```text
+https://crt.sh/
+```
+
 ## تزریق php درون jpeg
 
 ```text
