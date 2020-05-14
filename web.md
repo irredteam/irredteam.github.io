@@ -257,6 +257,12 @@ gobuster dns -t 50 -d pubg.com -w ~/seclists/Dir/subdomains.dat
 https://crt.sh/
 ```
 
+و 
+
+```text
+assetfinder --subs-only <domain> | httprobe
+```
+
 ## تزریق php درون jpeg
 
 ```text
