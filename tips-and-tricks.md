@@ -317,6 +317,11 @@ sudo journalctl
 !/bin/sh
 ```
 
+### افزایش دسترسی با فایل 00-header
+
+```text
+echo “id” >> 00-header
+```
 
 ## دسترسی همیشگی
 
