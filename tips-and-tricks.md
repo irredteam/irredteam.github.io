@@ -343,6 +343,18 @@ Ctrl+W
 :!/bin/sh
 ```
 
+### افزایش دسترسی با استفاده از acl
+
+```text
+$user = "megacorp\jorden"
+$folder = "C:\Users\administrator"
+$acl = get-acl $folder
+$aclpermissions = $user, "FullControl", "ContainerInherit, ObjectInherit", "None", "Allow"
+$aclrule = new-object System.Security.AccessControl.FileSystemAccessRule $aclpermissions 
+$acl.AddAccessRule($aclrule)
+set-acl -path $folder -AclObject $acl
+get-acl $folder | folder
+```
 
 ## دسترسی همیشگی
 
