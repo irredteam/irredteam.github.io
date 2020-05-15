@@ -463,3 +463,11 @@ simpleproxy -L 8000 -R 10.10.10.10:1337
 ```text
 ldapsearch -h <host> -x -b "dc=<dc>,dc=local" 
 ```
+
+## vnc
+
+### رمزگشایی فایل VNC Install.reg
+
+```text
+vncpwd.exe <ENCRYPTEDPASSWORD>
+```
