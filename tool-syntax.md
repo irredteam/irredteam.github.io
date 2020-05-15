@@ -494,6 +494,7 @@ sqlmap -r req -D openemr -T users_secure --dump
 ```text
 sqlmap -r req  --technique=T
 ```
+[اطلاعات بیشتر](https://github.com/sqlmapproject/sqlmap/wiki/Techniques)
 
 ## msf
 
