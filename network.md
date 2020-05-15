@@ -455,3 +455,11 @@ simpleproxy -L 8000 -R 10.10.10.10:1337
 "LogFileName"="%TEMP%\putty.dat"
 "LogType"=dword:00000002"
 ```
+
+## ldap
+
+### جست و جو اطلاعات مهم ldap با استفاده از impackt
+
+```text
+ldapsearch -h <host> -x -b "dc=<dc>,dc=local" 
+```
