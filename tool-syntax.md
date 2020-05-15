@@ -496,6 +496,12 @@ sqlmap -r req  --technique=T
 ```
 [اطلاعات بیشتر](https://github.com/sqlmapproject/sqlmap/wiki/Techniques)
 
+### دور زدن waf با unicode
+
+```text
+sqlmap -r json  --tamper=charunicodeescape  --dump --level=5 --risk=3 --dbs --columns
+```
+
 ## msf
 
 
