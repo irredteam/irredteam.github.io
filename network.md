@@ -471,3 +471,29 @@ ldapsearch -h <host> -x -b "dc=<dc>,dc=local"
 ```text
 vncpwd.exe <ENCRYPTEDPASSWORD>
 ```
+
+یا 
+
+```text
+RealVNC
+HKEY_LOCAL_MACHINE\SOFTWARE\RealVNC\vncserver
+Value: Password
+
+TightVNC
+HKEY_CURRENT_USER\Software\TightVNC\Server
+HKLM\SOFTWARE\TightVNC\Server\ControlPassword
+
+tightvnc.ini
+vnc_viewer.ini
+Value: Password or PasswordViewOnly
+
+TigerVNC
+HKEY_LOCAL_USER\Software\TigerVNC\WinVNC4
+Value: Password
+
+UltraVNC
+C:\Program Files\UltraVNC\ultravnc.ini
+Value: passwd or passwd2
+```
+
+[اطلاعات بیشتر](https://github.com/frizb/PasswordDecrypts)
