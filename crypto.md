@@ -44,3 +44,10 @@ https://zb3.me/malbolge-tools/
 ```text
 https://www.geocachingtoolbox.com/index.php?lang=en&page=dvorakKeyboard
 ```
+
+## رمز گشایی DTFM
+
+```text
+http://dl.djsoft.net/DTMFChecker.zip
+https://www.dcode.fr/prime-numbers-cipher
+```
