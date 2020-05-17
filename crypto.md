@@ -31,3 +31,10 @@ token = ""
 cipher = Fernet(key)
 decoded = cipher.decrypt(token)
 ```
+
+## رمز گشایی زبان Malbolge
+
+```text
+http://www.malbolge.doleczek.pl/
+https://zb3.me/malbolge-tools/
+```
