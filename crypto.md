@@ -70,3 +70,9 @@ http://rumkin.com/tools/cipher/atbash.php
 ```text
 python3 crack_repeating_key_xor.py -f <file> -x
 ```
+
+## حمله به PKCS#1 در RSA
+
+```text
+https://programtalk.com/vs2/python/9053/featherduster/tests/test_bleichenbacher.py/
+```
