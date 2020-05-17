@@ -64,3 +64,9 @@ https://www.dcode.fr/cistercian-numbers
 https://www.dcode.fr/code-multitap-abc
 http://rumkin.com/tools/cipher/atbash.php
 ```
+
+## رمز گشایی پیام xor
+
+```text
+python3 crack_repeating_key_xor.py -f <file> -x
+```
