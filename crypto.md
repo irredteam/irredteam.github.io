@@ -57,3 +57,10 @@ https://www.dcode.fr/prime-numbers-cipher
 ```text
 https://www.dcode.fr/cistercian-numbers
 ```
+
+## تبدیل Multi-tap Phone Code به حروف
+
+```text
+https://www.dcode.fr/code-multitap-abc
+http://rumkin.com/tools/cipher/atbash.php
+```
