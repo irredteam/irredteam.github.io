@@ -51,3 +51,9 @@ https://www.geocachingtoolbox.com/index.php?lang=en&page=dvorakKeyboard
 http://dl.djsoft.net/DTMFChecker.zip
 https://www.dcode.fr/prime-numbers-cipher
 ```
+
+## رمز گشایی اعداد Cistercian
+
+```text
+https://www.dcode.fr/cistercian-numbers
+```
