@@ -38,3 +38,9 @@ decoded = cipher.decrypt(token)
 http://www.malbolge.doleczek.pl/
 https://zb3.me/malbolge-tools/
 ```
+
+## رمز گشایی کیبورد های قالب Dvorak
+
+```text
+https://www.geocachingtoolbox.com/index.php?lang=en&page=dvorakKeyboard
+```
