@@ -76,3 +76,14 @@ python3 crack_repeating_key_xor.py -f <file> -x
 ```text
 https://programtalk.com/vs2/python/9053/featherduster/tests/test_bleichenbacher.py/
 ```
+
+## انواع حملات بر روی RSA
+
+https://github.com/Ganapati/RsaCtfTool
+
+برای مثال رمز گشایی فایل flag.enc توسط public key بدون private key
+
+```text
+python3 ./RsaCtfTool/RsaCtfTool.py --publickey ./key.pub --private
+openssl rsautl -decrypt -inkey key.pri -in flag.enc -out flag.txt
+```
