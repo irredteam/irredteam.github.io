@@ -292,6 +292,22 @@ if($remote) {print "$port is open\n"); )
 | \[aeiou\] | هر یک |
 | \(0 \[3-9\] \|1 \[0-9\]\|2 \[0-5\]\) | محدوده 03 تا 25 |
 
+## extract تو در تو با bash
+
+```text
+#!/bin/bash
+RESULT=0
+while [ $RESULT -eq 0 ]
+do
+PASSWORD="PASSWORD"
+ZIPFILE="$( ls *.zip )"
+unzip -P "$PASSWORD" "$ZIPFILE"
+RESULT=$?
+echo "Unzipped $ZIPFILE using password $PASSWORD ($RESULT)"
+cd flag
+done
+```
+
 ## جدول Ascii
 
-![IBM](.gitbook/assets/ascii_table.gif)
+![IBM](/assets/images/ascii_table.gif)
