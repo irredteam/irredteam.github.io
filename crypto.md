@@ -79,8 +79,6 @@ https://programtalk.com/vs2/python/9053/featherduster/tests/test_bleichenbacher.
 
 ## انواع حملات بر روی RSA
 
-https://github.com/Ganapati/RsaCtfTool
-
 برای مثال رمز گشایی فایل flag.enc توسط public key بدون private key
 
 ```text
