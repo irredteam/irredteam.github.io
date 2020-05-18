@@ -32,45 +32,6 @@ for line in file1:
     file2.write(new)
 ```
 
-### تبدیل کد مورس
-
-```text
-def getPassword(morse):
-   """Decode morse
-   Convert morse back into text.
-   Takes list of letters as input, returns converted text.
-   Note that challenge uses lowercase letters.
-   >>> getPassword(['----.'])
-   '9'
-   """
-   MORSE_CODE_DICT = {
-      '.-': 'A', '-...': 'B', '-.-.': 'C', '-..': 'D',
-      '.': 'E', '..-.': 'F', '--.': 'G', '....': 'H',
-      '..': 'I', '.---': 'J', '-.-': 'K', '.-..': 'L',
-      '--': 'M', '-.': 'N', '---': 'O', '.--.': 'P',
-      '--.-': 'Q', '.-.': 'R', '...': 'S', '-': 'T',
-      '..-': 'U', '...-': 'V', '.--': 'W', '-..-': 'X',
-      '-.--': 'Y', '--..': 'Z', '-----': '0', '.----': '1',
-      '..---': '2', '...--': '3', '....-': '4', '.....': '5',
-      '-....': '6', '--...': '7', '---..': '8', '----.': '9',
-      '-..-.': '/', '.-.-.-': '.', '-.--.-': ')', '..--..': '?',
-      '-.--.': '(', '-....-': '-', '--..--': ','
-   }
-   
-for item in morse:
-   return "".join([MORSE_CODE_DICT.get(item) for item in morse]).lower()
-   
-def main():
-   """ Auto start
-   Used for automation.
-   Automatically call methods and use 'pwd.png' as input image.
-   """
-   
-print getPassword(getMorse("pwd.png"))
-if __name__ == "__main__":
-   main()
-```
-
 ### تبدیل رجیستری ویندوز از hex به ascii در پایتون
 
 ```text
