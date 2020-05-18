@@ -9,4 +9,5 @@ published: true
 
 ```text
 steghide info <filename> -p <password>
+steghide extract -sf <filename> -p <password>
 ```
