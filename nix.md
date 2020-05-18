@@ -228,6 +228,10 @@ published: true
       <td style="text-align:left">chattr (+/-)i file</td>
       <td style="text-align:left">تنظیم و یا عدم تنظیم بیت immutable</td>
     </tr>
+    <tr>
+      <td style="text-align:left">while [ $? -eq 0 ]; do cd flag/; done</td>
+      <td style="text-align:left">ورود به پوشه بی نهایت تو در تو</td>
+    </tr>
   </tbody>
 </table>
 
