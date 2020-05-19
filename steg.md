@@ -19,6 +19,12 @@ steghide info <filename> -p <password>
 steghide extract -sf <filename> -p <password>
 ```
 
+## اسختراج فایل در داخل فایل wav
+
+```text
+java -jar turgen.jar
+```
+
 ## تبدیل کد های باینری به qrcode
 
 ```text
