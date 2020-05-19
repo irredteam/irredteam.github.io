@@ -31,3 +31,10 @@ https://online-barcode-reader.inliteresearch.com/
 ```text
 java -jar Stegsolve.jar
 ```
+
+## بررسی فایل
+
+```text
+binwalk -e <file>
+strings <file>
+```
