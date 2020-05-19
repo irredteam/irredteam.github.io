@@ -14,6 +14,7 @@ published: true
 | https://gchq.github.io/CyberChef/ | رمزنگاری و رمزگشایی و ... |
 | https://www.base64encode.org/ | رمزگذاری base64 |
 | https://www.base64decode.org/ | رمزگشایی base64 |
+| http://rumkin.com/tools/cipher/caesar.php | رمزگشایی caesar |
 
 
 ## رمز گشایی Fernet
