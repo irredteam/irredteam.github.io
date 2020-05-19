@@ -5,6 +5,13 @@ published: true
 
 # پنهان نگاری
 
+## وبسایت های کاربردی
+
+| آدرس | توضیح |
+| :--- | :--- |
+| https://secsy.net/easy_stegoCTF | ابزار های steganography |
+
+
 ## استخراج فایل در داخل فایل
 
 ```text
