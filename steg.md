@@ -25,3 +25,9 @@ steghide extract -sf <filename> -p <password>
 https://www.dcode.fr/binary-image
 https://online-barcode-reader.inliteresearch.com/
 ```
+
+## transformations عکس ها
+
+```text
+java -jar Stegsolve.jar
+```
