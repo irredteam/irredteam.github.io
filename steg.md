@@ -11,3 +11,10 @@ published: true
 steghide info <filename> -p <password>
 steghide extract -sf <filename> -p <password>
 ```
+
+## تبدیل کد های باینری به qrcode
+
+```text
+https://www.dcode.fr/binary-image
+https://online-barcode-reader.inliteresearch.com/
+```
