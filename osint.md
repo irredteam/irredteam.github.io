@@ -5,6 +5,13 @@ published: true
 
 # ارزیابی اطلاعات از منابع آشکار یا OSINT
 
+## ابزار های کاربردی
+
+| آدرس | توضیح |
+| :--- | :--- |
+| https://github.com/sc1341/InstagramOSINT | تحقیق بر روی instagram |
+
+
 ## ارزیابی اطلاعات SPF
 
 ```text
