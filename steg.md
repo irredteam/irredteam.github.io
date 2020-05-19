@@ -13,6 +13,7 @@ published: true
 | https://www.branah.com/braille-translator | مترجم خط Braille |
 | http://bigwww.epfl.ch/demo/ip/demos/FFT/ | رمز گشایی TTF |
 | https://www.dcode.fr/brainfuck-language | مترجم brainfuck |
+| https://www.boxentriq.com/code-breaking/morse-code | مترجم morse code |
 
 
 ## استخراج فایل در داخل فایل
