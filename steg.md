@@ -45,3 +45,9 @@ java -jar Stegsolve.jar
 binwalk -e <file>
 strings <file>
 ```
+
+## حدس کلمه عبور فایل در فایل
+
+```text
+./steg_brute.py -b -d /usr/share/wordlists/rockyou.txt -f ../meow.wav
+```
