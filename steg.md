@@ -11,6 +11,7 @@ published: true
 | :--- | :--- |
 | https://secsy.net/easy_stegoCTF | ابزار های steganography |
 | https://www.branah.com/braille-translator | مترجم خط Braille |
+| http://bigwww.epfl.ch/demo/ip/demos/FFT/ | رمز گشایی TTF |
 
 
 ## استخراج فایل در داخل فایل
