@@ -10,6 +10,7 @@ published: true
 | آدرس | توضیح |
 | :--- | :--- |
 | https://secsy.net/easy_stegoCTF | ابزار های steganography |
+| https://www.branah.com/braille-translator | مترجم خط Braille |
 
 
 ## استخراج فایل در داخل فایل
