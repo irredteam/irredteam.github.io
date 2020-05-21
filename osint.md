@@ -72,3 +72,18 @@ gitrob <username> or <git repo>
 python3 theHarvester.py -d sbmu.ac.ir -b all -l 200
 ```
 
+## فریمورک osint
+
+https://www.spiderfoot.net/documentation/
+
+### استفاده از طریق وب
+
+```text
+python3 sf.py -l 127.0.0.1:8070
+```
+
+### جمع آوری ایمیل های دامین
+
+```text
+python3 sf.py -m sfp_spider,sfp_hunter,sfp_fullcontact,sfp_pgp,sfp_clearbit,sfcd ..p_emailformat,sfp_email -s dotin.ir -F EMAILADDR
+```
