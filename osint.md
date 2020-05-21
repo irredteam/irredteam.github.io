@@ -10,6 +10,7 @@ published: true
 | آدرس | توضیح |
 | :--- | :--- |
 | https://osintframework.com/ | فریمورک osint  |
+| https://github.com/jivoi/awesome-osint | منابع osint |
 | https://censys.io/ | موتور جست و جو دستگاه های متصل به وب  |
 | https://shodan.io/ | موتور جست و جو دستگاه های متصل به وب  |
 
