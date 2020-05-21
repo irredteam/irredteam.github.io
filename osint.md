@@ -24,3 +24,9 @@ published: true
 ```text
 python photon.py -u https://example.com -l 3 -t 100 --wayback
 ```
+
+## ارزیابی اطلاعات اکانت های کاربر
+
+```text
+python3 sherlock <user>
+```
