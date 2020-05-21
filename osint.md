@@ -88,3 +88,9 @@ python3 sf.py -l 127.0.0.1:8070
 ```text
 python3 sf.py -m sfp_spider,sfp_hunter,sfp_fullcontact,sfp_pgp,sfp_clearbit,sfp_emailformat,sfp_email -s tesla.com -q -F EMAILADDR
 ```
+
+### ارزیابی اطلاعات اکانت های کاربر
+
+```text
+python3 ./sf.py -m sfp_accounts -s "elonmusk" -q
+```
