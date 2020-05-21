@@ -94,3 +94,9 @@ python3 sf.py -m sfp_spider,sfp_hunter,sfp_fullcontact,sfp_pgp,sfp_clearbit,sfp_
 ```text
 python3 ./sf.py -m sfp_accounts -s "elonmusk" -q
 ```
+
+### ارزیابی اطلاعات metadata فایل های دامین
+
+```text
+python3 ./sf.py -m sfp_intfiles,sfp_spider,sfp_filemeta -s tesla.com -q -F RAW_FILE_META_DATA
+```
