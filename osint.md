@@ -9,7 +9,9 @@ published: true
 
 | آدرس | توضیح |
 | :--- | :--- |
-| https://github.com/sc1341/InstagramOSINT | تحقیق بر روی instagram |
+| https://censys.io/ | موتور جست و جو دستگاه های متصل به وب  |
+| https://shodan.io/ | موتور جست و جو دستگاه های متصل به وب  |
+
 
 
 ## ارزیابی اطلاعات SPF
@@ -51,6 +53,13 @@ twint -u username --source "Twitter Web Client"
 twint -s keyword --min-likes 5 --members-list "folder/user_list"
 ```
 
+## ارزیابی اطلاعات instagram
+
+```text
+python3 main.py --username <username>
+```
+
+
 ## ارزیابی اطلاعات git
 
 ```text
@@ -62,3 +71,4 @@ gitrob <username> or <git repo>
 ```text
 python3 theHarvester.py -d sbmu.ac.ir -b all -l 200
 ```
+
