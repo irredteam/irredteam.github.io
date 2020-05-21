@@ -30,3 +30,23 @@ python photon.py -u https://example.com -l 3 -t 100 --wayback
 ```text
 python3 sherlock <user>
 ```
+
+## ارزیابی اطلاعات twitter
+
+### کلیه توییت های حاوی لینک
+
+```text
+twint -u username --links include
+```
+
+### کلیه توییت ها با فیلتر بر روی بستر ارسال کننده 
+
+```text
+twint -u username --source "Twitter Web Client"
+```
+
+### جست و جو بر روی توییت های لیست ارسال کنندگان
+
+```text
+twint -s keyword --min-likes 5 --members-list "folder/user_list"
+```
