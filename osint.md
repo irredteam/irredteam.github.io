@@ -56,3 +56,9 @@ twint -s keyword --min-likes 5 --members-list "folder/user_list"
 ```text
 gitrob <username> or <git repo>
 ```
+
+## جمع آوری ایمیل های دامین
+
+```text
+python3 theHarvester.py -d sbmu.ac.ir -b all -l 200
+```
