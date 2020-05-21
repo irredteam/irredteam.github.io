@@ -50,3 +50,9 @@ twint -u username --source "Twitter Web Client"
 ```text
 twint -s keyword --min-likes 5 --members-list "folder/user_list"
 ```
+
+## ارزیابی اطلاعات git
+
+```text
+gitrob <username> or <git repo>
+```
