@@ -497,3 +497,9 @@ http:// ip /snapctrl.ssi
 http:// ip /commard/visca-gen.cgi?visca= str
 8101046202FF : Freeze Camera
 ```
+
+## با perl تبدیل باینری به اسکی
+
+```text
+cat blue | perl -lpe '$_=pack"B*",$_' > bin
+```
