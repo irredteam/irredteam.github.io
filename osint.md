@@ -70,6 +70,15 @@ python3 main.py --username <username>
 gitrob <username> or <git repo>
 ```
 
+## ارزیابی اطلاعات برد های مدیریت پروژه
+
+```text
+inurl:https://trello.com AND intext:@gmail.com AND intext:password
+inurl:https://trello.com AND intext:ftp AND intext:password
+inurl:https://trello.com AND intext:ssh AND intext:password
+inurl:jira AND intitle:login AND inurl:[company_name]
+```
+
 ## جمع آوری ایمیل های دامین
 
 ```text
