@@ -323,6 +323,12 @@ smpwalk | grep hrSWinstalledName
 snmpwalk ip 1.3 | grep 77.1.2.25 -f4
 ```
 
+### فایل های به اشتراک گذاشته شده
+
+```text
+snmpwalk -v 1 -c public 10.13.37.10
+```
+
 ## ضبط Packet 
 
 ### ضبط بسته های پورت 22- 23
