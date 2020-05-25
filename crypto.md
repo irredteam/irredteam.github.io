@@ -87,3 +87,9 @@ https://programtalk.com/vs2/python/9053/featherduster/tests/test_bleichenbacher.
 python3 ./RsaCtfTool/RsaCtfTool.py --publickey ./key.pub --private
 openssl rsautl -decrypt -inkey key.pri -in flag.enc -out flag.txt
 ```
+
+## رمزگشایی Vigenere Decoder
+
+```text
+https://www.dcode.fr/vigenere-cipher
+```
