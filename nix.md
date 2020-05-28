@@ -91,6 +91,7 @@ published: true
 | ssh2john.py id_rsa > ssh-key | پیدا نمودن passphrase |
 | john ssh-key | پیدا نمودن passphrase |
 | ssh -i id_rsa user@ip | وصل شدن با کلید و passphrase |
+| id -u <username> | دریافت id کاربر |
 
 ## دستورات فایل
 
