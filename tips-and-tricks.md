@@ -301,6 +301,14 @@ exec "/bin/sh"
 docker run -v /root:/mnt -it ubuntu
 ```
 
+یا 
+
+```text
+docker run --rm -it --privileged nginx bash
+mkdir /mnt/fsroot
+mount /dev/sda /mnt/fsroot
+```
+
 ### افزایش دسترسی در journalctl 
 
 اجرا کننده journalctl باید با دسترسی بیشتری مانند sudo اجرا شده باشد.
