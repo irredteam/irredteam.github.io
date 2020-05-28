@@ -367,8 +367,27 @@ get-acl $folder | folder
 ### افزایش دسترسی با ldap
 
 ```text
-1. exec ldapmodify -x -w PASSWORD
-2. paste this
+
+برای فعال سازی ssh با استفاده از ldap
+
+0. exec ldapmodify -x -w PASSWORD
+1. paste this
+dn: cn=openssh-lpk,cn=schema,cn=config
+objectClass: olcSchemaConfig
+cn: openssh-lpk
+olcAttributeTypes: ( 1.3.6.1.4.1.24552.500.1.1.1.13 NAME 'sshPublicKey' 
+  DESC 'MANDATORY: OpenSSH Public key'
+  EQUALITY octetStringMatch
+  SYNTAX 1.3.6.1.4.1.1466.115.121.1.40 )
+olcObjectClasses: ( 1.3.6.1.4.1.24552.500.1.1.2.0 NAME 'ldapPublicKey' SUP top AUXILIARY
+  DESC 'MANDATORY: OpenSSH LPK objectclass'
+  MAY ( sshPublicKey $ uid ) 
+  )
+
+برای ارتقا دسترسی به کاربر و گروه کاربری مورد نظر
+
+2. exec ldapmodify -x -w PASSWORD
+3. paste this
 dn: uid=UID,ou=users,ou=linux,ou=servers,dc=DC,dc=DC
 changeType: modify
 add: objectClass
