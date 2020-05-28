@@ -281,10 +281,20 @@ java -jar ysoserial.jar CommonsBeanutils1 'COMMAND' | base64 -w0
 https://github.com/TheBinitGhimire/Web-Shells
 ```
 
-## استخراج اطلاعات از .git
+## استخراج ساختار پوشه ها و فایل ها از .git
+
+https://github.com/arthaud/git-dumper
 
 ```text
-./git-dumper.py http://travel.ir/.git/ travel.ir
+./git-dumper.py http://example.com/.git/ example.com
+```
+
+## استخراج اطلاعات از .git
+
+https://github.com/internetwache/GitTools
+
+```text
+./extractor.sh /tmp/mygitrepo /tmp/mygitrepodump
 ```
 
 ## استخراج اطلاعات از .DS_Store
