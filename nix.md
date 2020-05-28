@@ -697,3 +697,9 @@ For example: ./pspy64 -pf -i 1000
 | /var/adm/messages | مسیر syslog |
 | /etc/auto ' | فایل تنظیمات Automounter  |
 | /etc/inet/ipnodes | فایل هاست های IPv4 و IPv6 |
+
+## فایل های cache مهم
+
+| **فایل** | **توضیحات** |
+| :--- | :--- |
+| ~/.viminfo | فایل ویرایشگر vim |
