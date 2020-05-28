@@ -470,6 +470,12 @@ simpleproxy -L 8000 -R 10.10.10.10:1337
 ldapsearch -h <host> -x -b "dc=<dc>,dc=local" 
 ```
 
+### نمایش تمامی اطلاعات ساختاری ldap
+
+```text
+ldapsearch -x -LLL -w PASSWORD
+```
+
 ## vnc
 
 ### رمزگشایی فایل VNC Install.reg
