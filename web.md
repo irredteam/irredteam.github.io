@@ -286,3 +286,12 @@ https://github.com/TheBinitGhimire/Web-Shells
 ```text
 ./git-dumper.py http://travel.ir/.git/ travel.ir
 ```
+
+## استخراج اطلاعات از .DS_Store
+
+```text
+1-find structure
+python2.7 ds_store_exp.py http://poo.htb/.DS_Store
+2-enum in finded path 
+java -jar iis_shortname_scanner.jar 2 20 http://poo.htb/dev/dca66d38fd916317687e1390a420c3fc/db/
+```
