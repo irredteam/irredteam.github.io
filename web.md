@@ -311,3 +311,9 @@ java -jar iis_shortname_scanner.jar 2 20 http://poo.htb/dev/dca66d38fd916317687e
 ```text
 python3 paramspider.py --domain bugcrowd.com --exclude woff,css,js,png,svg,php,jpg --output bugcrowd.txt
 ```
+
+## بررسی ساختار پارامتر ها بر اساس الگو های آسیب پذیری ها
+
+```text
+gf xss domain.txt
+```
