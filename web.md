@@ -305,3 +305,9 @@ python2.7 ds_store_exp.py http://poo.htb/.DS_Store
 2-enum in finded path 
 java -jar iis_shortname_scanner.jar 2 20 http://poo.htb/dev/dca66d38fd916317687e1390a420c3fc/db/
 ```
+
+## استخراج پارامتر های صفحات
+
+```text
+python3 paramspider.py --domain bugcrowd.com --exclude woff,css,js,png,svg,php,jpg --output bugcrowd.txt
+```
