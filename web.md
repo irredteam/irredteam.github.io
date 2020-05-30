@@ -316,4 +316,5 @@ python3 paramspider.py --domain bugcrowd.com --exclude woff,css,js,png,svg,php,j
 
 ```text
 gf xss domain.txt
+gf potential domain.txt
 ```
