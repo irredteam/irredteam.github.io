@@ -68,6 +68,13 @@ python3 main.py --username <username>
 
 ```text
 gitrob <username> or <git repo>
+
+./gitgot.py -q example.com
+
+./gitgot.py -q example.com -u https://git.example.com
+
+./gitgot.py -q "org:github cats"
+
 ```
 
 ## ارزیابی اطلاعات برد های مدیریت پروژه
