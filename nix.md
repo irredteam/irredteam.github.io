@@ -155,6 +155,14 @@ published: true
       <td style="text-align:left">جمع خطوط w/ &apos;&apos;str&apos;&apos;</td>
     </tr>
     <tr>
+      <td style="text-align:left">grep -Hnri word * | vim -</td>
+      <td style="text-align:left">جست و جو کلمه مورد نظر در فایل ها به همراه نام فایل</td>
+    </tr>
+    <tr>
+      <td style="text-align:left">grep -rial word</td>
+      <td style="text-align:left">فایل های حاوی کلمه مورد نظر</td>
+    </tr> 
+    <tr>
       <td style="text-align:left">tar cf file.tar files</td>
       <td style="text-align:left">ایجاد .tar از فایل ها</td>
     </tr>
