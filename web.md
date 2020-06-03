@@ -318,3 +318,13 @@ python3 paramspider.py --domain bugcrowd.com --exclude woff,css,js,png,svg,php,j
 gf xss domain.txt
 gf potential domain.txt
 ```
+
+## حدس کلید jwt
+
+```text
+jwt-cracker "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ" "abcdefghijklmnopqrstuwxyz" 6
+
+یا 
+
+./jwtcrack eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoicm9vdCIsInBlcm1pc3Npb25zIjpbInVzZXI6cmVhZCIsInVzZXI6d3JpdGUiXSwiaWF0IjoxNTkxMTcxODU4LCJleHAiOjE1OTEzNDQ2NTgsImlzcyI6Imh0dHBzOi8vZ2l0aHViLmNvbS9zbm9vcHlzZWN1cml0eSJ9.blfmt8RiLnBO8mfOKS1Y8u_aFZnMpgNhpQzooLADHcs
+```
