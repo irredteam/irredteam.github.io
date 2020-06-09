@@ -464,7 +464,7 @@ mimikatz # sekurlsa::logonPasswords f
 
 ## استخراج اطلاعات در حافظه با استفاده از افزونه mimikatz در volatility
 
-```
+```text
 volatility — plugins=/usr/share/volatility/plugins — profile=Win7SP0x86 -f halomar.dmp mimikatz
 ````
 
