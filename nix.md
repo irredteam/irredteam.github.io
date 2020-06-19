@@ -93,6 +93,7 @@ published: true
 | ssh -i id_rsa user@ip | وصل شدن با کلید و passphrase |
 | id -u <username> | دریافت id کاربر |
 | cut -d: -f3 < <(getent group GROUPNAME) | دریافت id گروه |
+| curl -G 'http://example.com/file.php' --data-urlencode 'cmd=echo ssh-rsa AA...........' | ارسال اطلاعات با متد get در curl |
 
 ## دستورات فایل
 
