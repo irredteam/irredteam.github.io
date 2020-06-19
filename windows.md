@@ -1388,13 +1388,13 @@ python3 /usr/share/doc/python3-impacket/examples/GetNPUsers.py 10.10.10.10L -use
 
 ## دستورات rpcclient
 
-### ورود و بررسی سیستم بدون لاگ
+### ورود به سیستم
 
 ```text
 rpcclient 10.10.10.10 -U support
 ```
 
-### نمایش اطلاعات کاربرد
+### نمایش اطلاعات کاربر
 
 ```text
 queryuser support
@@ -1406,7 +1406,7 @@ queryuser support
 enumprivs
 ```
 
-### تغییر دسترسی کاربرد
+### تغییر دسترسی کاربر
 
 ```text
 setuserinfo2 audit2020 23 'redteam'
