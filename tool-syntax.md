@@ -797,6 +797,9 @@ crunch 12 12 -t baseword@,%^ wordlist.txt
 
 Use custom special character set and add 2 numbers then special character
 maskprocessor -custom-charset1=\!\@\#\$ baseword?d?d?l wordlist.txt
+
+generate wordlist from website with number 
+cewl -d 5 -m 3 -w wordlist http://fuse.fabricorp.local/papercut/logs/html/index.htm --with-numbers
 ```
 
 ## دستور Vsown
