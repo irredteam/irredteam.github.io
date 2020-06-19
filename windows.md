@@ -1431,6 +1431,12 @@ rpcclient 10.10.10.10 -U support
 queryuser support
 ```
 
+### نمایش کاربران
+
+```text
+enumdomusers
+```
+
 ### نمایش دسترسی ها
 
 ```text
@@ -1441,6 +1447,12 @@ enumprivs
 
 ```text
 setuserinfo2 audit2020 23 'redteam'
+```
+
+### نمایش چاپگر ها
+
+```text
+enumprinters
 ```
 
 ## استخراج NTLM از فایل ntds.dit
