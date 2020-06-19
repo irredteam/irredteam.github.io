@@ -1374,3 +1374,8 @@ smbclient -L 10.10.10.10
 smbclient //10.10.10.10/forensic
 ```
 
+## ورود به شل
+
+```text
+smbclient //10.10.10.10/profiles$
+```
