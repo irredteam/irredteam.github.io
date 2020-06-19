@@ -53,4 +53,7 @@ services.html. Accessed on 26 Feb 2013.
 httc://blog.strategicc··ber.com/2013/11/09/schtasks-persistence-with-powershell-one-liners
 Accessed on 21 Nov 2013.
 [11] https://ired.team/
+[12] https://www.nav1n.com/
+[13] https://0xprashant.github.io/
+[14] https://0x00sec.org/
 ```
