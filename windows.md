@@ -1368,4 +1368,9 @@ onidle /i 30
 smbclient -L 10.10.10.10
 ```
 
+### نمایش مسیر مشخص
+
+```text
+smbclient //10.10.10.10/forensic
+```
 
