@@ -875,3 +875,9 @@ https://fileadvisor.bit9.com/services/search.aspx
 ```text
 https://www.virustotal.com/#search
 ```
+
+## حدس کلمه عبور فایل zip
+
+```text
+fcrackzip -v -D -u -p /usr/share/wordlists/rockyou.txt secret.zip
+```
