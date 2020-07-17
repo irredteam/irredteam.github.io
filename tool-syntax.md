@@ -299,6 +299,12 @@ ssh -D1080 root@2.2.2.2
 In a separate terminal run:
 proxychains nmap -sT -p80,443 3.3.3.3
 ```
+# ایجاد ssh tunnel به صورت multi-hop
+
+```text
+ssh -L 8888:127.0.0.1:8444 50mctf@MY_VPS
+ssh -v -o PubkeyAuthentication=no -o PreferredAuthentications=password -o GatewayPorts=yes -fN -R *:8444:172.28.0.3:80 50mctf@MY_VPS
+```
 
 ## نرم افزار Metasploit 
 
