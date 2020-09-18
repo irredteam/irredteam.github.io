@@ -498,6 +498,14 @@ ldapsearch -h <host> -x -b "dc=<dc>,dc=local"
 ldapsearch -x -LLL -w PASSWORD
 ```
 
+## چاپگر ها
+
+### ایجاد اتصال
+
+```text
+python pret.py 10.10.10.10 pjl
+```
+
 ## vnc
 
 ### رمزگشایی فایل VNC Install.reg
