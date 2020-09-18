@@ -93,3 +93,9 @@ openssl rsautl -decrypt -inkey key.pri -in flag.enc -out flag.txt
 ```text
 https://www.dcode.fr/vigenere-cipher
 ```
+
+## رمزگشایی base64 در terminal
+
+```text
+echo "YToxOntzOjQ6Im5hbWUiO2E6MTp7czoxMDoicGF1bC1jb2xlcyI7YTo5OntzOjI6ImlkIjtzOjEwOiIxNTkyNDgzMjM2IjtzOjQ6Im5hbWUiO3M6 | base64 -d
+```
