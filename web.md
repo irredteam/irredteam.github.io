@@ -251,6 +251,13 @@ ffuf -w /usr/share/seclists/Discovery/Web-Content/raft-large-directories.txt -u 
 gobuster dns -t 50 -d pubg.com -w ~/seclists/Dir/subdomains.dat
 ```
 
+حدس subdomain با ffuf
+
+```text
+ffuf -c -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt -u http://
+example.com/ -H "Host: FUZZ.example.com" 
+```
+
 ## پیدا نمودن subdomain بر اساس گواهی نامه ها
 
 ```text
