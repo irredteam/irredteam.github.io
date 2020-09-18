@@ -290,6 +290,28 @@ socat TCP-LISTEN:8080,reuseaddr,fork TCP6:[2001::]:80
 http:// ip /level/ 16-99 /exec/show/config
 ```
 
+## SVN
+
+لیست فایل ها و فولدر ها
+
+```text
+svn list svn://10.10.10.10/Empty/
+```
+
+گزارش های فعالیت ها
+
+```text
+svn log svn://10.10.10.10/
+```
+
+لیست تغییرات
+
+```text
+svn diff -c r2 svn://10.10.10.10
+```
+
+
+
 ## پروتکل SNMP
 
 نیاز به شروع سرویس tftp
