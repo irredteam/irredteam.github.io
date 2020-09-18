@@ -558,6 +558,12 @@ Scan through socks proxy:
 socat TCP4:LISTEN:1234 TCP4:2.2.2.2:80
 ```
 
+### ایجاد ssh بدون سرویس ssh
+
+```text
+./socat TCP-LISTEN:22,fork,reuseaddr TCP:172.10.10.11:22
+```
+
 ### Stunnel - ssl encapsulated در تونل nc \(ویندوز & لینوکس\) \[8\]
 
 ```text
