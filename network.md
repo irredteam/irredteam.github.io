@@ -498,6 +498,14 @@ ldapsearch -h <host> -x -b "dc=<dc>,dc=local"
 ldapsearch -x -LLL -w PASSWORD
 ```
 
+#ftp
+
+### وصل شدن به ftp با نام کاربری و کلمه عبور
+
+```text
+lftp -e 'set ssl:verify-certificate false' -u "user,pass" -p 21 10.10.10.10
+```
+
 ## چاپگر ها
 
 ### ایجاد اتصال
