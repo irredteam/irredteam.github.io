@@ -54,6 +54,13 @@ http://dl.djsoft.net/DTMFChecker.zip
 https://www.dcode.fr/prime-numbers-cipher
 ```
 
+## رمزگشایی bcrypt
+
+```text
+git clone https://github.com/BREAKTEAM/Debcrypt.git
+python3 crack.py
+```
+
 ## رمز گشایی اعداد Cistercian
 
 ```text
