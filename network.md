@@ -320,6 +320,11 @@ svn diff -c r2 svn://10.10.10.10
 ```
 
 
+## حدس کلمه عبور OVA, O365, skype business
+
+```text
+python3 atomizer.py owa 10.10.10.10 pass.txt user.txt -i 0:0:01
+```
 
 ## پروتکل SNMP
 
