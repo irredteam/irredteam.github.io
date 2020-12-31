@@ -365,6 +365,12 @@ snmpwalk ip 1.3 | grep 77.1.2.25 -f4
 snmpwalk -v 1 -c public 10.13.37.10
 ```
 
+## شنود با responder
+
+```text
+responder -I eth1 -v
+```
+
 ## ضبط Packet 
 
 ### ضبط بسته های پورت 22- 23
