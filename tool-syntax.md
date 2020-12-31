@@ -766,6 +766,15 @@ GRUB Henu:Add 'single' end of kernel line. Reboot. Change root pass. reboot
 hydra -1 ftp -P words -v targetiP ftp
 ```
 
+## نرم افزار hashcat
+
+### کرک NTLMv2
+
+```text
+hashcat -m 5600 hash /usr/share/wordlists/rockyou.txt --force
+```
+
+
 ## نرم افزار John the ripper 
 
 ### کرک با لیست کلمات
