@@ -154,6 +154,15 @@ $ nc -v -n -z -wl [TargetiP] [startPort]-[endPort]
 ### انتقال فایل ها
 
 ```text
+ارسال فایل
+nc.exe 10.10.10.10 < "file.log"
+
+دریافت فایل
+nc -vnlp 1234 > file.txt
+```
+
+
+```text
 Grab a [filename] from a Listener:
 1. Start Listener to push [filename]
     $ nc -1 -p [port] [filename]
