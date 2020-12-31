@@ -317,6 +317,15 @@ nager/text/deploy?path=/exploit.war" | ایجاد backdoor با آسیب پذی�
 | /var/log/apache/access.log | گزارشات ارتباطات apache |
 | /etc/fstab | فایل اطلاعات ثابت سیستم |
 
+## استفاده از powershell
+
+### نصب
+
+```text
+sudo apt install gss-ntlmssp
+sudo apt-get install powershell
+```
+
 ## اسکریپت نویسی
 
 ### ایجاد Ping sweep
