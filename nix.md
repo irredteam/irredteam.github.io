@@ -334,6 +334,12 @@ $offsec_session = New-PSSession -ComputerName 10.10.10.210 -Authentication Negot
 Enter-PSSession $offsec_session
 ```
 
+### ایجاد symlink
+
+```text
+New-Item -ItemType Junction -Path 'C:\ProgramData' -Target 'C:\Users\Administrator'
+```
+
 
 ## اسکریپت نویسی
 
