@@ -326,6 +326,15 @@ sudo apt install gss-ntlmssp
 sudo apt-get install powershell
 ```
 
+### ورود با استفاده نام کاربری و کلمه عبور
+
+```text
+pwsh
+$offsec_session = New-PSSession -ComputerName 10.10.10.210 -Authentication Negotiate -Credential k.svensson
+Enter-PSSession $offsec_session
+```
+
+
 ## اسکریپت نویسی
 
 ### ایجاد Ping sweep
