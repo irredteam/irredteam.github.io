@@ -1152,6 +1152,12 @@ HKCU\Software\Microsoft\Windows\CurrentVersion\Run & \Runonce
 HKCU\Software\Microsoft\Windows NT\CurrentVersion\Windows\Load & \Run
 ```
 
+### فعال سازی Remote Desktop
+
+```text
+Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server' -name "fDenyTSConnections" -value 0
+```
+
 ## دریافت اطلاعات ویندوز با dsquery
 
 ### لیست کاربران دامین
