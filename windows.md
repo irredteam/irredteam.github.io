@@ -1510,3 +1510,11 @@ https://github.com/BloodHoundAD/BloodHound/blob/master/Collectors/SharpHound.exe
 .\SharpHound.exe
 ```
 
+## جمع آوری اطلاعات درباره Sql Server
+
+```text
+https://github.com/NetSPI/PowerUpSQL/blob/master/PowerUpSQL.ps1
+. .\PowerUpSQL.ps1
+Get-SQLInstanceDomain | Get-SQLServerInfo -Verbose
+```
+
