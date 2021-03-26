@@ -1009,6 +1009,13 @@ LPORT~8080 R I msfencode -t psh -a x86
 PROFIT
 ```
 
+### شناسایی دامنه های آسیب پذیر با powerup
+
+```text
+https://github.com/PowerShellEmpire/PowerTools/blob/master/PowerUp/PowerUp.ps1
+. .\PowerUp.ps1
+```
+
 ## رجیستری ویندوز 
 
 ### اطلاعات سیستم عامل
