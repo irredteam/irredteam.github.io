@@ -744,6 +744,12 @@ https://raw.githubusercontent.com/kmkz/Pentesting/master/AMSI-Bypass.ps1
 Invoke-AmsiBypass
 ```
 
+### غیرفعال سازی realtimemonitoring
+
+```text
+powershell -command set-mpppreference -Disable realtimemonitoring $true
+```
+
 ### لیست تمامی کاربران
 
 ```text
