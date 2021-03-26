@@ -1497,4 +1497,10 @@ python3 /usr/share/doc/python3-impacket/examples/secretsdump.py -ntds ntds.dit -
 hashes lmhash:nthash LOCAL -output nt-hash
 ```
 
+## جمع آوری اطلاعات با استفاده از SharpHound
+
+```text
+https://github.com/BloodHoundAD/BloodHound/blob/master/Collectors/SharpHound.exe
+.\SharpHound.exe
+```
 
