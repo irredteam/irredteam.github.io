@@ -1459,7 +1459,7 @@ enumprinters
 
 ## استخراج NTLM از فایل ntds.dit
 
-``text
+```text
 python3 /usr/share/doc/python3-impacket/examples/secretsdump.py -ntds ntds.dit -system system -
 hashes lmhash:nthash LOCAL -output nt-hash
 ```
