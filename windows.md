@@ -753,6 +753,15 @@ $users.SearchRoot = ''
 $users.FindAll()
 ```
 
+### لیست تمامی domain ها
+
+```text
+$computers = New-Object DirectoryServices.DirectorySearcher
+$computers.Filter = "(&(objectclass=computer))"
+$computers.SearchRoot = ''
+$computers.FindAll()
+```
+
 
 ### دریافت اطلاعات هویتی AD با استفاده از doesnotrequirepreauth
 
