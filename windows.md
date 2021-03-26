@@ -744,6 +744,15 @@ https://raw.githubusercontent.com/kmkz/Pentesting/master/AMSI-Bypass.ps1
 Invoke-AmsiBypass
 ```
 
+### لیست تمامی کاربران
+
+```text
+$users = New-Object DirectoryServices.DirectorySearcher
+$users.Filter = "(&(objectclass=user))"
+$users.SearchRoot = ''
+$users.FindAll()
+```
+
 
 ### دریافت اطلاعات هویتی AD با استفاده از doesnotrequirepreauth
 
