@@ -86,6 +86,12 @@ comma-seperated with no spaces list of decoy IPs --spoof-mac aa:bb:cc:dd:ee:ff
 -e eth0 -Pn targeted-IP. ;done
 ```
 
+### لیست اسکریپت های nmap
+
+| نام | توضیح |
+| :--- | :--- |
+| لیست مسیر های به اشتراک گذاشته  | smb-enum-shares.nse |
+
 ## نرم افزار Wireshark
 
 | فیلتر | توضیح |
