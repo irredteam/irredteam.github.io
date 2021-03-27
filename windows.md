@@ -1531,3 +1531,8 @@ https://github.com/r3motecontrol/Ghostpack-CompiledBinaries
 .\Rubeus.exe asreproast
 ```
 
+## لیست ip های دردسترس بدون استفاده از nmap
+
+```text
+for /L %i in (1,1,255) do @ping -n 1 -w 200 10.10.10.%i > nul && echo 10.10.10.%i is up.
+```
