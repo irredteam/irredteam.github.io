@@ -51,6 +51,7 @@
 | --spoof-mac mac | spoof آدرس mac |
 | --data-length size | اندازه  |
 | --scan-delay script | اسکریپت |
+| --min-rate=X | تعیین حداقل تعداد درخواست ارسالی در ثانیه |
 
 ### تبدیل خروجی xml به html 
 
