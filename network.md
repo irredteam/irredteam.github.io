@@ -182,6 +182,13 @@ rsumrf6 eth# remote ipv6
 ./chisel server -p 9000 --reverse
 ./chisel client <ip>:9000 R:4500:127.0.0.1:4500
 ```
+
+یا 
+
+```text
+./chisel server -p 9000 --reverse
+./chisel client <ip>:9000 R:socks
+```
  
 
 ### تونل ipv6 در ipv4  با socat
