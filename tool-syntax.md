@@ -921,3 +921,9 @@ https://www.virustotal.com/#search
 ```text
 fcrackzip -v -D -u -p /usr/share/wordlists/rockyou.txt secret.zip
 ```
+
+## حدس کلمه عبور سرویس winrm
+
+```text
+crackmapexec winrm <IPS> -u <USERS> -p <PASSWORDS>
+```
