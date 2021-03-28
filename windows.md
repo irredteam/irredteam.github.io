@@ -1536,3 +1536,11 @@ https://github.com/r3motecontrol/Ghostpack-CompiledBinaries
 ```text
 for /L %i in (1,1,255) do @ping -n 1 -w 200 10.10.10.%i > nul && echo 10.10.10.%i is up.
 ```
+
+یا
+
+```text
+https://github.com/sperner/PowerShell/blob/master/PortScan.ps1
+.\PortScan.ps1
+.\PortScan.ps1 10.10.10.10 1 10000
+```
