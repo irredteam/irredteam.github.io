@@ -1544,3 +1544,9 @@ https://github.com/sperner/PowerShell/blob/master/PortScan.ps1
 .\PortScan.ps1
 .\PortScan.ps1 10.10.10.10 1 10000
 ```
+
+## شناسایی سرویس با Test-WSMan
+
+```text
+PS> Test-WSMan -ComputerName <COMPUTERNAME> -Port 6666
+```
