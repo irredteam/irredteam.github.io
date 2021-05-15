@@ -933,3 +933,9 @@ fcrackzip -v -D -u -p /usr/share/wordlists/rockyou.txt secret.zip
 ```text
 crackmapexec winrm <IPS> -u <USERS> -p <PASSWORDS>
 ```
+
+## حدس کلمه عبور سرویس smb
+
+```text
+crackmapexec smb <IP> -u <USER> -p <PASS> --shares
+```
