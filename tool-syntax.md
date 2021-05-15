@@ -939,3 +939,9 @@ crackmapexec winrm <IPS> -u <USERS> -p <PASSWORDS>
 ```text
 crackmapexec smb <IP> -u <USER> -p <PASS> --shares
 ```
+
+## اتصال به mssql با impackt
+
+```text
+mssqlclient.py -port 1433 sa@10.10.10.10
+```
