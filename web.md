@@ -326,7 +326,7 @@ gf xss domain.txt
 gf potential domain.txt
 ```
 
-## حدس کلید jwt
+## حدس کلید رمزنگاری متقارن jwt
 
 ```text
 jwt-cracker "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ" "abcdefghijklmnopqrstuwxyz" 6
@@ -334,6 +334,13 @@ jwt-cracker "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibm
 یا 
 
 ./jwtcrack eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoicm9vdCIsInBlcm1pc3Npb25zIjpbInVzZXI6cmVhZCIsInVzZXI6d3JpdGUiXSwiaWF0IjoxNTkxMTcxODU4LCJleHAiOjE1OTEzNDQ2NTgsImlzcyI6Imh0dHBzOi8vZ2l0aHViLmNvbS9zbm9vcHlzZWN1cml0eSJ9.blfmt8RiLnBO8mfOKS1Y8u_aFZnMpgNhpQzooLADHcs
+```
+
+
+## حدس کلید عمومی رمزنگاری نامتقارن jwt
+
+```text
+docker run --rm -it portswigger/sig2n <token1> <token2> 
 ```
 
 ## ایجاد وب شل jpg
