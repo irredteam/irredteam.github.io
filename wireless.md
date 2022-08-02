@@ -1,18 +1,17 @@
 ---
 layout: default
-published: true
 ---
 
-# بی سیم
+# Wireless
 
-### نمودار فرکانس ها
+### Frequency chart
 
 <table>
   <thead>
     <tr>
-      <th style="text-align:left"><b>تکنولوژی</b>
+      <th style="text-align:left"><b>Technology</b>
       </th>
-      <th style="text-align:left"><b>فرکانس</b>
+      <th style="text-align:left"><b>Frequency</b>
       </th>
     </tr>
   </thead>
@@ -95,51 +94,51 @@ published: true
 https://apps.fcc.gov/oetcf/eas/reports/GenericSearch.cfm
 ```
 
-### پایگاه داده فرکانس ها
+### Frequency database
 
 ```text
 http://www.radioreference.com/apps/db/
 ```
 
-### منبع Kismet 
+### Kismet Reference \[5\]
 
-| **دستور** | **توضیح** |
+| **Command** | **Description** |
 | :--- | :--- |
-| e | سرور های kismet |
-| h | راهنما |
-| z | نمایش تمام صفحه |
-| n | شماره شبکه فعلی |
-| m | حذف صدا |
-| i | جزییات شبکه |
-| t | تگ و یا حذف تگ شبکه |
-| s | مرتبط سازی لیست شبکه |
-| g | گروه بندی شبکه های تگ شده |
-| l | نمایش سطوح قدرت کارت شبکه بی سیم |
-| u | خذف گروه، گروه فعلی |
-| d | نمایش تنظیمات قابل نمایش |
-| c | نمایش کاربران شبکه فعلی |
-| r | نمودار نرخ بسته ها |
-| L | قفل نموده کانال در کانال انتخاب شده |
-| a | نمایش آمار شبکه |
-| H | بازگشت به کانال عادی |
-| p | دریافت نوع بسته |
-| +/- | Expand/collapse گروه ها |
-| f | مرکز شبکه |
-| CTRL+L | نمایش دوباره صفحه |
-| w | ردیابی هشدار ها |
-| Q | خروج از Kismet |
-| X | بستن پنجره popup |
+| e | List Kismet servers |
+| h | Help |
+| z | Toggle full-screen view |
+| n | Name current network |
+| m | Toggle muting of sound |
+| i | View detailed information for network |
+| t | Tag or untag selected network |
+| s | Sort network list |
+| g | Group tagged networks |
+| l | Show wireless card power levels |
+| u | Ungroup current group |
+| d | Dump printable strings |
+| c | Show clients in current network |
+| r | Packet rate graph |
+| L | Lock channel hopping to selected channel |
+| a | View network statistics |
+| H | Return to normal channel hopping |
+| p | Dump packet type |
+| +/- | Expand/collapse groups |
+| f | Follow network center |
+| CTRL+L | Re-draw the screen |
+| w | Track alerts |
+| Q | Quit Kismet |
+| X | Close popup window |
 
-### دستورات wifi در لینوکس
+### Linux wifi commands
 
-| دستور | توضیح |
+| Command | Description |
 | :--- | :--- |
-| iwconfig | تنظیمات interface ها |
-| rfkill list | نمایش مشکل wifi |
-| rfkill unblock all | روشن نموده wifi |
-| airdump-ng mon0 | نظارت بر کلیه interface ها |
+| iwconfig | Wireless interface config |
+| rfkill list | Identify wifi problems |
+| rfkill unblock all | Turn on wifi |
+| airdump-ng mon0 | Monitor all interfaces |
 
-### وصل شده به شبکه نا امن
+### Connect to unsecured wifi
 
 ```text
 iwconfig ath0 essid $SSID
@@ -147,7 +146,7 @@ ifconfig ath0 up
 dhclient ath0
 ```
 
-### اتصال به wep
+### Connect to wep wifi network
 
 ```text
 iwconfig ath0 essid $SSID key
@@ -155,7 +154,7 @@ ifconfig ath0 up
 dhclient ath0
 ```
 
-### اتصال به wpa-psk
+### Connect to wpa-psk wifi network
 
 ```text
 iwconfig ath0 essid $SSID
@@ -164,7 +163,7 @@ wpa_supplicant -B -i ath0 -c wpa-psk.conf
 dhclient ath0
 ```
 
-### اتصال به wpa-enterprise
+### Connect to wpa-enterprise wifi network
 
 ```text
 iwconfig ath0 essid $SSID
@@ -173,47 +172,45 @@ wpa supplicant -B -i ath0 -c wpa-ent.conf
 dhclient ath0
 ```
 
-## بلوتوث در لینوکس
+## Linux bluetooth
 
 <table>
   <thead>
     <tr>
-      <th style="text-align:left"><b>دستور</b>
+      <th style="text-align:left"><b>Command</b>
       </th>
-      <th style="text-align:left"><b>توضیح</b>
+      <th style="text-align:left"><b>Description</b>
       </th>
     </tr>
   </thead>
   <tbody>
     <tr>
       <td style="text-align:left">hciconfig hci0 up</td>
-      <td style="text-align:left">روشن نموده interface بلوتوث</td>
+      <td style="text-align:left">Turn on bluetooth interface</td>
     </tr>
     <tr>
       <td style="text-align:left">hcitool -i hci0 scan --flush --all</td>
-      <td style="text-align:left">جست و جو دستگاه های دارای بلوتوث</td>
+      <td style="text-align:left">Scan for bluetooth devices</td>
     </tr>
     <tr>
       <td style="text-align:left">sdptool browse BD_ADDR</td>
-      <td style="text-align:left">لیست سرویس های باز</td>
+      <td style="text-align:left">List open services</td>
     </tr>
     <tr>
       <td style="text-align:left">
         <p>hciconfig hci0 name &quot;NAME&quot; class Ox520204</p>
         <p>pi scan</p>
       </td>
-      <td style="text-align:left">انتخاب به عنوان discoverable</td>
+      <td style="text-align:left">Set as discoverable</td>
     </tr>
     <tr>
       <td style="text-align:left">pand -K</td>
-      <td style="text-align:left">حذف جلسه pand</td>
+      <td style="text-align:left">Clear pand sessions</td>
     </tr>
   </tbody>
-</table>
+</table>## Linux wifi testing
 
-## تست شبکه های wifi در لینوکس
-
-### آغاز monitor mode interface
+### Start monitor mode interface
 
 ```text
 airmon-ng stop ath0
@@ -221,7 +218,7 @@ airmon-ng start wifi0
 iwconfig ath0 channel $CH
 ```
 
-### حمله Capture client handshake
+### Capture client handshake
 
 ```text
 airdump-ng -c $CH --bssid $AP -w file athO    #Capture traffic
@@ -230,7 +227,7 @@ aireplay-ng -0 10 -a $AP -c $CH athO          #Force client de-auth
 
 ```
 
-### حمله Brute force handshake
+### Brute force handshake
 
 ```text
 aircrack-ng -w wordlist capture.cap    # WPA-PSK
@@ -241,7 +238,7 @@ eapmd5pass -r capture.cap -w wordlist  # EAP-HDS
 
 ```
 
-### حمله Dos
+### Dos attack
 
 ```text
 mdk3    int    a -a $AP    #Auth Flood

