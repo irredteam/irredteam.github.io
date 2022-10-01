@@ -585,3 +585,23 @@ Value: passwd or passwd2
 ```
 
 [اطلاعات بیشتر](https://github.com/frizb/PasswordDecrypts)
+
+##CCTV
+
+### جمع آوری اطلاعات
+```text
+nmap -Pn -sV --script "rtsp-*" -p 554 10.10.10.10/24
+```
+
+### حدس کلمه عبور
+
+```text
+rtspbrute -t ip.txt -p 554
+```
+
+
+### همه کاره
+
+```text
+docker run -t ullaakut/cameradar -t 192.168.100.0/24
+```
