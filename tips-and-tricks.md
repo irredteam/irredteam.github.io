@@ -772,3 +772,9 @@ http:// ip /commard/visca-gen.cgi?visca= str
 ```text
 cat blue | perl -lpe '$_=pack"B*",$_' > bin
 ```
+
+## آزمایشگاه بررسی و اجرا
+
+```text
+https://htbmachines.github.io/
+```
