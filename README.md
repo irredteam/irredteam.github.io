@@ -2,7 +2,7 @@
 
 ## Brought to you by:
 
-![HADESS](https://hadess.io/wp-content/uploads/2022/06/logo-white.png)
+<img src="https://hadess.io/wp-content/uploads/2022/06/logo-white.png" alt="HADESS" width="200"/>
 
 
 ## Cover
