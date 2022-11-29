@@ -1520,6 +1520,8 @@ hashes lmhash:nthash LOCAL -output nt-hash
 ```text
 https://github.com/BloodHoundAD/BloodHound/blob/master/Collectors/SharpHound.exe
 .\SharpHound.exe
+or
+SharpHound.exe -c All --zipfilename output.zip
 ```
 
 ## جمع آوری اطلاعات درباره Sql Server
