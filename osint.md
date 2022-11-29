@@ -16,6 +16,9 @@ published: true
 | https://shodan.io/ | موتور جست و جو دستگاه های متصل به وب  |
 | https://yasiv.com/youtube# | ارزیابی ویدیو های youtube |
 | https://ohshint.gitbook.io/ | کتابچه آموزشی osint |
+| https://epieos.com/| اکانت های مرتبط با ایمیل مانند skype  |
+
+
 
 
 
