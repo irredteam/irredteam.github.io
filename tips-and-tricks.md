@@ -9,7 +9,6 @@ published: true
 
 ### انتقال توسط ftp بدون دسترسی مستقیم به شل
 
-```text
 echo open ip 21 ftp.txt
 echo user ftp.txt
 echo pass ftp.txt
@@ -778,3 +777,10 @@ cat blue | perl -lpe '$_=pack"B*",$_' > bin
 ```text
 https://htbmachines.github.io/
 ```
+
+## ارسال ایمیل 
+
+```text
+swaks --to receiver@mail.dev --from from@mail.dev --server mail.server.dev --body "BODY" 
+```
+
