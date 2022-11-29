@@ -127,6 +127,7 @@ published: true
 | systeminfo /S ip /U domain\user /P Pwd | دریافت اطلاعات سیستم از راه دور |
 | reg query \\ ip \ RegDomain \  Key /v VALUE | ارسال پرس و جو به رجیستری, /s=all values |
 | reg query HKLM /f password /t REG\_SZ /s | جست و جو رجیستری برای کلمه عبور ها |
+| reg query HKLM\Software\Policies\Microsoft\Windows\WindowsUpdate /v WUServer HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Windows\WindowsUpdate | آدرس WSUS |
 | fsutil fsinfo drives | لیست درایور ها •نیاز به دسترسی admin |
 | dir /a /s /b c:\'.pdf' | جست و جو برای کلیه فایل های pdf |
 | dir /a /b c:\windows\kb' | جست و جو برای patche ها |
