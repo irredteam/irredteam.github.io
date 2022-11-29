@@ -15,6 +15,9 @@ published: true
 | https://censys.io/ | موتور جست و جو دستگاه های متصل به وب  |
 | https://shodan.io/ | موتور جست و جو دستگاه های متصل به وب  |
 | https://yasiv.com/youtube# | ارزیابی ویدیو های youtube |
+| https://ohshint.gitbook.io/ | کتابچه آموزشی osint |
+
+
 
 
 
