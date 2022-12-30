@@ -740,3 +740,4 @@ For example: ./pspy64 -pf -i 1000
 | ~/.viminfo | فایل ویرایشگر vim |
 
   
+  
